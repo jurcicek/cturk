@@ -1,0 +1,19 @@
+<feedback>
+<question id="1" name="Did you find all the information you were looking for?">No</question>
+<question id="2" name="The system understood me well.">strongly disagree</question>
+<question id="3" name="The phrasing of the system's responses was good.">strongly disagree</question>
+<question id="4" name="The system's voice was of good quality.">strongly disagree</question>
+<comments>jokalaka@hotmail.com
+</comments>
+<contact></contact>
+<token>1571</token>
+<dialogueId>/data/dial/classic/November10Classic-CI/Integrated/voip-anonymous-101124_075524</dialogueId>
+<assignmentId>None</assignmentId>
+<workerId>None</workerId>
+<hitId>None</hitId>
+<workerOuterIp></workerOuterIp>
+<workerInnerIp></workerInnerIp>
+<workerDn></workerDn>
+<goal>restaurant; addr, phone, postcode; food="East asian", pricerange=expensive</goal>
+<task>You want to find an East asian restaurant and it should have expensive pricerange. You want to know the address, phone number, and postcode.</task>
+</feedback>

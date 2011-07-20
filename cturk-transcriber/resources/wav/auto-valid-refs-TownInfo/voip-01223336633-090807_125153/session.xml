@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2009/08/07' time='12:51:53'>
+<session> voip-01223336633 </session>
+<user> ky219 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/partowninfo.pcy </policy>
+<semdecoder> SemClassifiers </semdecoder>
+<outputgen> JostGen </outputgen>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.001'>
+<dact>hello()</dact>
+<prompt starttime='0.001'> Hello, how may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='0.001'>
+<rec fname='ky219x-015-090807_124851_0013571_0013719.wav' starttime='140.280' endtime='6.140'/>
+<asr>
+<asrhyp>      I AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I I'M LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      ARE AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I THERE AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      OK AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I I AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      UH AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I AM LOOKING FOR A A RESTAURANT      </asrhyp>
+<asrhyp>      I ER LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I LOOKING FOR A RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.78'>hello(type=restaurant)</semihyp>
+<semihyp prob='0.20'>inform(type=restaurant)</semihyp>
+<semihyp prob='0.02'>hello()</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>ack(type=restaurant)</semihyp>
+<semihyp prob='0.00'>negate(type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>negate()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='0.244'>
+<dact>confreq(type=restaurant,area)</dact>
+<prompt starttime='0.244'> Ok, a restaurant! What part of town do you have in mind? For example something in the centre of town, or in the north, or on the riverside? </prompt>
+</systurn>
+<userturn turnnum='2' starttime='0.245'>
+<rec fname='ky219x-002-090807_125219_0001846_0002304.wav' starttime='18.460' endtime='23.040'/>
+<asr>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT SERVING A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT SERVING ER FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT SERVING HUM A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT RESTAURANT SERVING A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT RESTAURANT SERVING A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A SERVING A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A A RESTAURANT SERVING A FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT SERVING UH FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I WANT A RESTAURANT SERVING HUM ER FRENCH FOOD      </asrhyp>
+<asrhyp>      I DON'T CARE BUT I A RESTAURANT SERVING A FRENCH FOOD      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.66'>inform(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.08'>inform(=dontcare,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.07'>inform(food=French)</semihyp>
+<semihyp prob='0.05'>deny(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.05'>deny(type=restaurant,food=French)</semihyp>
+<semihyp prob='0.04'>inform(type=restaurant)</semihyp>
+<semihyp prob='0.02'>inform(=dontcare,food=French)</semihyp>
+<semihyp prob='0.01'>deny(food=French,=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.01'>deny(type=restaurant,=dontcare,food=French)</semihyp>
+<semihyp prob='0.01'>inform(=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>inform(=dontcare)</semihyp>
+<semihyp prob='0.00'>deny(type=restaurant,=dontcare)</semihyp>
+<semihyp prob='0.00'>deny(food=French,=dontcare)</semihyp>
+<semihyp prob='0.00'>deny()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='0.643'>
+<dact>confirm(type=restaurant,food=French)</dact>
+<prompt starttime='0.643'> You are looking for a French restaurant right? </prompt>
+</systurn>
+<userturn turnnum='3' starttime='0.643'>
+<rec fname='ky219x-003-090807_125220_0002430_0002503.wav' starttime='24.300' endtime='25.030'/>
+<asr>
+<asrhyp>      UH UH           </asrhyp>
+<asrhyp>                    </asrhyp>
+<asrhyp>          UH UH                     </asrhyp>
+<asrhyp>          UH UH           HUM </asrhyp>
+<asrhyp>      UH     </asrhyp>
+<asrhyp>  UH      </asrhyp>
+<asrhyp>                </asrhyp>
+<asrhyp>           HUM </asrhyp>
+<asrhyp>      UH ER      </asrhyp>
+<asrhyp>          </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.85'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+<semihyp prob='0.07'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='0.520'>
+<dact>inform(name="La Garonde",type=restaurant,food=French)</dact>
+<prompt starttime='0.520'> La Garonde is a great French restaurant </prompt>
+</systurn>
+<userturn turnnum='4' starttime='0.520'>
+<rec fname='ky219x-004-090807_125230_0003464_0003605.wav' starttime='34.640' endtime='36.050'/>
+<asr>
+<asrhyp>      OK WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      ER WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      OK YEAH WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      OK WHAT'S THE PRICE      </asrhyp>
+<asrhyp>      OK WHAT'S THE PRICERANGE RANGE      </asrhyp>
+<asrhyp>      OK WHAT THE PRICE RANGE      </asrhyp>
+<asrhyp>      OH WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      ER YEAH WHAT'S THE PRICE RANGE      </asrhyp>
+<asrhyp>      ER WHAT'S THE PRICE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.84'>request(pricerange)</semihyp>
+<semihyp prob='0.12'>request()</semihyp>
+<semihyp prob='0.01'>inform(pricerange)</semihyp>
+<semihyp prob='0.01'>null()</semihyp>
+<semihyp prob='0.01'>ack()</semihyp>
+<semihyp prob='0.01'>request(price)</semihyp>
+<semihyp prob='0.00'>ack(pricerange)</semihyp>
+<semihyp prob='0.00'>request(price,pricerange)</semihyp>
+<semihyp prob='0.00'>ack(price)</semihyp>
+<semihyp prob='0.00'>inform(price)</semihyp>
+<semihyp prob='0.00'>ack(pricerange,price)</semihyp>
+<semihyp prob='0.00'>inform(pricerange,price)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='0.305'>
+<dact>inform(name="La Garonde",pricerange=expensive)</dact>
+<prompt starttime='0.305'> La Garonde is in the expensive price range </prompt>
+</systurn>
+<userturn turnnum='5' starttime='0.305'>
+<rec fname='ky219x-005-090807_125238_0004206_0004442.wav' starttime='42.060' endtime='44.420'/>
+<asr>
+<asrhyp>      DO YOU HAVE SOMETHING IN THE MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING THE MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING IN MODERATE MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING MODERATE MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING IN THE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING THE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING IN MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING MODERATE      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING IN      </asrhyp>
+<asrhyp>      DO YOU HAVE SOMETHING      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.59'>inform(pricerange=moderate)</semihyp>
+<semihyp prob='0.11'>null()</semihyp>
+<semihyp prob='0.10'>request(pricerange=moderate)</semihyp>
+<semihyp prob='0.06'>inform(near="River Jay")</semihyp>
+<semihyp prob='0.05'>request()</semihyp>
+<semihyp prob='0.03'>request(near="River Jay")</semihyp>
+<semihyp prob='0.02'>confirm(pricerange=moderate)</semihyp>
+<semihyp prob='0.01'>confirm(near="River Jay")</semihyp>
+<semihyp prob='0.01'>confirm()</semihyp>
+<semihyp prob='0.01'>inform(near)</semihyp>
+<semihyp prob='0.00'>inform(addr)</semihyp>
+<semihyp prob='0.00'>request(near)</semihyp>
+<semihyp prob='0.00'>request(addr)</semihyp>
+<semihyp prob='0.00'>inform(food=English)</semihyp>
+<semihyp prob='0.00'>confirm(near)</semihyp>
+<semihyp prob='0.00'>inform(addr,near)</semihyp>
+<semihyp prob='0.00'>confirm(addr)</semihyp>
+<semihyp prob='0.00'>request(near,addr)</semihyp>
+<semihyp prob='0.00'>request(food=English)</semihyp>
+<semihyp prob='0.00'>confirm(near,addr)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='0.809'>
+<dact>confirm(type=restaurant,pricerange=moderate)</dact>
+<prompt starttime='0.809'> Let me confirm, You are looking for a restaurant in the moderate price range right? </prompt>
+</systurn>
+<userturn turnnum='6' starttime='0.809'>
+<rec fname='ky219x-006-090807_125240_0004517_0004615.wav' starttime='45.170' endtime='46.150'/>
+<asr>
+<asrhyp>      PRICE RANGE      </asrhyp>
+<asrhyp>      RANGE      </asrhyp>
+<asrhyp>      PRICE PRICERANGE      </asrhyp>
+<asrhyp>      PRICERANGE      </asrhyp>
+<asrhyp>      PRICE FRENCH      </asrhyp>
+<asrhyp>      I RANGE      </asrhyp>
+<asrhyp>      FRENCH      </asrhyp>
+<asrhyp>      I'D RANGE      </asrhyp>
+<asrhyp>      I'VE RANGE      </asrhyp>
+<asrhyp>      UH RANGE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.65'>null()</semihyp>
+<semihyp prob='0.16'>request()</semihyp>
+<semihyp prob='0.05'>inform(pricerange)</semihyp>
+<semihyp prob='0.04'>inform(food=French)</semihyp>
+<semihyp prob='0.02'>ack()</semihyp>
+<semihyp prob='0.02'>request(pricerange)</semihyp>
+<semihyp prob='0.02'>inform(price)</semihyp>
+<semihyp prob='0.01'>inform(pricerange=expensive)</semihyp>
+<semihyp prob='0.01'>request(price)</semihyp>
+<semihyp prob='0.01'>bye()</semihyp>
+<semihyp prob='0.00'>request(food=French)</semihyp>
+<semihyp prob='0.00'>request(pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>ack(price)</semihyp>
+<semihyp prob='0.00'>inform(price,pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>ack(pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>request(price,pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>bye(pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>ack(price,pricerange=expensive)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='0.810'>
+<dact>select(pricerange=moderate,pricerange=expensive)</dact>
+<prompt starttime='0.810'> Would you like moderate or expensive pricerange? </prompt>
+</systurn>
+<userturn turnnum='7' starttime='0.810'>
+<rec fname='ky219x-007-090807_125247_0005261_0005351.wav' starttime='52.610' endtime='53.510'/>
+<asr>
+<asrhyp>          MODERATE      </asrhyp>
+<asrhyp>      MODERATE MODERATE      </asrhyp>
+<asrhyp>      UH      </asrhyp>
+<asrhyp>      A      </asrhyp>
+<asrhyp>      MODERATE OR      </asrhyp>
+<asrhyp>      MODERATE I      </asrhyp>
+<asrhyp>      I      </asrhyp>
+<asrhyp>      UH MODERATE      </asrhyp>
+<asrhyp>      HUM      </asrhyp>
+<asrhyp>      A MODERATE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.93'>inform(pricerange=moderate)</semihyp>
+<semihyp prob='0.06'>null()</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>bye()</semihyp>
+<semihyp prob='0.00'>bye(pricerange=moderate)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='0.033'>
+<dact>confirm(type=restaurant,food=French)</dact>
+<prompt starttime='0.033'> You are looking for a French restaurant right? </prompt>
+</systurn>
+<userturn turnnum='8' starttime='0.033'>
+<rec fname='ky219x-008-090807_125253_0005855_0005939.wav' starttime='58.550' endtime='59.390'/>
+<asr>
+<asrhyp>          YES      </asrhyp>
+<asrhyp>      YES YES      </asrhyp>
+<asrhyp>      UH      </asrhyp>
+<asrhyp>      YEAH      </asrhyp>
+<asrhyp>      YES           </asrhyp>
+<asrhyp>      YES </asrhyp>
+<asrhyp>      YES I      </asrhyp>
+<asrhyp>      YES A </asrhyp>
+<asrhyp>      AND      </asrhyp>
+<asrhyp>      OH      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.94'>affirm()</semihyp>
+<semihyp prob='0.06'>null()</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>bye()</semihyp>
+<semihyp prob='0.00'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>confirm(type=hotel)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='0.065'>
+<dact>inform(name=none,type=restaurant,pricerange=moderate,food=French,name!="La Garonde")</dact>
+<prompt starttime='0.066'> I am sorry, but there is no restaurant that is in the moderate price range and serves French food </prompt>
+</systurn>
+<userturn turnnum='9' starttime='0.066'>
+<rec fname='ky219x-009-090807_125314_0006918_0007564.wav' starttime='69.180' endtime='75.640'/>
+<asr>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF A FRENCH RESTAURANT NEAR THE YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO OR CAN YOU GIVE ME THE NUMBER OF A FRENCH RESTAURANT NEAR THE YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF THE FRENCH RESTAURANT NEAR THE YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF A FRENCH RESTAURANT NEAR YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO OR CAN YOU GIVE ME THE NUMBER OF THE FRENCH RESTAURANT NEAR THE YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO OR CAN YOU GIVE ME THE NUMBER OF A FRENCH RESTAURANT NEAR YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF THE FRENCH RESTAURANT NEAR YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF FRENCH RESTAURANT NEAR THE YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO OR CAN YOU GIVE ME THE NUMBER OF THE FRENCH RESTAURANT NEAR YOU JUST MENTIONED      </asrhyp>
+<asrhyp>      OK SO CAN YOU GIVE ME THE NUMBER OF A FRENCH RESTAURANT NEAR THE THE YOU JUST MENTIONED      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.66'>request(phone,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.15'>request(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.06'>request(phone,near,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.04'>request(near,phone,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.02'>reqalts(phone,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.02'>request(near,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.02'>request(phone,type=restaurant)</semihyp>
+<semihyp prob='0.01'>reqalts(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts(phone,near,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone,food=French)</semihyp>
+<semihyp prob='0.00'>request(phone,food=French,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone,near,type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts(near,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(near,phone,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(food=French)</semihyp>
+<semihyp prob='0.00'>reqalts(phone,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(near,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(food=French,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone,near,food=French)</semihyp>
+<semihyp prob='0.00'>request(phone,near,food=French,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts(type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(near,phone,food=French)</semihyp>
+<semihyp prob='0.00'>reqalts(phone,food=French)</semihyp>
+<semihyp prob='0.00'>request(near,food=French)</semihyp>
+<semihyp prob='0.00'>reqalts(phone,near,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone)</semihyp>
+<semihyp prob='0.00'>request(phone,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(near,food=French,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts(food=French)</semihyp>
+<semihyp prob='0.00'>reqalts(near,type=restaurant)</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>reqalts(phone,near,food=French)</semihyp>
+<semihyp prob='0.00'>request(phone,food=French,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone,near,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>request(phone,near)</semihyp>
+<semihyp prob='0.00'>reqalts(near,food=French)</semihyp>
+<semihyp prob='0.00'>request(near,phone)</semihyp>
+<semihyp prob='0.00'>reqalts(phone)</semihyp>
+<semihyp prob='0.00'>request(near)</semihyp>
+<semihyp prob='0.00'>request(food=French,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(phone,near,food=French,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(near,name="Number One",type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts()</semihyp>
+<semihyp prob='0.00'>reqalts(phone,near)</semihyp>
+<semihyp prob='0.00'>request(phone,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(near,food=French,name="Number One")</semihyp>
+<semihyp prob='0.00'>reqalts(near)</semihyp>
+<semihyp prob='0.00'>request(name="Number One")</semihyp>
+<semihyp prob='0.00'>request(phone,near,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(near,name="Number One")</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='10'>
+<systurn turnnum='10' starttime='0.463'>
+<dact>inform(name=none,type=restaurant,pricerange=moderate,food=French,name!="La Garonde")</dact>
+<prompt starttime='0.463'> I am sorry, but there is no restaurant that is in the moderate price range and serves French food </prompt>
+</systurn>
+<userturn turnnum='10' starttime='0.464'>
+<rec fname='ky219x-010-090807_125330_0009096_0009436.wav' starttime='90.960' endtime='94.360'/>
+<asr>
+<asrhyp>      OK SO I WANT A A FRENCH RESTAURANT TOWN      </asrhyp>
+<asrhyp>      OK SO I WANT A A FRENCH OF TOWN      </asrhyp>
+<asrhyp>      OK SO I WANT A A FRENCH RESTAURANT      </asrhyp>
+<asrhyp>      OK SO I WANT A FRENCH RESTAURANT TOWN      </asrhyp>
+<asrhyp>      OK SO I WANT A A FRENCH OF      </asrhyp>
+<asrhyp>      OK SO I WANT A FRENCH OF TOWN      </asrhyp>
+<asrhyp>      OK SO I WANT A FRENCH RESTAURANT      </asrhyp>
+<asrhyp>      OK SO I WANT A FRENCH OF      </asrhyp>
+<asrhyp>      OK SO I WANT FRENCH RESTAURANT TOWN      </asrhyp>
+<asrhyp>      OK SO I WANT FRENCH OF TOWN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.29'>inform(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.25'>inform(food=French)</semihyp>
+<semihyp prob='0.07'>ack(food=French)</semihyp>
+<semihyp prob='0.05'>request(food=French)</semihyp>
+<semihyp prob='0.05'>inform(area=dontcare,food=French)</semihyp>
+<semihyp prob='0.04'>hello(food=French)</semihyp>
+<semihyp prob='0.03'>reqalts(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.03'>inform(area=dontcare,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.03'>hello(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.03'>ack(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.03'>deny(food=French,type=restaurant)</semihyp>
+<semihyp prob='0.03'>deny(type=restaurant,food=French)</semihyp>
+<semihyp prob='0.01'>ack(area=dontcare,food=French)</semihyp>
+<semihyp prob='0.01'>inform(type=restaurant)</semihyp>
+<semihyp prob='0.01'>null()</semihyp>
+<semihyp prob='0.01'>hello(area=dontcare,food=French)</semihyp>
+<semihyp prob='0.01'>request(area=dontcare,food=French)</semihyp>
+<semihyp prob='0.01'>deny(food=French,area=dontcare)</semihyp>
+<semihyp prob='0.01'>reqalts(food=French)</semihyp>
+<semihyp prob='0.00'>reqalts(area=dontcare,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>hello(area=dontcare,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(area=dontcare,food=French,type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>deny(food=French,area=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>deny(type=restaurant,area=dontcare,food=French)</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>inform(area=dontcare)</semihyp>
+<semihyp prob='0.00'>hello()</semihyp>
+<semihyp prob='0.00'>deny()</semihyp>
+<semihyp prob='0.00'>reqalts(type=restaurant)</semihyp>
+<semihyp prob='0.00'>inform(area=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>hello(type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(type=restaurant)</semihyp>
+<semihyp prob='0.00'>reqalts(area=dontcare,food=French)</semihyp>
+<semihyp prob='0.00'>ack(area=dontcare)</semihyp>
+<semihyp prob='0.00'>hello(area=dontcare)</semihyp>
+<semihyp prob='0.00'>request(area=dontcare)</semihyp>
+<semihyp prob='0.00'>reqalts()</semihyp>
+<semihyp prob='0.00'>reqalts(area=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>hello(area=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(area=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>deny(type=restaurant,area=dontcare)</semihyp>
+<semihyp prob='0.00'>reqalts(area=dontcare)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='11'>
+<systurn turnnum='11' starttime='0.302'>
+<dact>inform(name=none,type=restaurant,pricerange=moderate,food=French,name!="La Garonde")</dact>
+<prompt starttime='0.303'> I am sorry, but there is no restaurant that is in the moderate price range and serves French food </prompt>
+</systurn>
+<userturn turnnum='11' starttime='0.303'>
+<rec fname='ky219x-011-090807_125332_0009544_0009770.wav' starttime='95.440' endtime='97.700'/>
+<asr>
+<asrhyp>      IN THE EXPENSIVE PRICE RANGE      </asrhyp>
+<asrhyp>      IN THE EXPENSIVE PRICE      </asrhyp>
+<asrhyp>      IN THE EXPENSIVE PRICERANGE RANGE      </asrhyp>
+<asrhyp>      IN THE EXPENSIVE PRICERANGE      </asrhyp>
+<asrhyp>      IN IN THE EXPENSIVE PRICE RANGE      </asrhyp>
+<asrhyp>      IN IN THE EXPENSIVE PRICE      </asrhyp>
+<asrhyp>      IN IN THE EXPENSIVE PRICERANGE RANGE      </asrhyp>
+<asrhyp>      ER THE EXPENSIVE PRICE RANGE      </asrhyp>
+<asrhyp>      IN THE EXPENSIVE PRICE PRICERANGE      </asrhyp>
+<asrhyp>      IN THE EXPENSIVE RANGE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.67'>inform(pricerange=expensive)</semihyp>
+<semihyp prob='0.28'>request(pricerange=expensive)</semihyp>
+<semihyp prob='0.02'>inform(price,pricerange=expensive)</semihyp>
+<semihyp prob='0.01'>null()</semihyp>
+<semihyp prob='0.01'>request(price,pricerange=expensive)</semihyp>
+<semihyp prob='0.01'>request()</semihyp>
+<semihyp prob='0.00'>inform(price)</semihyp>
+<semihyp prob='0.00'>request(price)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='12'>
+<systurn turnnum='12' starttime='0.032'>
+<dact>inform(name="La Garonde",type=restaurant,food=French,pricerange=expensive)</dact>
+<prompt starttime='0.033'> La Garonde is a great restaurant serving French food and it is in the expensive price range </prompt>
+</systurn>
+<userturn turnnum='12' starttime='0.033'>
+<rec fname='ky219x-012-090807_125344_0010741_0010900.wav' starttime='107.410' endtime='109.000'/>
+<asr>
+<asrhyp>          WHAT'S WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      ER WHAT'S WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      WHAT'S THE THE NUMBER      </asrhyp>
+<asrhyp>      ER WHAT'S THE THE NUMBER      </asrhyp>
+<asrhyp>      WHAT'S WHAT'S WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      ER WHAT'S WHAT'S WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      ER WHAT'S THE NUMBER      </asrhyp>
+<asrhyp>      WHAT'S WHAT THE NUMBER      </asrhyp>
+<asrhyp>      ER WHAT'S WHAT THE NUMBER      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.90'>request(phone)</semihyp>
+<semihyp prob='0.09'>request()</semihyp>
+<semihyp prob='0.01'>request(phone,name="Number One")</semihyp>
+<semihyp prob='0.00'>request(name="Number One")</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='13'>
+<systurn turnnum='13' starttime='128.054'>
+<dact>inform(name="La Garonde",phone=728-12-29)</dact>
+<prompt starttime='128.054'> No problem, the phone number of La Garonde is 728-12-29 </prompt>
+</systurn>
+<userturn turnnum='13' starttime='128.054'>
+<rec fname='ky219x-013-090807_125353_0011838_0011931.wav' starttime='118.380' endtime='119.310'/>
+<asr>
+<asrhyp>          AND THE ADDRESS      </asrhyp>
+<asrhyp>      ER THE ADDRESS      </asrhyp>
+<asrhyp>      UH THE ADDRESS      </asrhyp>
+<asrhyp>      IN THE ADDRESS      </asrhyp>
+<asrhyp>      AND AND THE ADDRESS      </asrhyp>
+<asrhyp>      AND IN THE ADDRESS      </asrhyp>
+<asrhyp>      AND THE ADDRESS ADDRESS      </asrhyp>
+<asrhyp>      AND THE ER      </asrhyp>
+<asrhyp>      ER AND THE ADDRESS      </asrhyp>
+<asrhyp>      AND YEAH ADDRESS      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.96'>request(addr)</semihyp>
+<semihyp prob='0.03'>request()</semihyp>
+<semihyp prob='0.01'>null()</semihyp>
+<semihyp prob='0.00'>inform(addr)</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='14'>
+<systurn turnnum='14' starttime='128.777'>
+<dact>inform(name="La Garonde",addr="Main Square")</dact>
+<prompt starttime='128.777'> Sure, La Garonde is on Main Square </prompt>
+</systurn>
+<userturn turnnum='14' starttime='128.778'>
+<rec fname='ky219x-014-090807_125401_0012533_0012688.wav' starttime='125.330' endtime='126.880'/>
+<asr>
+<asrhyp>          GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      YEAH GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      THERE GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      ER GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      OF GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      YEAH OF GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      THERE OF GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      ER OF GREAT THANK YOU GOODBYE      </asrhyp>
+<asrhyp>      GREAT THANK YOU GOODBYE BYE      </asrhyp>
+<asrhyp>      YEAH GREAT THANK YOU GOODBYE BYE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.00'>bye()</semihyp>
+<semihyp prob='0.00'>thankyou()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='15'>
+<systurn turnnum='15' starttime='127.971'>
+<dact> bye() </dact>
+<prompt starttime='127.971'> Thank you, goodbye </prompt>
+</systurn>
+<userturn turnnum='15' starttime='127.971'>
+</userturn>
+</turn>
+</dialog>

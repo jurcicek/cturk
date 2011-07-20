@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>start</title>
+<link rel="stylesheet" type="text/css" href="static/themes/default/blog-min.css" />
+<link rel="stylesheet" type="text/css" href="static/themes/default/styles.css" />
+<script type="text/javascript" src="static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="static/js/Config.js"></script>
+<script type="text/javascript" src="static/js/util/LocationSearch.js"></script>
+<script type="text/javascript" src="static/js/page/Start.js"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-349008-14']);
+  _gaq.push(['_setDomainName', '.camdial.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body class="main">
+	<div id="container">
+		<div id="container-inner">
+			
+			<div id="header">
+				<div id="header-inner"></div>
+			<!-- #header end --></div>
+			
+			<div id="content">
+				<div id="content-inner">
+					<div id="alpha">
+						<div id="alpha-inner">
+							<br/>
+							<p>Listen to the below dialogue and transcribe the USER audio to text by clicking the triangle play button.
+							The System prompt text is just to give you an idea of the context and you don't need to do anything to it.
+							A detailed description of how to deal with digits, punctuation, noise etc. can be
+							<a href="howToTranscribeSpeech.html" target="_blank">found here</a>. 
+							<span class="imp">Please read carefully before starting to transcribe the audio!</span></p>
+							
+							<p> If there is an unintelligible sound e.g. knocking or door squeaking, do not describe it in words. Just write in the text box "(sil)". 
+							<span class="imp">Do not use words like: unintelligible, sound, knocking, etc.</b>
+							</p>
+							<form id="dynamicTableForm" method="POST" action="zzz/cturk/server/webroot/workers/externalSubmit">
+								<input type="hidden" id="assignmentId" name="assignmentId" value="" />
+								<table id="dynamicTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+									<thead>
+										<tr>
+											<th scope="col">Speaker</th>
+											<th scope="col">&nbsp;</th>
+											<th scope="col">Text</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</form>
+							<div>
+								<input id="submitButton" type="button" value="Submit" class="submitButton" />
+							</div>
+						</div>
+					<!-- #alpha end --></div>
+					
+					<div id="beta">
+						<div id="beta-inner"></div>
+					<!-- #beta end --></div>
+					
+				</div>
+			<!-- #content end --></div>
+			
+			<div id="footer">
+				<div id="footer-inner"></div>
+			<!-- #footer end --></div>
+			
+		</div>
+	<!-- #container end --></div>
+</body>
+</html>

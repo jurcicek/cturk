@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <dialog date="2010/05/26" time="13:09:43">
+    <dman> HISDMan </dman>
+    <host> florence </host>
+    <hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+    <microphone> VOIP_PJSIP </microphone>
+    <outputgen> Personage </outputgen>
+    <policy> ../../resources/caminfo_V13.pcy </policy>
+    <rec endtime="22.030" fname="fj228x-003-100526_131128_all.wav" starttime="0.000" />
+    <semdecoder> Phoenix </semdecoder>
+    <session> voip-07952786468 </session>
+    <task> N/A </task>
+    <token> 2895 </token>
+    <turn turnnum="1">
+      <systurn starttime="0.057" turnnum="1">
+        <dact>hello()</dact>
+        <prompt starttime="0.066"> Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+      </systurn>
+      <userturn starttime="0.066" turnnum="1">
+        <asr>
+          <asrhyp prob="-2.444748402" />
+          <asrhyp prob="-2.465807676">          HOW </asrhyp>
+          <asrhyp prob="-2.939019442" />
+          <asrhyp prob="-2.960078716">      HOW      </asrhyp>
+          <asrhyp prob="-3.493315220">           EAT </asrhyp>
+          <asrhyp prob="-3.514374256">      HOW EAT </asrhyp>
+          <asrhyp prob="-3.544788122">      CAN </asrhyp>
+          <asrhyp prob="-3.987586260">           EAT      </asrhyp>
+          <asrhyp prob="-4.008645535">      HOW EAT      </asrhyp>
+          <asrhyp prob="-4.039059162">      CAN      </asrhyp>
+        </asr>
+        <rec endtime="4.780" fname="fj228x-001-100526_130948_0000272_0000478.wav" starttime="2.720" />
+        <semi>
+          <semihyp prob="0.769238234">null()</semihyp>
+          <semihyp prob="0.230761766">inform(name=Eat)</semihyp>
+        </semi>
+        <transcription>(sil)</transcription>
+      </userturn>
+    </turn>
+    <turn turnnum="2">
+      <systurn starttime="0.158" turnnum="2">
+        <dact>inform(name=Eat)</dact>
+        <prompt starttime="0.171"> Eat is a great venue. </prompt>
+      </systurn>
+      <userturn starttime="0.171" turnnum="2">
+        <asr>
+          <asrhyp prob="-0.863744497">      ARE THERE      </asrhyp>
+          <asrhyp prob="-0.868055582">      ARE      </asrhyp>
+          <asrhyp prob="-2.912793159">      OH THERE      </asrhyp>
+          <asrhyp prob="-2.917104244">      OH      </asrhyp>
+          <asrhyp prob="-4.647481918">      THERE      </asrhyp>
+          <asrhyp prob="-4.651793003" />
+          <asrhyp prob="-4.742140293">      ARE I THERE      </asrhyp>
+          <asrhyp prob="-4.746451378">      ARE I      </asrhyp>
+          <asrhyp prob="-6.791188717">      OH I THERE      </asrhyp>
+          <asrhyp prob="-6.795499802">      OH I      </asrhyp>
+        </asr>
+        <rec endtime="7.830" fname="fj228x-002-100526_130951_0000722_0000783.wav" starttime="7.220" />
+        <semi>
+          <semihyp prob="1.000000000">null()</semihyp>
+        </semi>
+        <transcription>(sil)</transcription>
+      </userturn>
+    </turn>
+    <turn turnnum="3">
+      <systurn starttime="0.123" turnnum="3">
+        <dact>reqmore()</dact>
+        <prompt starttime="0.140"> Can I help you with anything else? </prompt>
+      </systurn>
+      <userturn starttime="0.140" turnnum="3">
+        <asr>
+          <asrhyp prob="-1.478636146">      HELLO      </asrhyp>
+          <asrhyp prob="-1.632649899" />
+          <asrhyp prob="-2.056715488">      NO      </asrhyp>
+          <asrhyp prob="-2.245709181">      HELLO UH      </asrhyp>
+          <asrhyp prob="-2.399723053">      UH      </asrhyp>
+          <asrhyp prob="-2.561716080">      OH      </asrhyp>
+          <asrhyp prob="-2.823788643">      NO UH      </asrhyp>
+          <asrhyp prob="-3.328789234">      OH UH      </asrhyp>
+          <asrhyp prob="-4.480597496" />
+          <asrhyp prob="-4.950070858">      HELLO NO      </asrhyp>
+        </asr>
+        <rec endtime="22.030" fname="fj228x-003-100526_131005_0002096_0002203.wav" starttime="20.960" />
+        <semi>
+          <semihyp prob="0.437329680">null()</semihyp>
+          <semihyp prob="0.355626673">hello()</semihyp>
+          <semihyp prob="0.207043633">negate()</semihyp>
+        </semi>
+        <transcription>(barking)</transcription>
+      </userturn>
+    </turn>
+    <turn turnnum="4">
+      <systurn starttime="0.328" turnnum="4">
+        <dact>inform(name=Eat)</dact>
+        <prompt starttime="0.341"> Eat is an outstanding venue. </prompt>
+      </systurn>
+      <userturn starttime="0.341" turnnum="4" />
+    </turn>
+    <turn turnnum="5">
+      <systurn starttime="-0.036" turnnum="5">
+        <dact> canthear() </dact>
+        <prompt starttime="-0.036"> I can't hear you. Eat is an outstanding venue. </prompt>
+      </systurn>
+      <userturn starttime="-0.036" turnnum="5" />
+    </turn>
+    <turn turnnum="6">
+      <systurn starttime="128.340" turnnum="6">
+        <dact> canthear() </dact>
+        <prompt starttime="128.340"> I can't hear you. Eat is an outstanding venue. </prompt>
+      </systurn>
+      <userturn starttime="128.340" turnnum="6" />
+    </turn>
+    <turn turnnum="7">
+      <systurn starttime="128.716" turnnum="7">
+        <dact> canthear() </dact>
+        <prompt starttime="128.716"> I can't hear you. Eat is an outstanding venue. </prompt>
+      </systurn>
+      <userturn starttime="128.717" turnnum="7">
+        <event>Too long silence. HangUp received</event>
+      </userturn>
+    </turn>
+    <turn turnnum="8">
+      <systurn starttime="128.092" turnnum="8">
+        <dact>inform(name=Eat)</dact>
+        <prompt starttime="128.105"> Eat is a great venue. </prompt>
+      </systurn>
+      <userturn starttime="128.106" turnnum="8" />
+    </turn>
+    <user> fj228 </user>
+  </dialog>

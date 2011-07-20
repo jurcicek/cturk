@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2010/11/24' time='08:06:14'>
+<session> voip-anonymous </session>
+<user> fj228 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/caminfo_rest_3best_V6.pcy </policy>
+<semdecoder> Phoenix </semdecoder>
+<outputgen> EdinGen </outputgen>
+<token> 8804 </token>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.020'>
+<dact> hello() </dact>
+<prompt starttime='0.029'> \rate{-15%} Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='0.029'><rec fname='fj228x-001-101124_080623_0000794_0000866.wav' starttime='7.940' endtime='8.660'/>
+<asr>
+<asrhyp prob='-0.402743071'>                </asrhyp>
+<asrhyp prob='-1.349985719'>          UH UH           </asrhyp>
+<asrhyp prob='-3.266985893'>          DO      </asrhyp>
+<asrhyp prob='-4.214228630'>      DO UH      </asrhyp>
+<asrhyp prob='-4.337662220'>      I      </asrhyp>
+<asrhyp prob='-5.773356438'>      CAN      </asrhyp>
+<asrhyp prob='-6.720598698'>      CAN UH      </asrhyp>
+<asrhyp prob='-7.201905251'>      DO I      </asrhyp>
+<asrhyp prob='-8.555586815'>      A      </asrhyp>
+<asrhyp prob='-8.959140778'>      UH UH      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='0.012'>
+<dact> repeat() </dact>
+<prompt starttime='0.028'> \rate{-15%} Can you please rephrase that? </prompt>
+</systurn>
+<userturn turnnum='2' starttime='0.028'><rec fname='fj228x-002-101124_080632_0001289_0001664.wav' starttime='12.890' endtime='16.640'/>
+<asr>
+<asrhyp prob='-8.715107918'>      I WANT A BAR WHAT THAI WITH A IN NOW CHEZ      </asrhyp>
+<asrhyp prob='-8.725957870'>      I WANT A BAR WHAT THAI WITH A GOOD NOW CHEZ      </asrhyp>
+<asrhyp prob='-8.732036591'>      I WANT A BAR WHAT THAI WITH A IN NOW OF CHEZ      </asrhyp>
+<asrhyp prob='-8.742885590'>      I WANT A BAR WHAT THAI WITH A GOOD NOW OF CHEZ      </asrhyp>
+<asrhyp prob='-8.823795319'>      I WANT A BAR WHAT WITH A IN NOW CHEZ      </asrhyp>
+<asrhyp prob='-8.834645271'>      I WANT A BAR WHAT WITH A GOOD NOW CHEZ      </asrhyp>
+<asrhyp prob='-8.840723038'>      I WANT A BAR WHAT WITH A IN NOW OF CHEZ      </asrhyp>
+<asrhyp prob='-8.851572990'>      I WANT A BAR WHAT WITH A GOOD NOW OF CHEZ      </asrhyp>
+<asrhyp prob='-8.852686882'>      I WANT A BAR WHAT THAI WITH OPEN IN NOW CHEZ      </asrhyp>
+<asrhyp prob='-8.863536835'>      I WANT A BAR WHAT THAI WITH OPEN GOOD NOW CHEZ      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.507584691'>inform(food=Thai)</semihyp>
+<semihyp prob='0.383923471'>inform()</semihyp>
+<semihyp prob='0.108491801'>request(food=Thai)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='-0.530'>
+<dact> inform(name="Bangkok City",type=restaurant,food=Thai) </dact>
+<prompt starttime='0.044'> \rate{-15%}I found 5 restaurants, which have Thai cuisine. 3 of them are located in the riverside area. On the other hand, 1 of them is located in the Fen Ditton area and 1 of them is located in the central area. The restaurant called \pitch{+10%} \volume{loud} Bangkok City, \volume \pitch has the best overall quality amongst the selected restaurants. It is a Thai restaurant. </prompt>
+</systurn>
+<userturn turnnum='3' starttime='0.044'><rec fname='fj228x-003-101124_080642_0002680_0002753.wav' starttime='26.800' endtime='27.530'/>
+<asr>
+<asrhyp prob='-0.825751185'>      AL AL           </asrhyp>
+<asrhyp prob='-1.604581952'>          NO      </asrhyp>
+<asrhyp prob='-1.941211462'>           </asrhyp>
+<asrhyp prob='-2.334533691'>      AL TELL      </asrhyp>
+<asrhyp prob='-3.113364458'>      NO TELL      </asrhyp>
+<asrhyp prob='-3.449994087'>      TELL      </asrhyp>
+<asrhyp prob='-4.557234287'>      ARE      </asrhyp>
+<asrhyp prob='-4.635666847'>      I      </asrhyp>
+<asrhyp prob='-5.024420738'>      AL HELP      </asrhyp>
+<asrhyp prob='-5.803251266'>      NO HELP      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.741163254'>null()</semihyp>
+<semihyp prob='0.252162874'>negate()</semihyp>
+<semihyp prob='0.006673862'>help()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='-0.106'>
+<dact> select(type=coffeeshop,type=pub) </dact>
+<prompt starttime='-0.087'> \rate{-15%} Are you looking for a cafe or a pub? </prompt>
+</systurn>
+<userturn turnnum='4' starttime='-0.087'><rec fname='fj228x-004-101124_080647_0003188_0003252.wav' starttime='31.880' endtime='32.520'/>
+<asr>
+<asrhyp prob='-0.714433432'>      AH AH           </asrhyp>
+<asrhyp prob='-1.612978578'>          HOW      </asrhyp>
+<asrhyp prob='-2.594067812'>      ARE      </asrhyp>
+<asrhyp prob='-3.217437983'>      AH I      </asrhyp>
+<asrhyp prob='-3.238419294'>               </asrhyp>
+<asrhyp prob='-3.732950211'>  AH      </asrhyp>
+<asrhyp prob='-3.828470945'>           </asrhyp>
+<asrhyp prob='-4.115983009'>      HOW I      </asrhyp>
+<asrhyp prob='-4.190714836'>      I      </asrhyp>
+<asrhyp prob='-4.344536304'>      AH HI      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.986088276'>null()</semihyp>
+<semihyp prob='0.013911706'>hello()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='-0.141'>
+<dact> request(near) </dact>
+<prompt starttime='-0.091'> \rate{-15%} Are you looking for somewhere near a particular venue? For example, All Saints Church, Cambridge Contemporary Art, or the Regency Gallery. </prompt>
+</systurn>
+<userturn turnnum='5' starttime='-0.090'><rec fname='fj228x-005-101124_080654_0003891_0003941.wav' starttime='38.910' endtime='39.410'/>
+<asr>
+<asrhyp prob='-1.308935285'>      YEAH      </asrhyp>
+<asrhyp prob='-1.484272718'>      THERE      </asrhyp>
+<asrhyp prob='-2.216592312'>      ARE      </asrhyp>
+<asrhyp prob='-2.284293890'>      YES      </asrhyp>
+<asrhyp prob='-2.472059011'>      WHERE      </asrhyp>
+<asrhyp prob='-2.514027357'>      NO      </asrhyp>
+<asrhyp prob='-3.253606796'>      YEAH THERE      </asrhyp>
+<asrhyp prob='-3.428944349'>      THERE THERE      </asrhyp>
+<asrhyp prob='-4.161263943'>      ARE THERE      </asrhyp>
+<asrhyp prob='-4.228965282'>      YES THERE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.480480552'>null()</semihyp>
+<semihyp prob='0.436431170'>affirm()</semihyp>
+<semihyp prob='0.083088271'>negate()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='0.117'>
+<dact> select(type=coffeeshop,type=pub) </dact>
+<prompt starttime='0.139'> \rate{-15%} Are you looking for a cafe or a pub? </prompt>
+</systurn>
+<userturn turnnum='6' starttime='0.139'><rec fname='fj228x-006-101124_080656_0004082_0004142.wav' starttime='40.820' endtime='41.420'/>
+<asr>
+<asrhyp prob='-0.507628083'>      OH OH           </asrhyp>
+<asrhyp prob='-2.566435337'>          OH OH WHAT      </asrhyp>
+<asrhyp prob='-3.029877186'>      OH HOPE      </asrhyp>
+<asrhyp prob='-3.180122614'>      HOW      </asrhyp>
+<asrhyp prob='-3.270838737'>      I      </asrhyp>
+<asrhyp prob='-3.387545109'>           </asrhyp>
+<asrhyp prob='-3.428387880'>      AND      </asrhyp>
+<asrhyp prob='-3.914627552'>      OH I      </asrhyp>
+<asrhyp prob='-3.994936466'>      UH      </asrhyp>
+<asrhyp prob='-4.112626553'>      ERM      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000119'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='0.049'>
+<dact> reqmore() </dact>
+<prompt starttime='0.068'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='7' starttime='0.068'><rec fname='fj228x-007-101124_080659_0004389_0004467.wav' starttime='43.890' endtime='44.670'/>
+<asr>
+<asrhyp prob='-1.135878682'>      NO      </asrhyp>
+<asrhyp prob='-1.521554470'>           </asrhyp>
+<asrhyp prob='-1.853941083'>      NO UH      </asrhyp>
+<asrhyp prob='-2.221564293'>      AH      </asrhyp>
+<asrhyp prob='-2.239616871'>      UH      </asrhyp>
+<asrhyp prob='-2.939626694'>      AH UH      </asrhyp>
+<asrhyp prob='-4.107031822'>      ARE      </asrhyp>
+<asrhyp prob='-4.825094223'>      ARE UH      </asrhyp>
+<asrhyp prob='-6.330581188'>      I      </asrhyp>
+<asrhyp prob='-6.507466316'>      OH      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.518247902'>null()</semihyp>
+<semihyp prob='0.481752038'>negate()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='0.002'>
+<dact> select(type=coffeeshop,type=pub) </dact>
+<prompt starttime='0.016'> \rate{-15%} Are you looking for a cafe or a pub? </prompt>
+</systurn>
+<userturn turnnum='8' starttime='0.017'><rec fname='fj228x-008-101124_080704_0004915_0004956.wav' starttime='49.150' endtime='49.560'/>
+<asr>
+<asrhyp prob='-0.721126139'>      HOW      </asrhyp>
+<asrhyp prob='-1.556548715'>      HOW           </asrhyp>
+<asrhyp prob='-1.862409353'>      HOW DO </asrhyp>
+<asrhyp prob='-2.697831869'>      HOW DO      </asrhyp>
+<asrhyp prob='-3.479627609'>      HOW TO </asrhyp>
+<asrhyp prob='-3.828363895'>      HOW CAN </asrhyp>
+<asrhyp prob='-4.315050125'>      HOW TO      </asrhyp>
+<asrhyp prob='-4.663786411'>      HOW CAN      </asrhyp>
+<asrhyp prob='-5.900130272'>      HOW IN </asrhyp>
+<asrhyp prob='-6.735552788'>      HOW IN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='0.296'>
+<dact> reqmore() </dact>
+<prompt starttime='0.315'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='9' starttime='0.315'><rec fname='fj228x-009-101124_080713_0005372_0005793.wav' starttime='53.720' endtime='57.930'/>
+<asr>
+<asrhyp prob='-0.666896760'>      I WANT TO FIND THE PARROT AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-2.304672718'>      I WANT TO FIND THE PARROT UH AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.084205627'>      I WANT TO FIND THE PARROT SAINT INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.333066463'>      I WANT TO FIND THE PARROT FOR AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.432033539'>      I WANT TO FIND THE TOWN AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.700659990'>      I WANT TO FIND THE TIME AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.837799788'>      I WANT TO FIND THE PARROT AND INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-4.201515675'>      I WANT TO FIND OF PARROT AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-4.372744083'>      I WANT TO FIND THE POUNDS AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-4.495152473'>      I WANT TO FIND A THE PARROT AN INTERNET CONNECTION      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000119'>inform(hasinternet=true)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='10'>
+<systurn turnnum='10' starttime='-0.330'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='-0.307'> \rate{-15%} The Bakers, which has an  \pitch{+10%} \volume{loud} internet connection \volume \pitch , is a great pub. </prompt>
+</systurn>
+<userturn turnnum='10' starttime='-0.307'><rec fname='fj228x-010-101124_080721_0006499_0006651.wav' starttime='64.990' endtime='66.510'/>
+<asr>
+<asrhyp prob='-2.184091091'>          SURE VERY ALLOWED      </asrhyp>
+<asrhyp prob='-2.232924700'>      SURE VERY HOW      </asrhyp>
+<asrhyp prob='-2.978538513'>      SURE VERY      </asrhyp>
+<asrhyp prob='-3.109078646'>      SURE ALLOWED      </asrhyp>
+<asrhyp prob='-3.157912493'>      SURE HOW      </asrhyp>
+<asrhyp prob='-3.245152712'>      SURE VERY ALLOWED HOUSE      </asrhyp>
+<asrhyp prob='-3.293986320'>      SURE VERY HOW HOUSE      </asrhyp>
+<asrhyp prob='-3.903526068'>      SURE      </asrhyp>
+<asrhyp prob='-3.909792662'>      SURE VERY OUT ALLOWED      </asrhyp>
+<asrhyp prob='-3.958626509'>      SURE VERY OUT HOW      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000119'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='11'>
+<systurn turnnum='11' starttime='0.256'>
+<dact> reqmore() </dact>
+<prompt starttime='0.272'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='11' starttime='0.272'><rec fname='fj228x-011-101124_080729_0007153_0007394.wav' starttime='71.530' endtime='73.940'/>
+<asr>
+<asrhyp prob='-2.935143709'>      I WANT A RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-3.511923075'>      I WANT RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-3.644729137'>      I WANT NOW RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-3.663421631'>      I WANT TO RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.131387234'>      I WANT A KNOW RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.292007446'>      I ONE A RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.361527443'>      I WANT A A RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.644663811'>          WANT A RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.708167076'>      I WANT KNOW RESTAURANT IN TOWN      </asrhyp>
+<asrhyp prob='-4.755885601'>  I WANT A RESTAURANT IN TOWN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000119'>inform(=restaurant)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='12'>
+<systurn turnnum='12' starttime='127.466'>
+<dact> inform(name="Sala Thong Restaurant",type=restaurant,food=Thai) </dact>
+<prompt starttime='128.022'> \rate{-15%}I found 5 restaurants, which have Thai cuisine. 3 of them are located in the riverside area, while 1 of them is located in the Fen Ditton area and 1 of them is located in the central area. The restaurant called \pitch{+10%} \volume{loud} the Sala Thong, \volume \pitch is a Thai restaurant. This restaurant has the best overall quality amongst the selected restaurants. </prompt>
+</systurn>
+<userturn turnnum='12' starttime='128.022'><rec fname='fj228x-012-101124_080747_0008924_0009164.wav' starttime='89.240' endtime='91.640'/>
+<asr>
+<asrhyp prob='-4.491333961'>          NO NO THAT      </asrhyp>
+<asrhyp prob='-4.587554932'>      NO NO THAT FOOD </asrhyp>
+<asrhyp prob='-4.600918293'>      NO NO THAT           </asrhyp>
+<asrhyp prob='-4.648674488'>      NO THAT      </asrhyp>
+<asrhyp prob='-4.697139263'>      NO NO THAT FOOD      </asrhyp>
+<asrhyp prob='-4.720762253'>      NO NO THAT'S      </asrhyp>
+<asrhyp prob='-4.723572254'>      NO NO THAT PUB      </asrhyp>
+<asrhyp prob='-4.744895458'>      NO THAT FOOD </asrhyp>
+<asrhyp prob='-4.758259296'>      NO THAT           </asrhyp>
+<asrhyp prob='-4.816983223'>      NO NO THAT'S FOOD </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.904767573'>negate()</semihyp>
+<semihyp prob='0.095232494'>negate(=pub)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='13'>
+<systurn turnnum='13' starttime='127.597'>
+<dact> inform(name="Milton Park English and Thai Restaurant",type=restaurant,food=Thai) </dact>
+<prompt starttime='128.205'> \rate{-15%}I found 5 restaurants, which have Thai cuisine. 3 of them are located in the riverside area. However, 1 of them is located in the Fen Ditton area and 1 of them is located in the central area. The restaurant called \pitch{+10%} \volume{loud} Milton Park English and Thai Restaurant, \volume \pitch has the best overall quality amongst the selected restaurants. It is a Thai restaurant. </prompt>
+</systurn>
+<userturn turnnum='13' starttime='128.205'><rec fname='fj228x-013-101124_080749_0009400_0009489.wav' starttime='94.000' endtime='94.890'/>
+<asr>
+<asrhyp prob='-0.021187831'>      NO      </asrhyp>
+<asrhyp prob='-4.738339901'>      NO           </asrhyp>
+<asrhyp prob='-5.100056171'>      NO THE </asrhyp>
+<asrhyp prob='-6.030329227'>      NO </asrhyp>
+<asrhyp prob='-6.113021851'>      NO I      </asrhyp>
+<asrhyp prob='-6.982097149'>      NO NO      </asrhyp>
+<asrhyp prob='-8.285834312'>      NO HUM </asrhyp>
+<asrhyp prob='-8.649123192'>      NO ROOM      </asrhyp>
+<asrhyp prob='-9.817208290'>      NO THE      </asrhyp>
+<asrhyp prob='-10.830173492'>      NO I           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>negate()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='14'>
+<systurn turnnum='14' starttime='128.257'>
+<dact> inform(name="Mai Thai",type=restaurant,food=Thai) </dact>
+<prompt starttime='127.890'> \rate{-15%}I found 5 restaurants, which have Thai cuisine. 3 of them are located in the riverside area, but 1 of them is located in the Fen Ditton area and 1 of them is located in the central area. The restaurant called \pitch{+10%} \volume{loud} Mai Thai, \volume \pitch has the best overall quality amongst the selected restaurants. It is a Thai restaurant. </prompt>
+</systurn>
+<userturn turnnum='14' starttime='127.890'><rec fname='fj228x-014-101124_080752_0009711_0009767.wav' starttime='97.110' endtime='97.670'/>
+<asr>
+<asrhyp prob='-0.166991413'>      NO      </asrhyp>
+<asrhyp prob='-3.234065056'>      NO HOPE      </asrhyp>
+<asrhyp prob='-3.278361320'>      NO I      </asrhyp>
+<asrhyp prob='-3.898650646'>      NO WALK      </asrhyp>
+<asrhyp prob='-4.734375000'>      NO WILL      </asrhyp>
+<asrhyp prob='-5.574057102'>      NO I'D      </asrhyp>
+<asrhyp prob='-5.653531075'>      NO I'M      </asrhyp>
+<asrhyp prob='-5.659337997'>      NO NO      </asrhyp>
+<asrhyp prob='-5.891518593'>      NO WOULD      </asrhyp>
+<asrhyp prob='-6.322702885'>           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.998144984'>negate()</semihyp>
+<semihyp prob='0.001855013'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='15'>
+<systurn turnnum='15' starttime='128.359'>
+<dact> select(type=coffeeshop,type=restaurant) </dact>
+<prompt starttime='127.377'> \rate{-15%} Are you looking for a cafe or a restaurant? </prompt>
+</systurn>
+<userturn turnnum='15' starttime='127.378'><rec fname='fj228x-015-101124_080754_0009859_0009942.wav' starttime='98.590' endtime='99.420'/>
+<asr>
+<asrhyp prob='-0.126415521'>      OH OH           </asrhyp>
+<asrhyp prob='-2.891091108'>          NO      </asrhyp>
+<asrhyp prob='-3.716077089'>      HELLO      </asrhyp>
+<asrhyp prob='-4.674248695'>      OH           </asrhyp>
+<asrhyp prob='-4.783685684'>      OH </asrhyp>
+<asrhyp prob='-4.800412178'>      ALL      </asrhyp>
+<asrhyp prob='-5.735861778'>      OH OH      </asrhyp>
+<asrhyp prob='-5.971373081'>      UH      </asrhyp>
+<asrhyp prob='-6.362133980'>      OH NO      </asrhyp>
+<asrhyp prob='-6.940865517'>      OH OH </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.918059826'>null()</semihyp>
+<semihyp prob='0.057500646'>negate()</semihyp>
+<semihyp prob='0.024439460'>hello()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='16'>
+<systurn turnnum='16' starttime='127.750'>
+<dact> select(type=coffeeshop,type=pub) </dact>
+<prompt starttime='127.763'> \rate{-15%} Are you looking for a cafe or a pub? </prompt>
+</systurn>
+<userturn turnnum='16' starttime='127.763'><rec fname='fj228x-016-101124_080803_0010527_0010889.wav' starttime='105.270' endtime='108.890'/>
+<asr>
+<asrhyp prob='-3.911596537'>      I WANT A BAR A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.406802177'>      I WANT BAR A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.412125111'>      I WANT TO A BAR A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.413668156'>      I WANT A FIND A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.649572849'>      I WANT A BAR OR A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.760580063'>      I WANT A BAR A TOWN WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.810470581'>      I WANT A BAR IN PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.907330990'>      I WANT TO BAR A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.908874035'>      I WANT FIND A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.914196968'>      I WANT TO A FIND A PUB WITH A INTERNET CONNECTIONS      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.840646386'>inform(=pub,hasinternet=true)</semihyp>
+<semihyp prob='0.159353659'>inform(hasinternet=true)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='17'>
+<systurn turnnum='17' starttime='128.246'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='128.270'> \rate{-15%} The Bakers has an  \pitch{+10%} \volume{loud} internet connection \volume \pitch  and it's a great pub. </prompt>
+</systurn>
+<userturn turnnum='17' starttime='128.271'><rec fname='fj228x-017-101124_080810_0011407_0011550.wav' starttime='114.070' endtime='115.500'/>
+<asr>
+<asrhyp prob='-1.187525511'>          I I WANT HAKKA      </asrhyp>
+<asrhyp prob='-2.215414286'>      I WANT TO HAKKA      </asrhyp>
+<asrhyp prob='-2.347591162'>      I WANT HAD      </asrhyp>
+<asrhyp prob='-2.567936897'>      I WANT HAKKA JAZZ      </asrhyp>
+<asrhyp prob='-3.375479698'>      I WANT TO HAD      </asrhyp>
+<asrhyp prob='-3.595825672'>      I WANT TO HAKKA JAZZ      </asrhyp>
+<asrhyp prob='-3.664582968'>      I WANT NEAR HAKKA      </asrhyp>
+<asrhyp prob='-3.728002548'>      I WANT HAD JAZZ      </asrhyp>
+<asrhyp prob='-3.807580471'>      I WANT      </asrhyp>
+<asrhyp prob='-4.094047070'>      I WANT HAKKA HAKKA      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.701803744'>inform(name=Hakka)</semihyp>
+<semihyp prob='0.230979815'>inform()</semihyp>
+<semihyp prob='0.033608243'>request(near,name=Hakka)</semihyp>
+<semihyp prob='0.033608243'>inform(near=Hakka)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='18'>
+<systurn turnnum='18' starttime='127.981'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='128.006'> \rate{-15%} The Bakers has an  \pitch{+10%} \volume{loud} internet connection \volume \pitch  and it's a great pub. </prompt>
+</systurn>
+<userturn turnnum='18' starttime='128.006'><rec fname='fj228x-018-101124_080816_0012088_0012167.wav' starttime='120.880' endtime='121.670'/>
+<asr>
+<asrhyp prob='-1.495606899'>      ADDRESS      </asrhyp>
+<asrhyp prob='-1.969917893'>      I'VE ADDRESS      </asrhyp>
+<asrhyp prob='-2.282758474'>      I ADDRESS      </asrhyp>
+<asrhyp prob='-2.584579468'>      JUST      </asrhyp>
+<asrhyp prob='-3.058890343'>      I'VE JUST      </asrhyp>
+<asrhyp prob='-3.143375874'>      HOW ADDRESS      </asrhyp>
+<asrhyp prob='-3.266109467'>           </asrhyp>
+<asrhyp prob='-3.371731043'>      I JUST      </asrhyp>
+<asrhyp prob='-3.740420580'>      I'VE      </asrhyp>
+<asrhyp prob='-3.970345020'>      I'D ADDRESS      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.707047462'>request(addr)</semihyp>
+<semihyp prob='0.292952567'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='19'>
+<systurn turnnum='19' starttime='128.007'>
+<dact> inform(name="The Bakers",addr="176 East Road") </dact>
+<prompt starttime='128.020'> \rate{-15%} The Bakers is on 176 East Road. </prompt>
+</systurn>
+<userturn turnnum='19' starttime='128.021'><rec fname='fj228x-019-101124_080823_0012729_0012871.wav' starttime='127.290' endtime='128.710'/>
+<asr>
+<asrhyp prob='-2.614850998'>          HOW NUMBER      </asrhyp>
+<asrhyp prob='-2.906529665'>      HOW PHONE NUMBER      </asrhyp>
+<asrhyp prob='-2.951735020'>      HOW BAR NUMBER      </asrhyp>
+<asrhyp prob='-3.444139242'>      HOW AND NUMBER      </asrhyp>
+<asrhyp prob='-3.489157200'>      HOW I NUMBER      </asrhyp>
+<asrhyp prob='-3.669668674'>      HOW FAR NUMBER      </asrhyp>
+<asrhyp prob='-3.735817909'>      HOW PHONE AND NUMBER      </asrhyp>
+<asrhyp prob='-3.781023264'>      HOW BAR AND NUMBER      </asrhyp>
+<asrhyp prob='-3.979900599'>      HOW IS NUMBER      </asrhyp>
+<asrhyp prob='-4.097319603'>      HOW NUMBER VERY      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.561229587'>null()</semihyp>
+<semihyp prob='0.224343061'>request(phone)</semihyp>
+<semihyp prob='0.214427367'>inform()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='20'>
+<systurn turnnum='20' starttime='128.051'>
+<dact> inform(name="The Bakers",phone="01223304121") </dact>
+<prompt starttime='128.064'> \rate{-15%} The  \pitch{+10%} \volume{loud} phone number \volume \pitch  of The Bakers is 01223 \break 304121. </prompt>
+</systurn>
+<userturn turnnum='20' starttime='128.067'><rec fname='fj228x-020-101124_080832_0013602_0013753.wav' starttime='136.020' endtime='137.530'/>
+<asr>
+<asrhyp prob='-2.283991575'>      DO THEY HAVE JAZZ      </asrhyp>
+<asrhyp prob='-2.367205381'>      DO THEY HAVE      </asrhyp>
+<asrhyp prob='-2.379956007'>      DO THEY HAVE SURE JAZZ      </asrhyp>
+<asrhyp prob='-2.463169813'>      DO THEY HAVE SURE      </asrhyp>
+<asrhyp prob='-2.810809135'>      DO THEY HAVE CHILDREN JAZZ      </asrhyp>
+<asrhyp prob='-2.894022942'>      DO THEY HAVE CHILDREN      </asrhyp>
+<asrhyp prob='-2.906773329'>      DO THEY HAVE CHILDREN SURE JAZZ      </asrhyp>
+<asrhyp prob='-2.989987135'>      DO THEY HAVE CHILDREN SURE      </asrhyp>
+<asrhyp prob='-3.992371798'>      DO THEY HAVE SHOP JAZZ      </asrhyp>
+<asrhyp prob='-4.075585365'>      DO THEY HAVE SHOP      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.649649918'>confirm()</semihyp>
+<semihyp prob='0.350350052'>confirm(childrenallowed=true)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='21'>
+<systurn turnnum='21' starttime='128.202'>
+<dact> reqmore() </dact>
+<prompt starttime='128.218'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='21' starttime='128.218'><rec fname='fj228x-021-101124_080841_0014194_0014574.wav' starttime='141.940' endtime='145.740'/>
+<asr>
+<asrhyp prob='-7.037278652'>      AND THE ADDRESS THE TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.149345398'>      AND THE ADDRESS IN TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.156311989'>      AND THE ADDRESS TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.421729565'>      AND THE ADDRESS THE TOWN ALLOWED DRINK      </asrhyp>
+<asrhyp prob='-7.533796787'>      AND THE ADDRESS IN TOWN ALLOWED DRINK      </asrhyp>
+<asrhyp prob='-7.540762901'>      AND THE ADDRESS TOWN ALLOWED DRINK      </asrhyp>
+<asrhyp prob='-7.559627533'>      AND BE ADDRESS THE TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.651935577'>      AND THE ADDRESS OF THE TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.671694756'>      AND BE ADDRESS IN TOWN ALLOWED OF DRINK      </asrhyp>
+<asrhyp prob='-7.678661346'>      AND BE ADDRESS TOWN ALLOWED OF DRINK      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>request(addr)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='22'>
+<systurn turnnum='22' starttime='127.402'>
+<dact> inform(name="The Bakers",addr="176 East Road") </dact>
+<prompt starttime='127.416'> \rate{-15%} The Bakers is located on 176 East Road. </prompt>
+</systurn>
+<userturn turnnum='22' starttime='127.416'><rec fname='fj228x-022-101124_080847_0015171_0015239.wav' starttime='151.710' endtime='152.390'/>
+<asr>
+<asrhyp prob='-0.490027905'>      ARE ARE THERE      </asrhyp>
+<asrhyp prob='-1.875475526'>      ARE THEN      </asrhyp>
+<asrhyp prob='-2.541461945'>      TILL THERE      </asrhyp>
+<asrhyp prob='-2.574962378'>      ARE THERE ANY </asrhyp>
+<asrhyp prob='-2.716947556'>      UH THERE      </asrhyp>
+<asrhyp prob='-3.692524433'>      TELL THERE      </asrhyp>
+<asrhyp prob='-3.926909447'>      TILL THEN      </asrhyp>
+<asrhyp prob='-3.960410118'>      ARE THEN ANY </asrhyp>
+<asrhyp prob='-4.102395058'>      UH THEN      </asrhyp>
+<asrhyp prob='-4.626396656'>      TILL THERE ANY </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='23'>
+<systurn turnnum='23' starttime='128.115'>
+<dact> reqmore() </dact>
+<prompt starttime='128.128'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='23' starttime='128.128'><rec fname='fj228x-023-101124_080854_0015705_0015947.wav' starttime='157.050' endtime='159.470'/>
+<asr>
+<asrhyp prob='-3.479925871'>      I NEED VERY CHILDREN      </asrhyp>
+<asrhyp prob='-3.618073225'>      I NEED NEED VERY CHILDREN      </asrhyp>
+<asrhyp prob='-3.644885778'>      I NEED A VERY CHILDREN      </asrhyp>
+<asrhyp prob='-3.746966600'>      I VERY CHILDREN      </asrhyp>
+<asrhyp prob='-3.911926508'>      I A VERY CHILDREN      </asrhyp>
+<asrhyp prob='-3.999508858'>      I THE VERY CHILDREN      </asrhyp>
+<asrhyp prob='-4.137656212'>      I THE NEED VERY CHILDREN      </asrhyp>
+<asrhyp prob='-4.164468765'>      I THE A VERY CHILDREN      </asrhyp>
+<asrhyp prob='-4.504331112'>      NEED VERY CHILDREN      </asrhyp>
+<asrhyp prob='-4.642478466'>      NEED NEED VERY CHILDREN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>inform(childrenallowed=true)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='24'>
+<systurn turnnum='24' starttime='127.975'>
+<dact> inform(name="The Bakers",type=pub,childrenallowed=true,hasinternet=true) </dact>
+<prompt starttime='128.004'> \rate{-15%} The Bakers  \pitch{+10%} \volume{loud} allows children, it has an internet connection \volume \pitch  and it's an outstanding pub. </prompt>
+</systurn>
+<userturn turnnum='24' starttime='128.004'><rec fname='fj228x-024-101124_080900_0016461_0016534.wav' starttime='164.610' endtime='165.340'/>
+<asr>
+<asrhyp prob='-0.579111397'>                </asrhyp>
+<asrhyp prob='-2.098667860'>          </asrhyp>
+<asrhyp prob='-2.397329092'>                              </asrhyp>
+<asrhyp prob='-2.498203993'>          UH UH           </asrhyp>
+<asrhyp prob='-3.920128345'>          I I           </asrhyp>
+<asrhyp prob='-4.017760277'>          UH UH </asrhyp>
+<asrhyp prob='-4.316421509'>          UH UH                     </asrhyp>
+<asrhyp prob='-5.100045681'>          HOW      </asrhyp>
+<asrhyp prob='-5.439684868'>      I </asrhyp>
+<asrhyp prob='-5.440974712'>      ARE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000119'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='25'>
+<systurn turnnum='25' starttime='127.688'>
+<dact> reqmore() </dact>
+<prompt starttime='127.704'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='25' starttime='127.704'><rec fname='fj228x-025-101124_080902_0016626_0016739.wav' starttime='166.260' endtime='167.390'/>
+<rec fname='fj228x-026-101124_080905_0016877_0017041.wav' starttime='168.770' endtime='170.410'/>
+<asr>
+<asrhyp prob='-1.110071063'>          YOU GOODBYE      </asrhyp>
+<asrhyp prob='-1.238337994'>      GOODBYE      </asrhyp>
+<asrhyp prob='-2.897345781'>      IS GOODBYE      </asrhyp>
+<asrhyp prob='-3.338640928'>      OH GOODBYE      </asrhyp>
+<asrhyp prob='-3.454032660'>      YOU GOODBYE EIGHT      </asrhyp>
+<asrhyp prob='-3.582299471'>      GOODBYE EIGHT      </asrhyp>
+<asrhyp prob='-3.745151520'>      YOU THE      </asrhyp>
+<asrhyp prob='-3.830307007'>      YOU GOODBYE BANK      </asrhyp>
+<asrhyp prob='-3.873418331'>      THE      </asrhyp>
+<asrhyp prob='-3.958573818'>      GOODBYE BANK      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.900300980'>bye()</semihyp>
+<semihyp prob='0.051970705'>null()</semihyp>
+<semihyp prob='0.047728308'>inform()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='26'>
+<systurn turnnum='26' starttime='127.741'>
+<dact>givetoken()</dact>
+<prompt starttime='127.872'> Thank you for using this system. We will now give the 4 digit code required to complete the feedback form. The code for this call is 8, 8, 0, 4. I repeat, the code is 8, 8, 0, 4. You can now hang up. </prompt>
+</systurn>
+</turn>
+<rec fname='fj228x-026-101124_080918_all.wav' starttime='0.000' endtime='170.410'/>
+<turn turnnum='27'>
+<systurn turnnum='27' starttime='127.591'>
+<dact> bye() </dact>
+<prompt starttime='127.591'> Thank you goodbye </prompt>
+</systurn>
+<userturn turnnum='26' starttime='127.591'></userturn>
+</turn>
+</dialog>

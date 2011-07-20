@@ -1,0 +1,18 @@
+<feedback>
+<question id="1" name="Did you find all the information you were looking for?">Yes</question>
+<question id="2" name="The system understood me well.">lightly disagree</question>
+<question id="3" name="The phrasing of the system's responses was good.">lightly disagree</question>
+<question id="4" name="The system's voice was of good quality.">lightly disagree</question>
+<comments>jokalaka@hotmail.com</comments>
+<contact></contact>
+<token>1583</token>
+<dialogueId>/data/dial/classic/November10Classic-CI/Integrated/voip-anonymous-101124_085148</dialogueId>
+<assignmentId>None</assignmentId>
+<workerId>None</workerId>
+<hitId>None</hitId>
+<workerOuterIp></workerOuterIp>
+<workerInnerIp></workerInnerIp>
+<workerDn></workerDn>
+<goal>pub; phone, pricerange; hasinternet=true, hastv=true</goal>
+<task>You want to find a pub and it should have an internet connection and have a television. You want to know the phone number and price range of the venue.</task>
+</feedback>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2010/11/24' time='07:55:24'>
+<session> voip-anonymous </session>
+<user> fj228 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/caminfo_rest_3best_V6.pcy </policy>
+<semdecoder> Phoenix </semdecoder>
+<outputgen> EdinGen </outputgen>
+<token> 1571 </token>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.014'>
+<dact> hello() </dact>
+<prompt starttime='0.023'> \rate{-15%} Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='0.023'>
+<rec fname='fj228x-001-101124_075545_0001715_0002099.wav' starttime='17.150' endtime='20.990'/>
+<asr>
+<asrhyp prob='-2.585258484'>      I'M LOOKING FOR AN VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-2.644893646'>      I'M LOOKING FOR AND VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-2.982899189'>      I'M LOOKING AN AN VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-3.042534351'>      I'M LOOKING AN AND VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-3.084445953'>      I'M LOOKING FOR FOR AN VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-3.144081116'>      I'M LOOKING FOR FOR AND VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-3.482086658'>      I'M LOOKING FOR AN AN VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-3.541722059'>      I'M LOOKING FOR AN AND VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-4.038673401'>      I'M LOOKING FOR AN IS VERY NICE THE J RESTAURANT      </asrhyp>
+<asrhyp prob='-4.098308563'>      I'M LOOKING FOR AND IS VERY NICE THE J RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.769940197'>inform(name="J Restaurant",task=find)</semihyp>
+<semihyp prob='0.230059847'>inform(name="J Restaurant")</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='0.714'>
+<dact> inform(name="J Restaurant") </dact>
+<prompt starttime='0.729'> \rate{-15%} The J Restaurant is a great venue. </prompt>
+</systurn>
+<userturn turnnum='2' starttime='0.730'>
+<rec fname='fj228x-002-101124_075600_0003057_0003610.wav' starttime='30.570' endtime='36.100'/>
+<asr>
+<asrhyp prob='-4.415449142'>      I'M LOOKING FOR A FRIEND OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-4.678740025'>      I'M LOOKING FOR OLD FRIEND OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-4.735951900'>      I'M LOOKING FOR A FRIEND OR EAST THE RESTAURANT      </asrhyp>
+<asrhyp prob='-4.805583000'>      I'M LOOKING FOR A AND OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-4.999243259'>      I'M LOOKING FOR OLD FRIEND OR EAST THE RESTAURANT      </asrhyp>
+<asrhyp prob='-5.068873882'>      I'M LOOKING FOR OLD AND OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-5.076015949'>      I'M LOOKING FOR A BANK OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-5.126085758'>      I'M LOOKING FOR A AND OR EAST THE RESTAURANT      </asrhyp>
+<asrhyp prob='-5.173329830'>      I'M LOOKING FOR AN FRIEND OR EAST EITHER RESTAURANT      </asrhyp>
+<asrhyp prob='-5.339307308'>      I'M LOOKING FOR OLD BANK OR EAST EITHER RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>inform(=restaurant,task=find)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='0.751'>
+<dact> inform(name="J Restaurant",type=restaurant) </dact>
+<prompt starttime='0.321'> \rate{-15%}I found 149 restaurants. 26 of them are Contemporary. However, 24 of them are Indian, 20 of them are Italian and 79 have different types of cuisine. The restaurant called \pitch{+10%} \volume{loud} J Restaurant, \volume \pitch has the best overall quality amongst the selected restaurants. </prompt>
+</systurn>
+<userturn turnnum='3' starttime='0.322'>
+<rec fname='fj228x-003-101124_075624_0005901_0006011.wav' starttime='59.010' endtime='60.110'/>
+<asr>
+<asrhyp prob='-0.024424819'>          I I DON'T CARE      </asrhyp>
+<asrhyp prob='-5.772268295'>      I DON'T CARE AM      </asrhyp>
+<asrhyp prob='-5.788188934'>      I DON'T      </asrhyp>
+<asrhyp prob='-5.789433479'>      I I CARE      </asrhyp>
+<asrhyp prob='-5.791037560'>      I DON'T A      </asrhyp>
+<asrhyp prob='-5.798384190'>      DON'T CARE      </asrhyp>
+<asrhyp prob='-6.249731541'>      I AT CARE      </asrhyp>
+<asrhyp prob='-6.683248043'>      I'M DON'T CARE      </asrhyp>
+<asrhyp prob='-7.225660801'>      HI DON'T CARE      </asrhyp>
+<asrhyp prob='-7.249143600'>      I DON'T ER      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.987399876'>inform(=dontcare)</semihyp>
+<semihyp prob='0.011869479'>null()</semihyp>
+<semihyp prob='0.000730729'>hello(=dontcare)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='0.489'>
+<dact> inform(name="J Restaurant",type=restaurant,food=Chinese,area=riverside,near="Scott Polar Museum",pricerange=moderate) </dact>
+<prompt starttime='0.094'> \rate{-15%}I found 149 restaurants. 27 of them are Contemporary, while 24 of them are Indian, 20 of them are Italian and 78 have different types of cuisine. The restaurant called \pitch{+10%} \volume{loud} J Restaurant, \volume \pitch is a Chinese restaurant  in the riverside area. It is near the Scott Polar Museum, and it is in the moderate price range. This restaurant has the best overall quality amongst the selected restaurants. </prompt>
+</systurn>
+<userturn turnnum='4' starttime='0.094'>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='128.637'>
+<dact> canthear() </dact>
+<prompt starttime='128.637'> I can't hear you. \rate{-15%}I found 149 restaurants. 27 of them are Contemporary, while 24 of them are Indian, 20 of them are Italian and 78 have different types of cuisine. The restaurant called \pitch{+10%} \volume{loud} J Restaurant, \volume \pitch is a Chinese restaurant  in the riverside area. It is near the Scott Polar Museum, and it is in the moderate price range. This restaurant has the best overall quality amongst the selected restaurants. </prompt>
+</systurn>
+<userturn turnnum='5' starttime='128.637'>
+<rec fname='fj228x-004-101124_075714_0010837_0010940.wav' starttime='108.370' endtime='109.400'/>
+<asr>
+<asrhyp prob='-1.565149426'>      OH OH           </asrhyp>
+<asrhyp prob='-2.410238743'>          OH OH                     </asrhyp>
+<asrhyp prob='-2.867448092'>          AND      </asrhyp>
+<asrhyp prob='-3.002176046'>               </asrhyp>
+<asrhyp prob='-3.037271023'>      OH      YOU </asrhyp>
+<asrhyp prob='-3.083429813'>      OH DO </asrhyp>
+<asrhyp prob='-3.327322245'>  OH      </asrhyp>
+<asrhyp prob='-3.694453955'>      OH </asrhyp>
+<asrhyp prob='-3.712537527'>      AND           </asrhyp>
+<asrhyp prob='-3.847265482'>                    </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='128.089'>
+<dact> reqmore() </dact>
+<prompt starttime='128.104'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='6' starttime='128.104'>
+<rec fname='fj228x-005-101124_075746_0013856_0014217.wav' starttime='138.560' endtime='142.170'/>
+<asr>
+<asrhyp prob='-5.896177292'>      I'M LOOKING FOR FOR AN VERY NICE ENGLISH RESTAURANT      </asrhyp>
+<asrhyp prob='-6.072182178'>      I'M LOOKING FOR FOR AN VERY NICE ENGLISH FOR RESTAURANT      </asrhyp>
+<asrhyp prob='-6.107788563'>      I'M LOOKING FOR AN VERY NICE ENGLISH RESTAURANT      </asrhyp>
+<asrhyp prob='-6.283792973'>      I'M LOOKING FOR AN VERY NICE ENGLISH FOR RESTAURANT      </asrhyp>
+<asrhyp prob='-6.355439186'>      I'M LOOKING FOR FOR AN VERY NICE ENGLISH A RESTAURANT      </asrhyp>
+<asrhyp prob='-6.416066170'>      I'M LOOKING AN VERY NICE ENGLISH RESTAURANT      </asrhyp>
+<asrhyp prob='-6.438674927'>      I'M LOOKING FOR FOR AN VERY NICE THINK RESTAURANT      </asrhyp>
+<asrhyp prob='-6.469494820'>      I'M LOOKING FOR AN AN VERY NICE ENGLISH RESTAURANT      </asrhyp>
+<asrhyp prob='-6.501484871'>      I'M LOOKING FOR FOR VERY NICE ENGLISH RESTAURANT      </asrhyp>
+<asrhyp prob='-6.512093544'>      I'M LOOKING FOR FOR FEN AN VERY NICE ENGLISH RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.826665998'>inform(=restaurant,food=English,task=find)</semihyp>
+<semihyp prob='0.087646700'>inform(food=English,=restaurant)</semihyp>
+<semihyp prob='0.085687354'>inform(=restaurant,task=find)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='127.946'>
+<dact> inform(name="Carringtons cafe restaurant",pricerange=moderate,food=English,area=citycentre,near="Sidney Sussex College") </dact>
+<prompt starttime='128.001'> \rate{-15%} Carringtons, which serves english food, is in the central part of town. It's near Sidney Sussex College and it's in the moderate price range. </prompt>
+</systurn>
+<userturn turnnum='7' starttime='128.001'>
+<rec fname='fj228x-006-101124_075810_0016458_0016608.wav' starttime='164.580' endtime='166.080'/>
+<asr>
+<asrhyp prob='-1.507079959'>      THANK YOU GOODBYE      </asrhyp>
+<asrhyp prob='-2.900127172'>      THANK YOU A      </asrhyp>
+<asrhyp prob='-2.936574936'>      THANK YOU GOODBYE BAR      </asrhyp>
+<asrhyp prob='-2.953558683'>      THANK YOU NEED GOODBYE      </asrhyp>
+<asrhyp prob='-3.006629944'>      THANK I GOODBYE      </asrhyp>
+<asrhyp prob='-3.109992504'>          YOU GOODBYE      </asrhyp>
+<asrhyp prob='-3.241394758'>  THANK YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.133592129'>      AND YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.279665470'>      THANK GOODBYE      </asrhyp>
+<asrhyp prob='-4.329622269'>      THANK YOU A BAR      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.782726288'>bye()</semihyp>
+<semihyp prob='0.118675984'>inform()</semihyp>
+<semihyp prob='0.098597713'>thankyou()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='128.621'>
+<dact>givetoken()</dact>
+<prompt starttime='128.738'> Thank you for using this system. We will now give the 4 digit code required to complete the feedback form. The code for this call is 1, 5, 7, 1. I repeat, the code is 1, 5, 7, 1. You can now hang up. </prompt>
+</systurn>
+</turn>
+<rec fname='fj228x-006-101124_075827_all.wav' starttime='0.000' endtime='166.080'/>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='128.081'>
+<dact> bye() </dact>
+<prompt starttime='128.081'> Thank you goodbye </prompt>
+</systurn>
+<userturn turnnum='8' starttime='128.081'>
+</userturn>
+</turn>
+</dialog>

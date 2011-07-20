@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2010/11/22' time='18:01:01'>
+<session> voip-anonymous </session>
+<user> fj228 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/caminfo_rest_3best_V6.pcy </policy>
+<semdecoder> Phoenix </semdecoder>
+<outputgen> EdinGen </outputgen>
+<token> 2176 </token>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.016'>
+<dact> hello() </dact>
+<prompt starttime='-0.748'> \rate{-15%} Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='-0.748'>
+<rec fname='fj228x-001-101122_180122_0001753_0001988.wav' starttime='17.530' endtime='19.880'/>
+<asr>
+<asrhyp prob='-0.024776783'>      I'M LOOKING FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-4.589479446'>      LOOKING FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.223311901'>      I'M LOOKING THINK FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.225640297'>          LOOKING FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.233946800'>      I'M LOOKING I FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.236032963'>  I'M LOOKING FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.249867439'>      I'M FOR A CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-6.348067760'>      I'M LOOKING FOR AN CHEAP RESTAURANT      </asrhyp>
+<asrhyp prob='-7.091825962'>      I'M LOOKING FOR A CHEAPER RESTAURANT      </asrhyp>
+<asrhyp prob='-7.844672203'>      I'M LOOKING FOR A CHEAP A RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.981127918'>inform(=restaurant,pricerange=cheap,task=find)</semihyp>
+<semihyp prob='0.018038867'>inform(pricerange=cheap,=restaurant)</semihyp>
+<semihyp prob='0.000833152'>inform(=restaurant,task=find)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='-0.358'>
+<dact> inform(name="Dojo Noodle Bar",type=restaurant,pricerange=cheap) </dact>
+<prompt starttime='-0.478'> \rate{-15%}I found 26 restaurants, which are in the cheap price range. 7 of them are Chinese. However, 6 of them are Indian, 2 of them are Spanish and 11 have different types of cuisine. The restaurant called \pitch{+10%} \volume{loud} the Dojo Noodle Bar, \volume \pitch is in the cheap price range. It has the best overall quality amongst the selected restaurants. </prompt>
+</systurn>
+<userturn turnnum='2' starttime='-0.478'>
+<rec fname='fj228x-002-101122_180154_0004931_0005171.wav' starttime='49.310' endtime='51.710'/>
+<asr>
+<asrhyp prob='-1.524915457'>      IS IT NEAR SAINT AREA      </asrhyp>
+<asrhyp prob='-2.240037680'>      IS IT NEAR AREA      </asrhyp>
+<asrhyp prob='-2.625541449'>      IS IT NEAR ALL SAINT AREA      </asrhyp>
+<asrhyp prob='-2.703620911'>      IS IT NEAR SAINT SAINTS AREA      </asrhyp>
+<asrhyp prob='-3.340663671'>      IS IT NEAR ALL AREA      </asrhyp>
+<asrhyp prob='-3.418743134'>      IS IT NEAR SAINTS AREA      </asrhyp>
+<asrhyp prob='-3.804246902'>      IS IT NEAR ALL SAINT SAINTS AREA      </asrhyp>
+<asrhyp prob='-3.920338869'>      IS IT NEAR SAINT CURY      </asrhyp>
+<asrhyp prob='-4.151101112'>      IS IT NEAR SAINT THREE AREA      </asrhyp>
+<asrhyp prob='-4.286477566'>      IS IT NEAR FREE AREA      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.977200687'>confirm()</semihyp>
+<semihyp prob='0.022799224'>confirm(pricerange=free)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='-0.717'>
+<dact> inform(name="Dojo Noodle Bar",type=restaurant,pricerange=cheap) </dact>
+<prompt starttime='-0.044'> \rate{-15%}I found 26 restaurants, which are in the cheap price range. 7 of them are Chinese. On the other hand, 6 of them are Indian, 2 of them are Spanish and 11 have different types of cuisine. The restaurant called \pitch{+10%} \volume{loud} the Dojo Noodle Bar, \volume \pitch has the best overall quality amongst the selected restaurants. It is in the cheap price range. </prompt>
+</systurn>
+<userturn turnnum='3' starttime='-0.043'>
+<rec fname='fj228x-003-101122_180221_0007760_0007898.wav' starttime='77.600' endtime='78.980'/>
+<asr>
+<asrhyp prob='-3.533714771'>          OK AT      </asrhyp>
+<asrhyp prob='-3.602691174'>      OK THAT      </asrhyp>
+<asrhyp prob='-3.846760750'>      OK AM AT      </asrhyp>
+<asrhyp prob='-3.915737391'>      OK AM THAT      </asrhyp>
+<asrhyp prob='-3.960006237'>      I AT      </asrhyp>
+<asrhyp prob='-4.028982639'>      I THAT      </asrhyp>
+<asrhyp prob='-4.115824223'>      OK AND      </asrhyp>
+<asrhyp prob='-4.273052216'>      I AM AT      </asrhyp>
+<asrhyp prob='-4.342028618'>      I AM THAT      </asrhyp>
+<asrhyp prob='-4.380389690'>      OK AND AT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.664818764'>ack()</semihyp>
+<semihyp prob='0.335181177'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='-0.526'>
+<dact> reqmore() </dact>
+<prompt starttime='-0.410'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='4' starttime='-0.410'>
+<rec fname='fj228x-004-101122_180228_0008438_0008600.wav' starttime='84.380' endtime='86.000'/>
+<asr>
+<asrhyp prob='-0.411560446'>          CAN I GET THE ART CLOSE      </asrhyp>
+<asrhyp prob='-2.640381813'>      CAN I GET THE ART      </asrhyp>
+<asrhyp prob='-3.029815435'>      CAN I GET THE ART CLOSE CLOSE      </asrhyp>
+<asrhyp prob='-3.831318140'>      I GET THE ART CLOSE      </asrhyp>
+<asrhyp prob='-3.988657236'>      HI I GET THE ART CLOSE      </asrhyp>
+<asrhyp prob='-4.064407825'>      CAN I GET THE ARMS CLOSE      </asrhyp>
+<asrhyp prob='-4.149641991'>      CAN I GET ART CLOSE      </asrhyp>
+<asrhyp prob='-4.460857391'>      CAN I GET THE ARTS CLOSE      </asrhyp>
+<asrhyp prob='-4.551276207'>      CAN I GET THE ART PRICE CLOSE      </asrhyp>
+<asrhyp prob='-4.839257240'>      I I GET THE ART CLOSE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.967159450'>null()</semihyp>
+<semihyp prob='0.020921271'>hello()</semihyp>
+<semihyp prob='0.011919164'>request(price)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='-0.262'>
+<dact> inform(name="Dojo Noodle Bar",price="the price for main courses ranges from 5 pounds 70 to 7 pounds") </dact>
+<prompt starttime='-0.148'> \rate{-15%} The Dojo Noodle Bar is an outstanding venue. The price for main courses ranges from 5 pounds 70 to 7 pounds. </prompt>
+</systurn>
+<userturn turnnum='5' starttime='-0.148'>
+<rec fname='fj228x-005-101122_180243_0010001_0010152.wav' starttime='100.010' endtime='101.520'/>
+<asr>
+<asrhyp prob='-2.770136595'>          I I LIKE THE ADDRESS      </asrhyp>
+<asrhyp prob='-2.889764786'>      I LIKE ADDRESS      </asrhyp>
+<asrhyp prob='-3.134911060'>      I LIKE THE ADDRESS CLOSE      </asrhyp>
+<asrhyp prob='-3.254539251'>      I LIKE ADDRESS CLOSE      </asrhyp>
+<asrhyp prob='-3.958717346'>      I LIKE THE AT      </asrhyp>
+<asrhyp prob='-4.078345299'>      I LIKE AT      </asrhyp>
+<asrhyp prob='-4.080322266'>      I LIKE THE      </asrhyp>
+<asrhyp prob='-4.199950695'>      I LIKE      </asrhyp>
+<asrhyp prob='-4.323491573'>      I LIKE THE AT CLOSE      </asrhyp>
+<asrhyp prob='-4.362462997'>      I LIKE LIKE THE ADDRESS      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.724145174'>request(addr)</semihyp>
+<semihyp prob='0.275854766'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='128.154'>
+<dact> inform(name="Dojo Noodle Bar",addr="Miller's Yard") </dact>
+<prompt starttime='127.192'> \rate{-15%} The Dojo Noodle Bar is on Miller's Yard. </prompt>
+</systurn>
+<userturn turnnum='6' starttime='127.192'>
+<rec fname='fj228x-006-101122_180252_0010832_0010992.wav' starttime='108.320' endtime='109.920'/>
+<asr>
+<asrhyp prob='-0.028096529'>      CAN I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.072321892'>      CAN GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.076205730'>      HI I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.105550289'>      CAN I I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.895583630'>      DO I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-6.520390987'>      CAN I GET THE PHONE NUMBER OF </asrhyp>
+<asrhyp prob='-6.520464897'>      CAN I GET THE PHONE NUMBER           </asrhyp>
+<asrhyp prob='-7.341025352'>          I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-7.350298405'>  CAN I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-7.887860775'>      CAN I GET THE ONE NUMBER      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999623954'>request(phone)</semihyp>
+<semihyp prob='0.000375936'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='127.675'>
+<dact> inform(name="Dojo Noodle Bar",phone="01223363471") </dact>
+<prompt starttime='127.710'> \rate{-15%} The  \pitch{+10%} \volume{loud} phone number \volume \pitch  of the Dojo Noodle Bar is 01223 \break 363471. </prompt>
+</systurn>
+<userturn turnnum='7' starttime='127.711'>
+<rec fname='fj228x-007-101122_180304_0011950_0012243.wav' starttime='119.500' endtime='122.430'/>
+<asr>
+<asrhyp prob='-4.240704060'>      WHAT TYPE OF FOOD DO DO SERVE      </asrhyp>
+<asrhyp prob='-4.302452087'>      WHAT TYPE OF FOOD DO IT SERVE      </asrhyp>
+<asrhyp prob='-4.432757378'>      WHAT TYPE OF FOOD DO SERVE      </asrhyp>
+<asrhyp prob='-4.680538654'>      WHAT TYPE OF FOOD DO DO ENTRANCE      </asrhyp>
+<asrhyp prob='-4.719165325'>      WHAT TYPE OF FOOD DO DO CLOWNS      </asrhyp>
+<asrhyp prob='-4.742286682'>      WHAT TYPE OF FOOD DO IT ENTRANCE      </asrhyp>
+<asrhyp prob='-4.753245831'>      WHAT TYPE OF DO DO SERVE      </asrhyp>
+<asrhyp prob='-4.760271072'>      WHAT TYPE OF FOOD FOOD DO DO SERVE      </asrhyp>
+<asrhyp prob='-4.780913353'>      WHAT TYPE OF FOOD DO IT CLOWNS      </asrhyp>
+<asrhyp prob='-4.814993382'>      WHAT TYPE OF DO IT SERVE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.660978973'>request(food)</semihyp>
+<semihyp prob='0.172398686'>request(food,name=Clowns)</semihyp>
+<semihyp prob='0.166622296'>inform()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='127.837'>
+<dact> inform(name="Dojo Noodle Bar",food=Fusion) </dact>
+<prompt starttime='127.871'> \rate{-15%} The Dojo Noodle Bar serves fusion food. </prompt>
+</systurn>
+<userturn turnnum='8' starttime='127.871'>
+<rec fname='fj228x-008-101122_180314_0012976_0013241.wav' starttime='129.760' endtime='132.410'/>
+<asr>
+<asrhyp prob='-0.377115011'>      WHICH AREA OF THE PUB IS IT LOCATED      </asrhyp>
+<asrhyp prob='-2.992854834'>      WHICH AREA OF A PUB IS IT LOCATED      </asrhyp>
+<asrhyp prob='-3.087375641'>      WHICH AREA OF PUB IS IT LOCATED      </asrhyp>
+<asrhyp prob='-3.466641426'>      WHICH AREA OF THE PUB IT LOCATED      </asrhyp>
+<asrhyp prob='-3.475155354'>      WHICH AREA OF THE PART IS IT LOCATED      </asrhyp>
+<asrhyp prob='-3.855218887'>      WHICH AREA OF THE PUB IS IS IT LOCATED      </asrhyp>
+<asrhyp prob='-3.861476660'>      WHICH AREA OF THE PARK IS IT LOCATED      </asrhyp>
+<asrhyp prob='-4.065193653'>      WHICH AREA OTHER THE PUB IS IT LOCATED      </asrhyp>
+<asrhyp prob='-4.535606384'>      WHICH AREA OF THE DEPARTMENT IS IT LOCATED      </asrhyp>
+<asrhyp prob='-4.605385780'>      WHICH AREA OF THE PUB IS LOCATED      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.932117522'>request(area,=pub)</semihyp>
+<semihyp prob='0.067882560'>request(area)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='127.938'>
+<dact> inform(name="Dojo Noodle Bar",area=girton) </dact>
+<prompt starttime='127.986'> \rate{-15%} The Dojo Noodle Bar is  \pitch{+10%} \volume{loud} in \volume \pitch  the Girton part of town. </prompt>
+</systurn>
+<userturn turnnum='9' starttime='127.986'>
+<rec fname='fj228x-009-101122_180324_0013905_0014213.wav' starttime='139.050' endtime='142.130'/>
+<asr>
+<asrhyp prob='-4.105720043'>      HOW RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.113794804'>      HOW GET RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.247323036'>      HOW A RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.255397797'>      HOW GET A RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.306653976'>      HOW CAN RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.314728737'>      HOW CAN GET RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.349685669'>      I RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.357760429'>      I GET RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.448257446'>      HOW CAN A RESTAURANT IN THE ROMSEY PART      </asrhyp>
+<asrhyp prob='-4.456332207'>      HOW CAN GET A RESTAURANT IN THE ROMSEY PART      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>inform(=restaurant,area=romsey)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='10'>
+<systurn turnnum='10' starttime='127.629'>
+<dact> inform(name="Royal Standard",type=restaurant,food=Indian,area=romsey,pricerange=cheap) </dact>
+<prompt starttime='127.258'> \rate{-15%}I found 3 restaurants, which are located in the Romsey area, and which are in the cheap price range. 2 of them are Indian, but 1 of them is pub. The restaurant called \pitch{+10%} \volume{loud} the Royal Standard, \volume \pitch has the best overall quality amongst the selected restaurants. It is an Indian restaurant in the Romsey area, and it is in the cheap price range. </prompt>
+</systurn>
+<userturn turnnum='10' starttime='127.258'>
+<rec fname='fj228x-010-101122_180350_0016684_0016835.wav' starttime='166.840' endtime='168.350'/>
+<asr>
+<asrhyp prob='-1.301692486'>      CAN I GET THE ADDRESS      </asrhyp>
+<asrhyp prob='-1.755087614'>      CAN I GET THE ANCHOR      </asrhyp>
+<asrhyp prob='-1.906879783'>      CAN I GET THE ADDRESS HAS      </asrhyp>
+<asrhyp prob='-2.360274792'>      CAN I GET THE ANCHOR HAS      </asrhyp>
+<asrhyp prob='-3.295978785'>      CAN I GET THE ADDRESS IS      </asrhyp>
+<asrhyp prob='-3.373744965'>      CAN I GET THE ADDRESS HOUSE      </asrhyp>
+<asrhyp prob='-3.749373674'>      CAN I GET THE ANCHOR IS      </asrhyp>
+<asrhyp prob='-3.827139854'>      CAN I GET THE ANCHOR HOUSE      </asrhyp>
+<asrhyp prob='-3.856381416'>      CAN I GET THE I'D      </asrhyp>
+<asrhyp prob='-4.122303009'>      CAN I GET THE AND      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.584317207'>request(addr)</semihyp>
+<semihyp prob='0.371314317'>inform(name="The Anchor")</semihyp>
+<semihyp prob='0.044368424'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='11'>
+<systurn turnnum='11' starttime='127.437'>
+<dact> inform(name="Royal Standard",addr="292 Mill Road") </dact>
+<prompt starttime='127.468'> \rate{-15%} The Royal Standard is located on 292 Mill Road. </prompt>
+</systurn>
+<userturn turnnum='11' starttime='127.471'>
+<rec fname='fj228x-011-101122_180400_0017679_0017829.wav' starttime='176.790' endtime='178.290'/>
+<asr>
+<asrhyp prob='-0.022177981'>      CAN I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-4.554255962'>      CAN I GET TO PHONE NUMBER      </asrhyp>
+<asrhyp prob='-4.557549953'>      CAN I GET THE THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-7.293682575'>      CAN I GET THE PHONE NUMBER OF </asrhyp>
+<asrhyp prob='-8.496670723'>      CAN I GET THEIR PHONE NUMBER      </asrhyp>
+<asrhyp prob='-9.089627266'>      CAN I GET TO THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-9.431497574'>      I GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-9.924016953'>      CAN GET THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-9.929122925'>      CAN I LIKE THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-10.066185951'>      CAN I GET A PHONE NUMBER      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>request(phone)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='12'>
+<systurn turnnum='12' starttime='127.997'>
+<dact> inform(name="Royal Standard",phone="01223902175") </dact>
+<prompt starttime='128.027'> \rate{-15%} The  \pitch{+10%} \volume{loud} phone number \volume \pitch  of the Royal Standard is 01223 \break 902175. </prompt>
+</systurn>
+<userturn turnnum='12' starttime='128.027'>
+<rec fname='fj228x-012-101122_180412_0018884_0018970.wav' starttime='188.840' endtime='189.700'/>
+<asr>
+<asrhyp prob='-0.000480264'>      THANK YOU      </asrhyp>
+<asrhyp prob='-8.793912888'>      CAN YOU      </asrhyp>
+<asrhyp prob='-9.111716270'>      THANK YOU UH      </asrhyp>
+<asrhyp prob='-9.686397552'>      THANK YOU           </asrhyp>
+<asrhyp prob='-9.971207619'>      THANK YOU HUM </asrhyp>
+<asrhyp prob='-10.174776077'>      DO YOU      </asrhyp>
+<asrhyp prob='-10.275748253'>      THANK DO      </asrhyp>
+<asrhyp prob='-10.891512871'>      COULD YOU      </asrhyp>
+<asrhyp prob='-11.081281662'>      THANK YOU OH      </asrhyp>
+<asrhyp prob='-11.081363678'>      THANK YOU </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999756992'>thankyou()</semihyp>
+<semihyp prob='0.000242845'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='13'>
+<systurn turnnum='13' starttime='127.385'>
+<dact> inform(name="Royal Standard",type=restaurant,food=Indian,area=romsey,pricerange=cheap) </dact>
+<prompt starttime='127.998'> \rate{-15%}I found 2 restaurants, which have Indian cuisine, and which are located in the Romsey area, and which are in the cheap price range. The restaurant called \pitch{+10%} \volume{loud} the Royal Standard, \volume \pitch has the best overall quality amongst the selected restaurants. It is an Indian restaurant in the Romsey area. It is in the cheap price range. </prompt>
+</systurn>
+<userturn turnnum='13' starttime='127.998'>
+<rec fname='fj228x-013-101122_180413_0019041_0019160.wav' starttime='190.410' endtime='191.600'/>
+<asr>
+<asrhyp prob='-0.126221016'>      GOODBYE      </asrhyp>
+<asrhyp prob='-3.351521015'>      AND GOODBYE      </asrhyp>
+<asrhyp prob='-3.353156090'>      GOODBYE BYE      </asrhyp>
+<asrhyp prob='-3.456658125'>      GOOD      </asrhyp>
+<asrhyp prob='-5.880011082'>           </asrhyp>
+<asrhyp prob='-5.905580044'>      GOODBYE GOOD      </asrhyp>
+<asrhyp prob='-6.338912964'>      A GOODBYE      </asrhyp>
+<asrhyp prob='-6.578455925'>      AND GOODBYE BYE      </asrhyp>
+<asrhyp prob='-6.681958199'>      AND GOOD      </asrhyp>
+<asrhyp prob='-6.683592796'>      GOOD BYE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.964207292'>bye()</semihyp>
+<semihyp prob='0.032981578'>ack()</semihyp>
+<semihyp prob='0.002811230'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='14'>
+<systurn turnnum='14' starttime='127.198'>
+<dact>givetoken()</dact>
+<prompt starttime='127.273'> Thank you for using this system. We will now give the 4 digit code required to complete the feedback form. The code for this call is 2, 1, 7, 6. I repeat, the code is 2, 1, 7, 6. You can now hang up. </prompt>
+</systurn>
+<rec fname='fj228x-014-101122_180430_0020821_0020883.wav' starttime='208.210' endtime='208.830'/>
+</turn>
+<rec fname='fj228x-014-101122_180439_all.wav' starttime='0.000' endtime='208.830'/>
+<turn turnnum='15'>
+<systurn turnnum='15' starttime='127.437'>
+<dact> bye() </dact>
+<prompt starttime='127.437'> Thank you goodbye </prompt>
+</systurn>
+<userturn turnnum='14' starttime='127.437'>
+</userturn>
+</turn>
+</dialog>
