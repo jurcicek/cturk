@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - User Info</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/jquery/pagination/pagination.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/jquery.pagination.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/MFPagination.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<!-- util --><script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterUserInfo.js"></script>
+</head>
+<body class="requester requesterUserInfo">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write("WorkerList");
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <h3 class="pageName">User Info</h3>
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <div id="userInfo">
+                                <dl>
+                                    <dt>
+                                        UserId
+                                    </dt>
+                                    <dd>
+                                        <span class="id view" name="id"></span>
+                                    </dd>
+                                    <dt>
+                                        User Name *
+                                    </dt>
+                                    <dd>
+                                        <span class="username view" name="username"></span>
+                                        <span class="usernameEdit edit" name="username" style="display:none;"></span>
+                                        <span class="usernameError error"></span>
+                                    </dd>
+                                    <dt>
+                                        Paypal Account *
+                                    </dt>
+                                    <dd>
+                                        <span class="paypalAccount view" name="paypalAccount"></span>
+                                        <input type="text" class="paypalAccountEdit edit" name="paypalAccount" style="display:none;"/><span class="paypalAccountError error"></span>
+                                    </dd>
+                                    <dt>
+                                        Title *
+                                    </dt>
+                                    <dd>
+                                        <span class="title view" name="title"></span>
+                                        <select class="titleEdit edit" name="title" style="display:none;">
+                                            <option value="Mr.">Mr.</option>
+                                            <option value="Mrs.">Mrs.</option>
+                                            <option value="Miss.">Miss.</option>
+                                            <option value="Ms.">Ms.</option>
+                                            <option value="Dr.">Dr.</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        First Name *
+                                    </dt>
+                                    <dd>
+                                        <span class="firstname view" name="firstname"></span>
+                                        <input type="text" class="firstnameEdit edit" name="firstname" style="display:none;"/><span class="firstnameError error"></span>
+                                    </dd>
+                                    <dt>
+                                        Surname *
+                                    </dt>
+                                    <dd>
+                                        <span class="surname view" name="surname"></span>
+                                        <input type="text" class="surnameEdit edit" name="surname" style="display:none;"/><span class="surnameError error"></span>
+                                    </dd>
+                                    <dt>
+                                        Gender *
+                                    </dt>
+                                    <dd>
+                                        <span class="sex view" name="sex"></span>
+                                        <select class="sexEdit edit" name="sex" style="display:none;">
+                                            <option value="male">Male</option>
+                                            <option value="female" selected="selected">Female</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        Building Name
+                                    </dt>
+                                    <dd>
+                                        <span class="buildingName view" name="buildingName"></span>
+                                        <input type="text" class="buildingNameEdit edit" name="buildingName" style="display:none;"/>
+                                    </dd>
+                                    <dt>
+                                        Street Name
+                                    </dt>
+                                    <dd>
+                                        <span class="streetName view" name="streetName"></span>
+                                        <input type="text" class="streetNameEdit edit" name="streetName" style="display:none;"/>
+                                    </dd>
+                                    <dt>
+                                        City Name
+                                    </dt>
+                                    <dd>
+                                        <span class="cityName view" name="cityName"></span>
+                                        <input type="text" class="cityNameEdit edit" name="cityName" style="display:none;"/>
+                                    </dd>
+                                    <dt>
+                                        Postcode
+                                    </dt>
+                                    <dd>
+                                        <span class="postcode view" name="postcode"></span>
+                                        <input type="text" class="postcodeEdit edit" name="postcode" style="display:none;"/>
+                                    </dd>
+                                    <dt title="Inactive worker cannot log in to CTurk">
+                                        Active Status:
+                                    </dt>
+                                    <dd>
+                                        <span class="isActive"></span>
+                                    </dd>
+                                    <dt title="Disabled worker can log in to CTurk but cannot accept HIT">
+                                        Enable Status:
+                                    </dt>
+                                    <dd>
+                                        <span class="isEnable"></span>
+                                    </dd>
+                                    <dt>
+                                        Acceptance Ratio For Submitted HITs:
+                                    </dt>
+                                    <dd>
+                                        <span class="acceptanceRatio"></span>
+                                    </dd>
+                                    <dt>
+                                        Is requester:
+                                    </dt>
+                                    <dd>
+                                        <span class="isRequester"></span>
+                                    </dd>
+                                    <dt>
+                                        Registration Date:
+                                    </dt>
+                                    <dd>
+                                        <span class="createDate"></span>
+                                    </dd>
+                                </dl>
+                                <!-- #userInfo end -->
+                            </div>
+                            <h3 class="pageName">All HITs Submitted by the users</h3>
+                            <div>
+                                <input id="userHitLink" href="#" type="button" value="Click here to view" onClick="#"</input>
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="RequesterFooter.js"></script>
+                    <script type="text/javascript">
+                        RequesterFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

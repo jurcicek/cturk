@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>user updateInfo</title>
+<script type="text/javascript"
+	src="../static/js/Config.js"></script>
+<script type="text/javascript"
+	src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#form1").unbind("submit").submit(function() {
+			$.ajax( {
+				url : Config.ajaxUrlPrefix + "/users/updateInfo",
+				type : "POST",
+				data : $("#form1").serialize(),
+				dataType : "json",
+				success : function(o) {
+					console.log(o.info);
+				}
+			});
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+<ul>
+	<li>paypalAccount<input type="text" name="paypalAccount" value="" /></li>
+	<li>title<input type="text" name="title" value="" /></li>
+	<li>firstname<input type="text" name="firstname" value="" /></li>
+	<li>surname<input type="text" name="surname" value="" /></li>
+	<li>sex<input type="text" name="sex" value="" /></li>
+	<li>buildingName<input type="text" name="buildingName" value="" /></li>
+	<li>streetName<input type="text" name="streetName" value="" /></li>
+	<li>cityName<input type="text" name="cityName" value="" /></li>
+	<li>postcode<input type="text" name="postcode" value="" /></li>
+	<li><input type="submit" value="submit" /></li>
+</ul>
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pagination</title>
+<link rel="stylesheet" href="pagination.css" />
+<script type="text/javascript" src="demo/lib/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.pagination.js"></script>
+<script type="text/javascript" src="MFPagination.js"></script>
+<script type="text/javascript">
+    $(function(){
+        function jsLog(t){
+            var html = $("#result").html();
+            $("#result").html(t + "<br />" + html);
+        }
+        
+        window.p1 = new MFPagination({
+            id: "p1",
+            size: 12,
+            itemsPerPage: 10,
+            numDisplayEntries: 5,
+            currentPage: 0,
+            numEdgeEntries: 0,
+            onPageChange: function(pageIndex, jq){
+                jsLog("p1 onPageChange: pageIndex = " + pageIndex);
+            }
+        });
+        
+        window.p2 = new MFPagination({
+            id: "p2",
+            size: 72,
+            itemsPerPage: 10,
+            numDisplayEntries: 5,
+            currentPage: 0,
+            numEdgeEntries: 0,
+            onPageChange: function(pageIndex, jq){
+                jsLog("p2 onPageChange: pageIndex = " + pageIndex);
+            }
+        });
+    })
+</script>
+</head>
+<body>
+    <div id="p1" style="height:100px;">
+    </div>
+    <div id="p2" style="height:100px;">
+    </div>
+    <pre>
+    	总数目发生变化时，需要重新设置参数
+		p1.setOptions({
+			currentPage: 3,//第4页
+			size: 39//总共39条记录
+		});
+	</pre>
+    <div id="result" style="width:600px; height:200px; border:1px solid #999; overflow:auto;">
+    </div>
+</body>
+</html>

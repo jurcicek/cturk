@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - HITs Details</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/jquery/pagination/pagination.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/jquery.pagination.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/MFPagination.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<!-- util --><script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterHitDetail.js"></script>
+</head>
+<body class="requester requesterHitDetail">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write();
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <div class="commonTitle">
+                                HIT Details
+                            </div>
+                            <br/>
+                            <div id="hitData" class="hitGroupList hitList">
+                            </div>
+                            <h3 class="pageName">Assignments List</h3>
+                            <div id="assignmentData" class="hitGroupList">
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="RequesterFooter.js"></script>
+                    <script type="text/javascript">
+                        RequesterFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+    <div id="assignmentResultDialog">
+    </div>
+    <form id="paypalForm" name="paypalForm" method="post" action="" style="display:none;">
+        <ul>
+            <li>
+                Sender's Email: <input type="text" name="paypalSenderEmail" value="" />
+            </li>
+            <li>
+                assignmentId<input type="text" name="assignmentId[]" value="" />
+            </li>
+            <li>
+                <input type="submit" value="submit" />
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

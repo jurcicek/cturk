@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Worker</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/worker/WorkerIndex.js"></script>
+</head>
+<body class="worker userIndex">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="WorkerHeader.js"></script>
+                    <script type="text/javascript">
+                        WorkerHeader.write("myAccount");
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div id="myInfo">
+                                <div class="commonTitle">
+                                    My Info
+                                    <div class="myInfoButton editMyInfoButton">
+                                        <input type="button" class="myInfoEdit" value="Edit" />
+                                    </div>
+                                    <div class="myInfoButton saveMyInfoButton" style="display:none;">
+                                        <input type="button" class="myInfoEditCancel" value="Cancel" /><input type="button" class="myInfoEditSubmit" value="Submit" />
+                                    </div>
+                                </div>
+                                <div class="myInfoText boundary">
+                                    <form id="updateUserInfoForm" name="updateUserInfoForm" method="post" action="">
+                                        <dl>
+                                            <dt>
+                                                User Name *
+                                            </dt>
+                                            <dd>
+                                                <span class="username view" name="username"></span>
+                                                <span class="usernameEdit edit" name="username" style="display:none;"></span>
+                                                <span class="usernameError error"></span>
+                                            </dd>
+                                            <dt>
+                                                Paypal Account *
+                                            </dt>
+                                            <dd>
+                                                <span class="paypalAccount view" name="paypalAccount"></span>
+                                                <input type="text" class="paypalAccountEdit edit" name="paypalAccount" style="display:none;"/><span class="paypalAccountError error"></span>
+                                            </dd>
+                                            <dt>
+                                                Title *
+                                            </dt>
+                                            <dd>
+                                                <span class="title view" name="title"></span>
+                                                <select class="titleEdit edit" name="title" style="display:none;">
+                                                    <option value="Mr.">Mr.</option>
+                                                    <option value="Mrs.">Mrs.</option>
+                                                    <option value="Miss.">Miss.</option>
+                                                    <option value="Ms.">Ms.</option>
+                                                    <option value="Dr.">Dr.</option>
+                                                </select>
+                                            </dd>
+                                            <dt>
+                                                First Name *
+                                            </dt>
+                                            <dd>
+                                                <span class="firstname view" name="firstname"></span>
+                                                <input type="text" class="firstnameEdit edit" name="firstname" style="display:none;"/><span class="firstnameError error"></span>
+                                            </dd>
+                                            <dt>
+                                                Surname *
+                                            </dt>
+                                            <dd>
+                                                <span class="surname view" name="surname"></span>
+                                                <input type="text" class="surnameEdit edit" name="surname" style="display:none;"/><span class="surnameError error"></span>
+                                            </dd>
+                                            <dt>
+                                                Gender *
+                                            </dt>
+                                            <dd>
+                                                <span class="sex view" name="sex"></span>
+                                                <select class="sexEdit edit" name="sex" style="display:none;">
+                                                    <option value="male">Male</option>
+                                                    <option value="female" selected="selected">Female</option>
+                                                </select>
+                                            </dd>
+                                            <dt>
+                                                Building Name
+                                            </dt>
+                                            <dd>
+                                                <span class="buildingName view" name="buildingName"></span>
+                                                <input type="text" class="buildingNameEdit edit" name="buildingName" style="display:none;"/>
+                                            </dd>
+                                            <dt>
+                                                Street Name
+                                            </dt>
+                                            <dd>
+                                                <span class="streetName view" name="streetName"></span>
+                                                <input type="text" class="streetNameEdit edit" name="streetName" style="display:none;"/>
+                                            </dd>
+                                            <dt>
+                                                City Name
+                                            </dt>
+                                            <dd>
+                                                <span class="cityName view" name="cityName"></span>
+                                                <input type="text" class="cityNameEdit edit" name="cityName" style="display:none;"/>
+                                            </dd>
+                                            <dt>
+                                                Postcode
+                                            </dt>
+                                            <dd>
+                                                <span class="postcode view" name="postcode"></span>
+                                                <input type="text" class="postcodeEdit edit" name="postcode" style="display:none;"/>
+                                            </dd>
+                                        </dl>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="myStatus">
+                                <div class="commonTitle">
+                                    My Status
+                                </div>
+                                <div class="myStatusText boundary">
+                                    <dl>
+                                        <dt title="Inactive worker cannot log in to CTurk">
+                                            Active Status:
+                                        </dt>
+                                        <dd>
+                                            <span class="isActive"></span>
+                                            <input class="terminateMyAccountButton" type="button" value="Terminate My Account"/>
+                                        </dd>
+                                        <dt title="Disabled worker can log in to CTurk but cannot accept HIT">
+                                            Enable Status:
+                                        </dt>
+                                        <dd>
+                                            <span class="isEnable"></span>
+                                        </dd>
+                                        <dt>
+                                            Pending Payments:
+                                        </dt>
+                                        <dd>
+                                            <span class="pendingPayments"></span>
+                                        </dd>
+                                        <dt>
+                                            Acceptance Ratio For Submitted HITs:
+                                        </dt>
+                                        <dd>
+                                            <span class="acceptanceRatio"></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div id="changePassword">
+                                <div class="commonTitle">
+                                    Change Password
+                                </div>
+                                <div class="changePasswordText boundary">
+                                    <form id="changePasswordForm" name="changePasswordForm" method="post" action="">
+                                        <dl>
+                                            <dt>
+                                                Old Password :
+                                            </dt>
+                                            <dd>
+                                                <input type="password" class="oldPassword" name="oldPassword" /><span class="oldPasswordError error"></span>
+                                            </dd>
+                                            <dt>
+                                                New Password :
+                                            </dt>
+                                            <dd>
+                                                <input type="password" class="newPassword" name="newPassword" /><span class="newPasswordError error"></span>
+                                            </dd>
+                                            <dt>
+                                                <input type="submit" class="updatePassword" value="Submit" />
+                                            </dt>
+                                            <dd>
+                                                <span class="updatePasswordInfo error"></span>
+                                            </dd>
+                                        </dl>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="pendingPayment">
+                                <div class="commonTitle">
+                                    Pending payments details
+                                </div>
+                                <div class="pendingPaymentText boundary hitGroupList">
+                                    <table style="width:100%" class="pendingPaymentTable groupTable groupDataTable" cellpadding="0" cellspacing="0" border="0">
+                                        <thead class="tableHead">
+                                            <tr>
+                                                <td class="c0">
+                                                    <span class="textTitle">Requester username</span>
+                                                </td>
+                                                <td class="c3">
+                                                    <span class="textTitle">Amount</span>
+                                                </td>
+                                                <td class="c2">
+                                                    <span class="textTitle">Is active</span>
+                                                </td>
+                                                <td class="c3">
+                                                    <span class="textTitle">Request date</span>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tableBody">
+                                            <tr>
+                                                <td colspan="4">
+                                                    &nbsp; 
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="WorkerFooter.js"></script>
+                    <script type="text/javascript">
+                        WorkerFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

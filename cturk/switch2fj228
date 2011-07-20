@@ -1,0 +1,8 @@
+mv ./server/app_conroller.php ./server/app_conroller.php.bck
+cp ./server/app_conroller.php.fj228 ./server/app_conroller.php
+
+mv ./server/config/database.php ./server/config/database.php.bck
+cp ./server/config/database.php.fj228 ./server/config/database.php
+
+mv ./server/webroot/.htaccess ./server/webroot/.htaccess.bck
+cp ./server/webroot/.htaccess.fj228 ./server/webroot/.htaccess
