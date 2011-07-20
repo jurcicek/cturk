@@ -1,0 +1,11 @@
+*{ margin:0; padding:0; font:normal 14px/20px Arial;}
+
+body { margin-top: 10px; margin-bottom: 10px;}
+
+.main input{ width:90%; margin-left:5px;margin-right:5px;}
+.main thead{ background-color:#CEC;}
+.main thead th{ padding:5px; border:2px solid #3a3;}
+.main tbody td{ padding:5px;}
+.main .submitButton{ width:auto; padding:5px 10px;}
+.main .trSys{ background-color:#FFFFCC; }
+.main .imp{ font:bold 16px Arial;}

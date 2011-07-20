@@ -1,0 +1,169 @@
+/* Base Theme ============================================================= */
+
+/* Reset ------------------------------------------------------------------ */
+
+/*
+    reset.css - resets default browser styling
+    http://tantek.com/log/2004/09.html#d06t2354
+    http://www.vox.com/.shared/css/base.css by beausmith.com
+    http://developer.yahoo.com/yui/reset/
+*/
+
+:link,:visited {
+    text-decoration: none;
+}
+html,body,div,
+ul,ol,li,dl,dt,dd,
+form,fieldset,input,textarea,
+h1,h2,h3,h4,h5,h6,pre,code,p,blockquote,hr,
+th,td {
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img,abbr,acronym {
+    border: 0;
+} 
+/* strict reset by uncommenting lines below */
+address,caption,cite,code,dfn,em,strong,b,u,s,i,th,var {
+    /* font-style: normal; */
+    /* font-weight: normal; */
+}
+
+ol,ul {
+    list-style: none;
+}
+caption,th {
+    text-align: left;
+}
+q:before,q:after {
+    content: '';
+}
+a {
+    text-decoration: underline;
+    outline: none;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    color: #000;
+}
+a img,:link img,:visited img {
+    border: none;
+}
+address {
+    font-style: normal;
+    display: inline;
+}
+
+
+/* Utilities ----------------------------------------------------------------- */
+
+.pkg:after, #content-inner:after {
+    content: " ";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0.1px;
+    font-size: 0.1em;
+    line-height: 0;
+}
+.pkg, #content-inner { display: block; }
+/* no ie mac \*/
+* html .pkg, * html #content-inner { height: 1%; }
+.pkg, #content-inner { display: block; }
+/* */
+
+.inline { display: inline;}
+.hidden { display: none;}
+.clear{ clear:both;}
+
+/* Layout ----------------------------------------------------------------- */
+
+body {
+    text-align: center;
+    background: #fff;
+}
+
+#container-inner {
+    width: 950px;
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#header, #content, #alpha, #beta, #gamma, #footer {
+    position: relative;
+}
+
+#alpha, #beta, #gamma {
+    display: inline;
+    float: left;
+}
+
+#header-inner, #content-inner, #footer-inner,
+#alpha-inner, #beta-inner, #gamma-inner {
+    position: static;
+}
+
+#header-inner, #content-inner, #footer-inner {
+    /*padding-top: 20px;
+    padding-bottom: 20px;*/
+}
+
+#header-inner, #footer-inner,
+#alpha-inner, #beta-inner, #gamma-inner {
+    overflow: hidden;
+   /* padding-right: 20px;
+    padding-left: 20px;*/
+}
+
+/* Content ---------------------------------------------------------------- */
+
+a:link, a:visited {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, fieldset, ul, ol, dl {
+    margin-bottom: .75em;
+}
+
+blockquote, ol, ul {
+    margin-left: 30px;
+    background-repeat: repeat-y;
+}
+
+ol { list-style: decimal outside; }
+ul { list-style: disc outside; }
+.item { list-style: none; }
+
+/* Widgets */
+
+.widget {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.item {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+}
+
+@media print {
+    * {
+        position: static ! important;
+        overflow: visible ! important;
+    }
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2010/11/24' time='08:51:48'>
+<session> voip-anonymous </session>
+<user> fj228 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/caminfo_rest_3best_V6.pcy </policy>
+<semdecoder> Phoenix </semdecoder>
+<outputgen> EdinGen </outputgen>
+<token> 1583 </token>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.023'>
+<dact> hello() </dact>
+<prompt starttime='0.032'> \rate{-15%} Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='0.032'><rec fname='fj228x-001-101124_085209_0001726_0002071.wav' starttime='17.260' endtime='20.710'/>
+<asr>
+<asrhyp prob='-1.672438741'>      I WANT TO FIND HAVE AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-2.265778780'>      I WANT TO FIND WHAT HAVE AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-2.495191574'>      I WANT TO FIND HAVE INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-2.613443613'>      I WANT TO FIND HAVE AN AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.088531494'>      I WANT TO FIND WHAT HAVE INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-3.206783533'>      I WANT TO FIND WHAT HAVE AN AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-4.091585159'>      I WANT TO FIND HAVE AN INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.094316483'>      I WANT FIND HAVE AN INTERNET CONNECTION      </asrhyp>
+<asrhyp prob='-4.684925079'>      I WANT TO FIND WHAT HAVE AN INTERNET CONNECTIONS      </asrhyp>
+<asrhyp prob='-4.687656403'>      I WANT FIND WHAT HAVE AN INTERNET CONNECTION      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='1.000000000'>inform(hasinternet=true)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='0.617'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='0.637'> \rate{-15%} The Bakers is an outstanding  \pitch{+10%} \volume{loud} pub \volume \pitch  with an internet connection. </prompt>
+</systurn>
+<userturn turnnum='2' starttime='0.638'><rec fname='fj228x-002-101124_085218_0002816_0002938.wav' starttime='28.160' endtime='29.380'/>
+<asr>
+<asrhyp prob='-1.610386372'>      HOW ONE      </asrhyp>
+<asrhyp prob='-2.295214176'>      HOW WANT      </asrhyp>
+<asrhyp prob='-2.352495670'>      HOW ONE ONE      </asrhyp>
+<asrhyp prob='-2.494051695'>      I ONE      </asrhyp>
+<asrhyp prob='-3.037323475'>      HOW WANT ONE      </asrhyp>
+<asrhyp prob='-3.178879499'>      I WANT      </asrhyp>
+<asrhyp prob='-3.236160994'>      I ONE ONE      </asrhyp>
+<asrhyp prob='-3.585660934'>      HOW      </asrhyp>
+<asrhyp prob='-3.920988798'>      I WANT ONE      </asrhyp>
+<asrhyp prob='-4.060016632'>      HOW IN ONE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.908544779'>null()</semihyp>
+<semihyp prob='0.091455199'>inform()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='127.697'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='127.726'> \rate{-15%} The Bakers has an  \pitch{+10%} \volume{loud} internet connection \volume \pitch  and it's a great pub. </prompt>
+</systurn>
+<userturn turnnum='3' starttime='127.727'><rec fname='fj228x-003-101124_085226_0003537_0003772.wav' starttime='35.370' endtime='37.720'/>
+<asr>
+<asrhyp prob='-4.663300991'>          HOW FAR THEN      </asrhyp>
+<asrhyp prob='-4.730459690'>      THERE HOW FAR THEN      </asrhyp>
+<asrhyp prob='-4.839993954'>      HOW FAR IT THEN      </asrhyp>
+<asrhyp prob='-4.907152653'>      THERE HOW FAR IT THEN      </asrhyp>
+<asrhyp prob='-4.983991623'>      ARE HOW FAR THEN      </asrhyp>
+<asrhyp prob='-4.988937855'>      HOW CURRENTLY THEN      </asrhyp>
+<asrhyp prob='-5.051150322'>      ARE THERE HOW FAR THEN      </asrhyp>
+<asrhyp prob='-5.056096554'>      THERE HOW CURRENTLY THEN      </asrhyp>
+<asrhyp prob='-5.160684586'>      ARE HOW FAR IT THEN      </asrhyp>
+<asrhyp prob='-5.165630817'>      HOW CURRENTLY IT THEN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='128.043'>
+<dact> reqmore() </dact>
+<prompt starttime='128.058'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='4' starttime='128.058'><rec fname='fj228x-004-101124_085235_0004200_0004714.wav' starttime='42.000' endtime='47.140'/>
+<asr>
+<asrhyp prob='-5.190316200'>      I AM THINKING FIVE FIVE OR CURRENTLY PLEASE           </asrhyp>
+<asrhyp prob='-5.234145164'>      I AM THINKING FIVE FIVE OR HOUSE PLEASE           </asrhyp>
+<asrhyp prob='-5.262934208'>      I AM THINKING FIVE FIVE OR CURRENTLY PLEASE      </asrhyp>
+<asrhyp prob='-5.306763649'>      I AM THINKING FIVE FIVE OR HOUSE PLEASE      </asrhyp>
+<asrhyp prob='-5.352382183'>      I AM THINKING FIVE FIVE ALL CURRENTLY PLEASE           </asrhyp>
+<asrhyp prob='-5.396211624'>      I AM THINKING FIVE FIVE ALL HOUSE PLEASE           </asrhyp>
+<asrhyp prob='-5.425000668'>      I AM THINKING FIVE FIVE ALL CURRENTLY PLEASE      </asrhyp>
+<asrhyp prob='-5.427693844'>      I AM THINKING FIVE FIVE OR CURRENTLY           </asrhyp>
+<asrhyp prob='-5.468829632'>      I AM THINKING FIVE FIVE ALL HOUSE PLEASE      </asrhyp>
+<asrhyp prob='-5.471523285'>      I AM THINKING FIVE FIVE OR HOUSE           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999940'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='127.680'>
+<dact> reqmore() </dact>
+<prompt starttime='127.700'> \rate{-15%} Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='5' starttime='127.700'><rec fname='fj228x-005-101124_085241_0005146_0005261.wav' starttime='51.460' endtime='52.610'/>
+<asr>
+<asrhyp prob='-1.775204778'>      IS VERY      </asrhyp>
+<asrhyp prob='-1.876919985'>      IS IT VERY      </asrhyp>
+<asrhyp prob='-2.879471540'>      IS IS VERY      </asrhyp>
+<asrhyp prob='-3.067229033'>      IS GO      </asrhyp>
+<asrhyp prob='-3.168944359'>      IS IT GO      </asrhyp>
+<asrhyp prob='-3.317789555'>      IS I VERY      </asrhyp>
+<asrhyp prob='-3.357384682'>      WHERE VERY      </asrhyp>
+<asrhyp prob='-3.459099770'>      WHERE IT VERY      </asrhyp>
+<asrhyp prob='-3.739630938'>      CAN VERY      </asrhyp>
+<asrhyp prob='-3.841346264'>      CAN IT VERY      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.682758570'>null()</semihyp>
+<semihyp prob='0.317241490'>confirm()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='127.925'>
+<dact> inform(name="The Bakers",type=pub,hasinternet=true) </dact>
+<prompt starttime='127.952'> \rate{-15%} The Bakers has an  \pitch{+10%} \volume{loud} internet connection \volume \pitch  and it's a great pub. </prompt>
+</systurn>
+<userturn turnnum='6' starttime='127.953'><rec fname='fj228x-006-101124_085243_0005298_0005440.wav' starttime='52.980' endtime='54.400'/>
+<asr>
+<asrhyp prob='-1.517112970'>      HOW I DON'T CARE      </asrhyp>
+<asrhyp prob='-1.820168376'>      HOW DON'T CARE      </asrhyp>
+<asrhyp prob='-2.236696243'>      I I DON'T CARE      </asrhyp>
+<asrhyp prob='-2.539751530'>      I DON'T CARE      </asrhyp>
+<asrhyp prob='-2.789207458'>      HI I DON'T CARE      </asrhyp>
+<asrhyp prob='-3.092262745'>      HI DON'T CARE      </asrhyp>
+<asrhyp prob='-3.749094486'>      HOW I DON'T THERE      </asrhyp>
+<asrhyp prob='-4.052149773'>      HOW DON'T THERE      </asrhyp>
+<asrhyp prob='-4.409975529'>      HOW I DON'T THEN      </asrhyp>
+<asrhyp prob='-4.468677521'>      I I DON'T THERE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.767877460'>inform(=dontcare)</semihyp>
+<semihyp prob='0.144720644'>hello(=dontcare)</semihyp>
+<semihyp prob='0.087401867'>null()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='128.263'>
+<dact> inform(name="The Bakers",hasinternet=true,type=pub,childrenallowed=true,hastv=true,area=riverside,near="Ruskin Gallery") </dact>
+<prompt starttime='128.322'> \rate{-15%} The Bakers, which allows children, is in the riverside part of town. It has an internet connection and a television and it's a great pub near the Ruskin Gallery. </prompt>
+</systurn>
+<userturn turnnum='7' starttime='128.322'><rec fname='fj228x-007-101124_085258_0006775_0006996.wav' starttime='67.750' endtime='69.960'/>
+<asr>
+<asrhyp prob='-0.026980629'>          I I WANT TO KNOW THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.321364403'>      I WANT KNOW THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.575325966'>      I WANT TO KNOW PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.702390194'>      I WANT TO THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.715390205'>      I WANT TO KNOW THE TELEPHONE NUMBER      </asrhyp>
+<asrhyp prob='-5.762860775'>      I WANT TO THE KNOW THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-6.896866798'>      I WANT TO YOU KNOW THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-6.954510689'>      I WANT TO DINNER THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-7.078144550'>      I WANT DO KNOW THE PHONE NUMBER      </asrhyp>
+<asrhyp prob='-7.339737415'>      I WANT TO KNOW THE PHONE THERE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.999999881'>request(phone)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='128.630'>
+<dact> inform(name="The Bakers",phone="01223304121") </dact>
+<prompt starttime='128.643'> \rate{-15%} The  \pitch{+10%} \volume{loud} phone number \volume \pitch  of The Bakers is 01223 \break 304121. </prompt>
+</systurn>
+<userturn turnnum='8' starttime='128.643'><rec fname='fj228x-008-101124_085308_0007716_0007932.wav' starttime='77.160' endtime='79.320'/>
+<asr>
+<asrhyp prob='-0.698742747'>      I WANT ME THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-2.310967922'>      I WANT A ME THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-2.625107765'>      I WANT TO ME THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-3.105210543'>      I WANT ME PRICE RANGE      </asrhyp>
+<asrhyp prob='-3.177051544'>      I WANT THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-3.287117958'>      I WANT NEAR THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-3.696805954'>      I WANT ME AND THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-3.921277285'>      I WANT DINNER THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-4.610135078'>      I WANT ME AT THE PRICE RANGE      </asrhyp>
+<asrhyp prob='-4.623166561'>      I WANT IN THE PRICE RANGE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.623710454'>request(near,price)</semihyp>
+<semihyp prob='0.376289576'>request(price)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='127.947'>
+<dact> inform(name="The Bakers",near="Ruskin Gallery",price="the price for main courses ranges from 6 pounds to 8 pounds 49 and the price for a cheapest pint of beer is 2 pounds 25") </dact>
+<prompt starttime='127.967'> \rate{-15%} The Bakers is  \pitch{+10%} \volume{loud} near \volume \pitch  the Ruskin Gallery. The price for main courses ranges from 6 pounds to 8 pounds 49 and the price for a cheapest pint of beer is 2 pounds 25. </prompt>
+</systurn>
+<userturn turnnum='9' starttime='127.967'><rec fname='fj228x-009-101124_085322_0009294_0009423.wav' starttime='92.940' endtime='94.230'/>
+<asr>
+<asrhyp prob='-0.089414269'>          THANK YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.190757751'>      THANK GOODBYE      </asrhyp>
+<asrhyp prob='-4.213428020'>          YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.231599808'>  THANK YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.543457508'>      CAN YOU GOODBYE      </asrhyp>
+<asrhyp prob='-4.635106564'>      THANK YOU GOODBYE BYE      </asrhyp>
+<asrhyp prob='-5.114679813'>      THANK YOU      </asrhyp>
+<asrhyp prob='-5.562246799'>      THANK YOU GOOD      </asrhyp>
+<asrhyp prob='-5.967002392'>      COULD YOU GOODBYE      </asrhyp>
+<asrhyp prob='-6.434530735'>      DO YOU GOODBYE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.990085483'>bye()</semihyp>
+<semihyp prob='0.009914636'>thankyou()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='10'>
+<systurn turnnum='10' starttime='128.533'>
+<dact>givetoken()</dact>
+<prompt starttime='128.658'> Thank you for using this system. We will now give the 4 digit code required to complete the feedback form. The code for this call is 1, 5, 8, 3. I repeat, the code is 1, 5, 8, 3. You can now hang up. </prompt>
+</systurn>
+</turn>
+<rec fname='fj228x-009-101124_085338_all.wav' starttime='0.000' endtime='94.230'/>
+<turn turnnum='11'>
+<systurn turnnum='11' starttime='127.769'>
+<dact> bye() </dact>
+<prompt starttime='127.769'> Thank you goodbye </prompt>
+</systurn>
+<userturn turnnum='10' starttime='127.769'></userturn>
+</turn>
+</dialog>

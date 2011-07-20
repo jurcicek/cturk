@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog date='2009/08/05' time='14:02:49'>
+<session> voip-01223336633 </session>
+<user> ky219 </user> <host> florence </host>
+<task> N/A </task>
+<microphone> VOIP_PJSIP </microphone>
+<hubversion> !HVER!AHub:   2.1 [KY 26/06/09] </hubversion>
+<dman> HISDMan </dman>
+<policy> ../../resources/partowninfo.pcy </policy>
+<semdecoder> SemClassifiers </semdecoder>
+<outputgen> JostGen </outputgen>
+<turn turnnum='1'>
+<systurn turnnum='1' starttime='0.002'>
+<dact>hello()</dact>
+<prompt starttime='0.002'> Hello, how may I help you? </prompt>
+</systurn>
+<userturn turnnum='1' starttime='0.002'>
+<rec fname='ky219x-001-090805_140304_0000451_0001061.wav' starttime='4.510' endtime='10.610'/>
+<asr>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR      </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR           </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL FOR </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR IT </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL FOR      </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR      IT </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR IT      </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL FOR           </asrhyp>
+<asrhyp>      YES I'M LOOKING FOR A HOTEL OR      IT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.97'>affirm(type=hotel)</semihyp>
+<semihyp prob='0.02'>affirm(near,type=hotel)</semihyp>
+<semihyp prob='0.02'>affirm()</semihyp>
+<semihyp prob='0.00'>affirm(near)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='2'>
+<systurn turnnum='2' starttime='-0.143'>
+<dact>inform(name="Hotel Primus",type=hotel)</dact>
+<prompt starttime='-0.143'> The Hotel Primus is a great hotel </prompt>
+</systurn>
+<userturn turnnum='2' starttime='-0.143'>
+<rec fname='ky219x-002-090805_140312_0001943_0002174.wav' starttime='19.430' endtime='21.740'/>
+<asr>
+<asrhyp>      HUM      </asrhyp>
+<asrhyp>      HUM           </asrhyp>
+<asrhyp>      HUM </asrhyp>
+<asrhyp>      HUM      HUM </asrhyp>
+<asrhyp>      HUM      HUM      </asrhyp>
+<asrhyp>      HUM HUM </asrhyp>
+<asrhyp>      HUM HUM      </asrhyp>
+<asrhyp>      ER HUM      </asrhyp>
+<asrhyp>      ER HUM           </asrhyp>
+<asrhyp>           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.85'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+<semihyp prob='0.07'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='3'>
+<systurn turnnum='3' starttime='0.214'>
+<dact>request(area)</dact>
+<prompt starttime='0.214'> What part of town do you have in mind? For example something in the centre of town, or in the north, or on the riverside? </prompt>
+</systurn>
+<userturn turnnum='3' starttime='0.214'>
+<rec fname='ky219x-003-090805_140314_0002308_0002402.wav' starttime='23.080' endtime='24.020'/>
+<asr>
+<asrhyp>          DON'T YOU      </asrhyp>
+<asrhyp>      DON'T      </asrhyp>
+<asrhyp>      DON'T YOU YOU      </asrhyp>
+<asrhyp>      THANK YOU      </asrhyp>
+<asrhyp>      THANK      </asrhyp>
+<asrhyp>      THANK YOU YOU      </asrhyp>
+<asrhyp>      I DON'T YOU      </asrhyp>
+<asrhyp>      I DON'T      </asrhyp>
+<asrhyp>      I DON'T YOU YOU      </asrhyp>
+<asrhyp>      I THANK YOU      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.55'>null()</semihyp>
+<semihyp prob='0.19'>bye()</semihyp>
+<semihyp prob='0.14'>thankyou()</semihyp>
+<semihyp prob='0.09'>inform(=dontcare)</semihyp>
+<semihyp prob='0.01'>bye(=dontcare)</semihyp>
+<semihyp prob='0.01'>ack()</semihyp>
+<semihyp prob='0.01'>inform(pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>bye(pricerange=expensive)</semihyp>
+<semihyp prob='0.00'>ack(pricerange=expensive)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='4'>
+<systurn turnnum='4' starttime='0.152'>
+<dact>inform(name="Hotel President",type=hotel)</dact>
+<prompt starttime='0.152'> The Hotel President is a great hotel </prompt>
+</systurn>
+<userturn turnnum='4' starttime='0.152'>
+<rec fname='ky219x-004-090805_140323_0003035_0003193.wav' starttime='30.350' endtime='31.930'/>
+<asr>
+<asrhyp>      WHERE IS THE HOTEL      </asrhyp>
+<asrhyp>      WHERE IS THE A HOTEL      </asrhyp>
+<asrhyp>      WHERE IS THE      </asrhyp>
+<asrhyp>      WHERE IS THE HOTEL HOTEL      </asrhyp>
+<asrhyp>      WHERE IS HOTEL      </asrhyp>
+<asrhyp>      WHERE IS THE THERE HOTEL      </asrhyp>
+<asrhyp>      WHERE IS THE THE HOTEL      </asrhyp>
+<asrhyp>      WHERE IS IT THE HOTEL      </asrhyp>
+<asrhyp>      WHAT IS THE HOTEL      </asrhyp>
+<asrhyp>      WHERE IS THE A      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.56'>request(addr,type=hotel)</semihyp>
+<semihyp prob='0.34'>request(type=hotel)</semihyp>
+<semihyp prob='0.08'>request(addr)</semihyp>
+<semihyp prob='0.01'>request()</semihyp>
+<semihyp prob='0.01'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(addr,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(addr,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(type=hotel)</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>confirm(addr)</semihyp>
+<semihyp prob='0.00'>inform(addr)</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='5'>
+<systurn turnnum='5' starttime='-0.590'>
+<dact>inform(name="Hotel President",addr="Castle Loop")</dact>
+<prompt starttime='-0.590'> Sure, the Hotel President is on Castle Loop </prompt>
+</systurn>
+<userturn turnnum='5' starttime='-0.590'>
+<rec fname='ky219x-005-090805_140329_0003826_0003886.wav' starttime='38.260' endtime='38.860'/>
+<asr>
+<asrhyp>                </asrhyp>
+<asrhyp>          UH UH           </asrhyp>
+<asrhyp>                  </asrhyp>
+<asrhyp>          UH UH         </asrhyp>
+<asrhyp>                              </asrhyp>
+<asrhyp>          UH UH                     </asrhyp>
+<asrhyp>            </asrhyp>
+<asrhyp>  UH UH           </asrhyp>
+<asrhyp>                    HUM </asrhyp>
+<asrhyp>      UH      HUM </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.85'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+<semihyp prob='0.07'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='6'>
+<systurn turnnum='6' starttime='-0.454'>
+<dact>inform(name="Hotel President",type=hotel)</dact>
+<prompt starttime='-0.454'> The Hotel President is a great hotel </prompt>
+</systurn>
+<userturn turnnum='6' starttime='-0.454'>
+<rec fname='ky219x-006-090805_140342_0004442_0004824.wav' starttime='44.420' endtime='48.240'/>
+<asr>
+<asrhyp>      AND THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      I THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      AND THE HOTEL ER A GREAT HOTEL      </asrhyp>
+<asrhyp>      AND NEED THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      ER THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      AND THE HOTEL A GREAT HOTEL      </asrhyp>
+<asrhyp>      I THE HOTEL ER A GREAT HOTEL      </asrhyp>
+<asrhyp>      I NEED THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      AND IN THE HOTEL IS A GREAT HOTEL      </asrhyp>
+<asrhyp>      AND NEED THE HOTEL ER A GREAT HOTEL      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.42'>inform(type=hotel)</semihyp>
+<semihyp prob='0.35'>confirm(type=hotel)</semihyp>
+<semihyp prob='0.16'>request(type=hotel)</semihyp>
+<semihyp prob='0.02'>confirm(near,type=hotel)</semihyp>
+<semihyp prob='0.01'>inform(near,type=hotel)</semihyp>
+<semihyp prob='0.01'>request(near,type=hotel)</semihyp>
+<semihyp prob='0.01'>inform(phone,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(phone,type=hotel)</semihyp>
+<semihyp prob='0.00'>request(phone,type=hotel)</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+<semihyp prob='0.00'>confirm(near=Cinema,type=hotel)</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>inform(near=Cinema,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(phone,near,type=hotel)</semihyp>
+<semihyp prob='0.00'>request(near=Cinema,type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(near,phone,type=hotel)</semihyp>
+<semihyp prob='0.00'>request(phone,near,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(near)</semihyp>
+<semihyp prob='0.00'>inform(near)</semihyp>
+<semihyp prob='0.00'>inform(phone)</semihyp>
+<semihyp prob='0.00'>request(near)</semihyp>
+<semihyp prob='0.00'>confirm(phone)</semihyp>
+<semihyp prob='0.00'>request(phone)</semihyp>
+<semihyp prob='0.00'>confirm(near=Cinema)</semihyp>
+<semihyp prob='0.00'>inform(near=Cinema)</semihyp>
+<semihyp prob='0.00'>confirm(phone,near)</semihyp>
+<semihyp prob='0.00'>inform(near,phone)</semihyp>
+<semihyp prob='0.00'>request(near=Cinema)</semihyp>
+<semihyp prob='0.00'>request(phone,near)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='7'>
+<systurn turnnum='7' starttime='-0.099'>
+<dact>inform(name="Hotel President",type=hotel)</dact>
+<prompt starttime='-0.098'> The Hotel President is a great hotel </prompt>
+</systurn>
+<userturn turnnum='7' starttime='-0.098'>
+<rec fname='ky219x-007-090805_140345_0004930_0005101.wav' starttime='49.300' endtime='51.010'/>
+<asr>
+<asrhyp>      IS IT A THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT A STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT A THREE THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT ER THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT A A THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT A THREE TWO STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT THE THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS IT IN A THREE STAR HOTEL      </asrhyp>
+<asrhyp>      IS THERE A THREE STAR HOTEL      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.78'>confirm(stars=3,type=hotel)</semihyp>
+<semihyp prob='0.17'>inform(stars=3,type=hotel)</semihyp>
+<semihyp prob='0.02'>confirm(type=hotel)</semihyp>
+<semihyp prob='0.01'>confirm(stars=3)</semihyp>
+<semihyp prob='0.01'>confirm(stars=2,type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(stars=2,stars=3,type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(stars=3)</semihyp>
+<semihyp prob='0.00'>inform(stars=2,type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(stars=2,stars=3,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+<semihyp prob='0.00'>reqalts(stars=3,type=hotel)</semihyp>
+<semihyp prob='0.00'>confirm(stars=2)</semihyp>
+<semihyp prob='0.00'>confirm(stars=2,stars=3)</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>inform(stars=2)</semihyp>
+<semihyp prob='0.00'>inform(stars=2,stars=3)</semihyp>
+<semihyp prob='0.00'>reqalts(type=hotel)</semihyp>
+<semihyp prob='0.00'>reqalts(stars=3)</semihyp>
+<semihyp prob='0.00'>reqalts()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='8'>
+<systurn turnnum='8' starttime='-0.256'>
+<dact>negate(name="Hotel President",entity=none,stars=4)</dact>
+<prompt starttime='-0.256'> No, the Hotel President is a nice place, , it has 4 stars </prompt>
+</systurn>
+<userturn turnnum='8' starttime='-0.256'>
+<rec fname='ky219x-008-090805_140346_0005187_0005288.wav' starttime='51.870' endtime='52.880'/>
+<asr>
+<asrhyp>      HUM      </asrhyp>
+<asrhyp>           </asrhyp>
+<asrhyp>      HUM YES      </asrhyp>
+<asrhyp>      YES      </asrhyp>
+<asrhyp>      UH HUM      </asrhyp>
+<asrhyp>      UH      </asrhyp>
+<asrhyp>      UH HUM YES      </asrhyp>
+<asrhyp>      ER      </asrhyp>
+<asrhyp>      HUM HUM      </asrhyp>
+<asrhyp>      UH YES      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.71'>null()</semihyp>
+<semihyp prob='0.18'>affirm()</semihyp>
+<semihyp prob='0.06'>bye()</semihyp>
+<semihyp prob='0.06'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='9'>
+<systurn turnnum='9' starttime='0.155'>
+<dact>reqmore()</dact>
+<prompt starttime='0.155'> Can I help you with anything else? </prompt>
+</systurn>
+<userturn turnnum='9' starttime='0.155'>
+<rec fname='ky219x-009-090805_140355_0006259_0006465.wav' starttime='62.590' endtime='64.650'/>
+<asr>
+<asrhyp>      IS IT      </asrhyp>
+<asrhyp>      IT      </asrhyp>
+<asrhyp>      IS BEER      </asrhyp>
+<asrhyp>      BEER      </asrhyp>
+<asrhyp>      IS THE      </asrhyp>
+<asrhyp>      IS IS IT      </asrhyp>
+<asrhyp>      UH IT      </asrhyp>
+<asrhyp>      THE      </asrhyp>
+<asrhyp>      IS GOOD      </asrhyp>
+<asrhyp>      GOOD      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.43'>null()</semihyp>
+<semihyp prob='0.26'>confirm()</semihyp>
+<semihyp prob='0.14'>inform(drinks=beer)</semihyp>
+<semihyp prob='0.12'>confirm(drinks=beer)</semihyp>
+<semihyp prob='0.03'>bye()</semihyp>
+<semihyp prob='0.02'>confirm(near)</semihyp>
+<semihyp prob='0.01'>inform(near)</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>confirm(type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>request(near)</semihyp>
+<semihyp prob='0.00'>confirm(near,type=hotel)</semihyp>
+<semihyp prob='0.00'>request(type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(near,type=hotel)</semihyp>
+<semihyp prob='0.00'>request(near,type=hotel)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='10'>
+<systurn turnnum='10' starttime='0.151'>
+<dact>confirm(type=hotel,drinks=beer)</dact>
+<prompt starttime='0.151'> You are looking for a hotel that serves beer right? </prompt>
+</systurn>
+<userturn turnnum='10' starttime='0.151'>
+<rec fname='ky219x-010-090805_140358_0006521_0006694.wav' starttime='65.210' endtime='66.940'/>
+<asr>
+<asrhyp>      YES      </asrhyp>
+<asrhyp>      UH YES      </asrhyp>
+<asrhyp>      ER YES      </asrhyp>
+<asrhyp>      YES YES      </asrhyp>
+<asrhyp>           </asrhyp>
+<asrhyp>      YES I      </asrhyp>
+<asrhyp>      YES A      </asrhyp>
+<asrhyp>      I YES      </asrhyp>
+<asrhyp>      A YES      </asrhyp>
+<asrhyp>      UH YES YES      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.94'>affirm()</semihyp>
+<semihyp prob='0.06'>null()</semihyp>
+<semihyp prob='0.00'>bye()</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='11'>
+<systurn turnnum='11' starttime='-0.518'>
+<dact>confreq(stars=4,area)</dact>
+<prompt starttime='-0.518'> Ok, 4 stars! What part of town do you have in mind? For example something in the centre of town, or in the north, or on the riverside? </prompt>
+</systurn>
+<userturn turnnum='11' starttime='-0.518'>
+<rec fname='ky219x-011-090805_140402_0006972_0007082.wav' starttime='69.720' endtime='70.820'/>
+<asr>
+<asrhyp>      NO ALL      </asrhyp>
+<asrhyp>      NO ALL </asrhyp>
+<asrhyp>      NO ALL           </asrhyp>
+<asrhyp>      NO NO      </asrhyp>
+<asrhyp>      ALL      </asrhyp>
+<asrhyp>      NO NO </asrhyp>
+<asrhyp>      NO NO           </asrhyp>
+<asrhyp>      ALL </asrhyp>
+<asrhyp>      NO OLD      </asrhyp>
+<asrhyp>      ALL           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.63'>negate()</semihyp>
+<semihyp prob='0.30'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='12'>
+<systurn turnnum='12' starttime='127.386'>
+<dact>confirm(stars=3)</dact>
+<prompt starttime='127.386'> Let me confirm, you are looking for a venue with 3 stars? </prompt>
+</systurn>
+<userturn turnnum='12' starttime='127.386'>
+<rec fname='ky219x-012-090805_140408_0007666_0007769.wav' starttime='76.660' endtime='77.690'/>
+<asr>
+<asrhyp>      HUM      </asrhyp>
+<asrhyp>      HUM HUM      </asrhyp>
+<asrhyp>      UH HUM      </asrhyp>
+<asrhyp>      ER HUM      </asrhyp>
+<asrhyp>      UH HUM HUM      </asrhyp>
+<asrhyp>           </asrhyp>
+<asrhyp>      HUM UH      </asrhyp>
+<asrhyp>      ER HUM HUM      </asrhyp>
+<asrhyp>      HUM HUM HUM      </asrhyp>
+<asrhyp>      UH      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.85'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+<semihyp prob='0.07'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='13'>
+<systurn turnnum='13' starttime='127.527'>
+<dact>confreq(stars=3,area)</dact>
+<prompt starttime='127.527'> Ok, 3 stars! What part of town do you have in mind? For example something in the centre of town, or in the north, or on the riverside? </prompt>
+</systurn>
+<userturn turnnum='13' starttime='127.527'>
+<rec fname='ky219x-013-090805_140410_0007864_0007957.wav' starttime='78.640' endtime='79.570'/>
+<asr>
+<asrhyp>          NO      </asrhyp>
+<asrhyp>           </asrhyp>
+<asrhyp>      NO NO      </asrhyp>
+<asrhyp>      NO ALL      </asrhyp>
+<asrhyp>      ALL      </asrhyp>
+<asrhyp>      NO NO ALL      </asrhyp>
+<asrhyp>      NO OLD      </asrhyp>
+<asrhyp>      UH NO      </asrhyp>
+<asrhyp>      OLD      </asrhyp>
+<asrhyp>      NO NO OLD      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.67'>negate()</semihyp>
+<semihyp prob='0.24'>null()</semihyp>
+<semihyp prob='0.08'>bye()</semihyp>
+<semihyp prob='0.01'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='14'>
+<systurn turnnum='14' starttime='127.642'>
+<dact>request(area)</dact>
+<prompt starttime='127.643'> What part of town do you have in mind? For example something in the centre of town, or in the north, or on the riverside? </prompt>
+</systurn>
+<userturn turnnum='14' starttime='127.643'>
+<rec fname='ky219x-014-090805_140412_0007992_0008236.wav' starttime='79.920' endtime='82.360'/>
+<asr>
+<asrhyp>      HI AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      HI LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      HI AM I'M LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I AM I'M LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      HI I'M LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      I I'M LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      AM LOOKING FOR A RESTAURANT      </asrhyp>
+<asrhyp>      LOOKING FOR A RESTAURANT      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.69'>hello(type=restaurant)</semihyp>
+<semihyp prob='0.30'>inform(type=restaurant)</semihyp>
+<semihyp prob='0.01'>hello()</semihyp>
+<semihyp prob='0.00'>null()</semihyp>
+<semihyp prob='0.00'>negate(type=restaurant)</semihyp>
+<semihyp prob='0.00'>negate()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='15'>
+<systurn turnnum='15' starttime='127.946'>
+<dact>inform(name=none,type=restaurant,drinks!=beer,stars!=3,name!="Hotel President",name!="Hotel Primus")</dact>
+<prompt starttime='127.946'> I am sorry, but there is no restaurant that serves beer and has 3 stars </prompt>
+</systurn>
+<userturn turnnum='15' starttime='127.946'>
+<rec fname='ky219x-015-090805_140426_0009016_0009349.wav' starttime='90.160' endtime='93.490'/>
+<asr>
+<asrhyp>      IS IT FOR THE RIVERSIDE      </asrhyp>
+<asrhyp>      IS IT FOR THE RIVERSIDE           </asrhyp>
+<asrhyp>      IS IT A FOR THE RIVERSIDE      </asrhyp>
+<asrhyp>      IS THERE FOR THE RIVERSIDE      </asrhyp>
+<asrhyp>      IS IT FOR THE RIVERSIDE THERE </asrhyp>
+<asrhyp>      IS IT FOR THE RIVERSIDE      UH </asrhyp>
+<asrhyp>      IS IT FOR THE RIVERSIDE </asrhyp>
+<asrhyp>      IS IT A FOR THE RIVERSIDE           </asrhyp>
+<asrhyp>      IS THERE FOR THE RIVERSIDE           </asrhyp>
+<asrhyp>      IT IT FOR THE RIVERSIDE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.61'>confirm(area=riverside)</semihyp>
+<semihyp prob='0.16'>inform(area=riverside)</semihyp>
+<semihyp prob='0.12'>confirm()</semihyp>
+<semihyp prob='0.05'>confirm(area=riverside,near="River Jay")</semihyp>
+<semihyp prob='0.02'>null()</semihyp>
+<semihyp prob='0.01'>inform(area=riverside,near="River Jay")</semihyp>
+<semihyp prob='0.01'>confirm(near="River Jay")</semihyp>
+<semihyp prob='0.01'>reqalts(area=riverside)</semihyp>
+<semihyp prob='0.00'>inform(near="River Jay")</semihyp>
+<semihyp prob='0.00'>reqalts()</semihyp>
+<semihyp prob='0.00'>reqalts(area=riverside,near="River Jay")</semihyp>
+<semihyp prob='0.00'>reqalts(near="River Jay")</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='16'>
+<systurn turnnum='16' starttime='127.330'>
+<dact>inform(name=none,type=restaurant,area=riverside,stars=3)</dact>
+<prompt starttime='127.330'> I am sorry, but there is no restaurant that is in the riverside part of town and has 3 stars </prompt>
+</systurn>
+<userturn turnnum='16' starttime='127.330'>
+<rec fname='ky219x-016-090805_140431_0009740_0009978.wav' starttime='97.400' endtime='99.780'/>
+<asr>
+<asrhyp>      CAN      </asrhyp>
+<asrhyp>      HUM CAN      </asrhyp>
+<asrhyp>      HE CAN      </asrhyp>
+<asrhyp>      OK      </asrhyp>
+<asrhyp>      HUM HUM CAN      </asrhyp>
+<asrhyp>      HUM HE CAN      </asrhyp>
+<asrhyp>      HUM OK      </asrhyp>
+<asrhyp>      HE OK      </asrhyp>
+<asrhyp>      HERE CAN      </asrhyp>
+<asrhyp>      HEAR CAN      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.70'>null()</semihyp>
+<semihyp prob='0.23'>ack()</semihyp>
+<semihyp prob='0.03'>confirm()</semihyp>
+<semihyp prob='0.02'>inform(=dontcare)</semihyp>
+<semihyp prob='0.01'>inform(type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(=dontcare)</semihyp>
+<semihyp prob='0.00'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>ack(type=hotel)</semihyp>
+<semihyp prob='0.00'>ack(=dontcare,type=restaurant)</semihyp>
+<semihyp prob='0.00'>confirm(type=hotel)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='17'>
+<systurn turnnum='17' starttime='127.704'>
+<dact>confreq(type=restaurant,pricerange)</dact>
+<prompt starttime='127.704'> Ok, a restaurant! Would you like something in the cheap, moderate, or expensive price range? </prompt>
+</systurn>
+<userturn turnnum='17' starttime='127.704'>
+<rec fname='ky219x-017-090805_140441_0010974_0011102.wav' starttime='109.740' endtime='111.020'/>
+<asr>
+<asrhyp>          CHEAP      </asrhyp>
+<asrhyp>      CHEAP PLEASE      </asrhyp>
+<asrhyp>      CHEAP THERE      </asrhyp>
+<asrhyp>      CHEAP CHEAP      </asrhyp>
+<asrhyp>      A      </asrhyp>
+<asrhyp>      A PLEASE      </asrhyp>
+<asrhyp>      CHEAPER      </asrhyp>
+<asrhyp>      CHEAP UH      </asrhyp>
+<asrhyp>      CHEAP CHEAP PLEASE      </asrhyp>
+<asrhyp>      CHEAPER PLEASE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.91'>inform(pricerange=cheap)</semihyp>
+<semihyp prob='0.05'>null()</semihyp>
+<semihyp prob='0.04'>confirm(pricerange=cheap)</semihyp>
+<semihyp prob='0.00'>ack()</semihyp>
+<semihyp prob='0.00'>confirm()</semihyp>
+<semihyp prob='0.00'>inform(=dontcare,pricerange=cheap)</semihyp>
+<semihyp prob='0.00'>request()</semihyp>
+<semihyp prob='0.00'>inform(=dontcare)</semihyp>
+<semihyp prob='0.00'>request(pricerange=cheap)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='18'>
+<systurn turnnum='18' starttime='128.050'>
+<dact>inform(name=none,type=restaurant,area=riverside,pricerange=cheap)</dact>
+<prompt starttime='128.050'> I am sorry, but there is no restaurant that is in the riverside part of town and in the cheap price range </prompt>
+</systurn>
+<userturn turnnum='18' starttime='128.050'>
+<rec fname='ky219x-018-090805_140448_0011699_0011791.wav' starttime='116.990' endtime='117.910'/>
+<asr>
+<asrhyp>      HUM      </asrhyp>
+<asrhyp>      HUM HUM      </asrhyp>
+<asrhyp>      UH HUM      </asrhyp>
+<asrhyp>      HA      </asrhyp>
+<asrhyp>      UH HUM HUM      </asrhyp>
+<asrhyp>      HUM HA      </asrhyp>
+<asrhyp>      ER HUM      </asrhyp>
+<asrhyp>      HA HUM      </asrhyp>
+<asrhyp>      UH HA      </asrhyp>
+<asrhyp>      HUM HUM HUM      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.85'>null()</semihyp>
+<semihyp prob='0.07'>bye()</semihyp>
+<semihyp prob='0.07'>ack()</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='19'>
+<systurn turnnum='19' starttime='127.919'>
+<dact>select(type=hotel,type=restaurant)</dact>
+<prompt starttime='127.919'> Sorry would you like a hotel or a restaurant? </prompt>
+</systurn>
+<userturn turnnum='19' starttime='127.919'>
+<rec fname='ky219x-019-090805_140459_0012511_0012706.wav' starttime='125.110' endtime='127.060'/>
+<asr>
+<asrhyp>      NO THANK YOU AND SERVE      </asrhyp>
+<asrhyp>      NO UH THANK YOU AND SERVE      </asrhyp>
+<asrhyp>      NO ER THANK YOU AND SERVE      </asrhyp>
+<asrhyp>      NO UH ER THANK YOU AND SERVE      </asrhyp>
+<asrhyp>      NO THANK YOU ER SERVE      </asrhyp>
+<asrhyp>      NO UH THANK YOU ER SERVE      </asrhyp>
+<asrhyp>      NO ER THANK YOU ER SERVE      </asrhyp>
+<asrhyp>      NO UH ER THANK YOU ER SERVE      </asrhyp>
+<asrhyp>      NO THANK YOU I'M SERVE      </asrhyp>
+<asrhyp>      NO UH THANK YOU I'M SERVE      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.41'>negate(pricerange=expensive)</semihyp>
+<semihyp prob='0.28'>bye(pricerange=expensive)</semihyp>
+<semihyp prob='0.15'>negate()</semihyp>
+<semihyp prob='0.09'>bye()</semihyp>
+<semihyp prob='0.04'>inform(pricerange=expensive)</semihyp>
+<semihyp prob='0.02'>thankyou(pricerange=expensive)</semihyp>
+<semihyp prob='0.01'>null()</semihyp>
+<semihyp prob='0.00'>negate(type=hotel)</semihyp>
+<semihyp prob='0.00'>negate(pricerange=expensive,type=hotel)</semihyp>
+<semihyp prob='0.00'>bye(type=hotel)</semihyp>
+<semihyp prob='0.00'>bye(pricerange=expensive,type=hotel)</semihyp>
+<semihyp prob='0.00'>thankyou()</semihyp>
+<semihyp prob='0.00'>inform(type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(pricerange=expensive,type=hotel)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='20'>
+<systurn turnnum='20' starttime='127.627'>
+<dact>confirm(area=riverside,stars=4)</dact>
+<prompt starttime='127.627'> Let me confirm, you are looking for a venue in the riverside part of town, with 4 stars? </prompt>
+</systurn>
+<userturn turnnum='20' starttime='127.627'>
+<rec fname='ky219x-020-090805_140511_0013834_0014008.wav' starttime='138.340' endtime='140.080'/>
+<asr>
+<asrhyp>      NO I'M I'M      </asrhyp>
+<asrhyp>      NO I I'M I'M      </asrhyp>
+<asrhyp>      NO AM I'M      </asrhyp>
+<asrhyp>      NO I'M GO      </asrhyp>
+<asrhyp>      NO I AM I'M      </asrhyp>
+<asrhyp>      NO I I'M GO      </asrhyp>
+<asrhyp>      NO AM GO      </asrhyp>
+<asrhyp>      NO I'M I'M I'M      </asrhyp>
+<asrhyp>      NO I'M GOING      </asrhyp>
+<asrhyp>      NO I AM GO      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.74'>negate()</semihyp>
+<semihyp prob='0.11'>null()</semihyp>
+<semihyp prob='0.09'>negate(type=hotel)</semihyp>
+<semihyp prob='0.02'>bye()</semihyp>
+<semihyp prob='0.02'>inform(type=hotel)</semihyp>
+<semihyp prob='0.01'>negate(=dontcare)</semihyp>
+<semihyp prob='0.01'>bye(type=hotel)</semihyp>
+<semihyp prob='0.00'>negate(=dontcare,type=hotel)</semihyp>
+<semihyp prob='0.00'>inform(=dontcare)</semihyp>
+<semihyp prob='0.00'>inform(=dontcare,type=hotel)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='21'>
+<systurn turnnum='21' starttime='127.749'>
+<dact>confirm(pricerange=cheap,stars=3)</dact>
+<prompt starttime='127.749'> Let me confirm, you are looking for a venue in the cheap price range, with 3 stars? </prompt>
+</systurn>
+<userturn turnnum='21' starttime='127.749'>
+<rec fname='ky219x-021-090805_140527_0015198_0015468.wav' starttime='151.980' endtime='154.680'/>
+<asr>
+<asrhyp>      NO I AM COMPLETE THANK YOU      </asrhyp>
+<asrhyp>      NO I AM COMPLETE THANK YOU           </asrhyp>
+<asrhyp>      NO I AM COMPLETE THANK YOU HUM </asrhyp>
+<asrhyp>      NO I AM COMPLETE THANK YOU HUM      </asrhyp>
+<asrhyp>      NO I I'M COMPLETE THANK YOU      </asrhyp>
+<asrhyp>      NO AM COMPLETE THANK YOU      </asrhyp>
+<asrhyp>      NO I I'M COMPLETE THANK YOU           </asrhyp>
+<asrhyp>      NO I I'M COMPLETE THANK YOU HUM </asrhyp>
+<asrhyp>      NO AM COMPLETE THANK YOU           </asrhyp>
+<asrhyp>      NO AM COMPLETE THANK YOU HUM </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.61'>negate()</semihyp>
+<semihyp prob='0.30'>bye()</semihyp>
+<semihyp prob='0.09'>thankyou()</semihyp>
+<semihyp prob='0.00'>negate(=dontcare)</semihyp>
+<semihyp prob='0.00'>thankyou(=dontcare)</semihyp>
+<semihyp prob='0.00'>bye(=dontcare)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='22'>
+<systurn turnnum='22' starttime='127.757'>
+<dact>inform(name=none,type=hotel,drinks=beer)</dact>
+<prompt starttime='127.757'> I am sorry, but there is no hotel that serves beer </prompt>
+</systurn>
+<userturn turnnum='22' starttime='127.757'>
+<rec fname='ky219x-022-090805_140535_0016343_0016446.wav' starttime='163.430' endtime='164.460'/>
+<asr>
+<asrhyp>          ER ER A      </asrhyp>
+<asrhyp>      ER ER      </asrhyp>
+<asrhyp>      AH A      </asrhyp>
+<asrhyp>      UH A      </asrhyp>
+<asrhyp>      BAR A      </asrhyp>
+<asrhyp>      ER ER A      </asrhyp>
+<asrhyp>      I A      </asrhyp>
+<asrhyp>      ER I A      </asrhyp>
+<asrhyp>      AH ER      </asrhyp>
+<asrhyp>      UH ER      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.73'>null()</semihyp>
+<semihyp prob='0.24'>ack()</semihyp>
+<semihyp prob='0.02'>bye()</semihyp>
+<semihyp prob='0.01'>inform(type=bar)</semihyp>
+<semihyp prob='0.00'>ack(type=bar)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='23'>
+<systurn turnnum='23' starttime='127.673'>
+<dact>request(near)</dact>
+<prompt starttime='127.673'> Are you looking for a venue near a specific location? For example, near the cinema, or near the park? Otherwise, please say, I dont care! </prompt>
+</systurn>
+<userturn turnnum='23' starttime='127.673'>
+<rec fname='ky219x-023-090805_140545_0017177_0017370.wav' starttime='171.770' endtime='173.700'/>
+<asr>
+<asrhyp>      IS IT      </asrhyp>
+<asrhyp>      IS THERE      </asrhyp>
+<asrhyp>      ER IS IT      </asrhyp>
+<asrhyp>      IS IT           </asrhyp>
+<asrhyp>      IS IT A </asrhyp>
+<asrhyp>      UH IS IT      </asrhyp>
+<asrhyp>      ER IS THERE      </asrhyp>
+<asrhyp>      IS THERE           </asrhyp>
+<asrhyp>      IS THERE A </asrhyp>
+<asrhyp>      ER IS IT           </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.55'>null()</semihyp>
+<semihyp prob='0.38'>confirm()</semihyp>
+<semihyp prob='0.03'>inform(near)</semihyp>
+<semihyp prob='0.02'>request()</semihyp>
+<semihyp prob='0.02'>confirm(near)</semihyp>
+<semihyp prob='0.00'>request(near)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='24'>
+<systurn turnnum='24' starttime='127.830'>
+<dact>confirm(pricerange=moderate,stars=3)</dact>
+<prompt starttime='127.830'> Let me confirm, you are looking for a venue in the moderate price range, with 3 stars? </prompt>
+</systurn>
+<userturn turnnum='24' starttime='127.830'>
+<rec fname='ky219x-024-090805_140552_0017671_0018030.wav' starttime='176.710' endtime='180.300'/>
+<asr>
+<asrhyp>      OK GOODBYE ER TO HUM      </asrhyp>
+<asrhyp>      OK GOODBYE A TO HUM      </asrhyp>
+<asrhyp>      OK GOODBYE ER HUM      </asrhyp>
+<asrhyp>      OK GOODBYE A HUM      </asrhyp>
+<asrhyp>      GOODBYE ER TO HUM      </asrhyp>
+<asrhyp>      GOODBYE A TO HUM      </asrhyp>
+<asrhyp>      OK IT GOODBYE ER TO HUM      </asrhyp>
+<asrhyp>      GOODBYE ER HUM      </asrhyp>
+<asrhyp>      OK IT GOODBYE A TO HUM      </asrhyp>
+<asrhyp>      GOODBYE A HUM      </asrhyp>
+</asr>
+<semi>
+<semihyp prob='0.43'>bye()</semihyp>
+<semihyp prob='0.31'>ack()</semihyp>
+<semihyp prob='0.20'>null()</semihyp>
+<semihyp prob='0.03'>confirm()</semihyp>
+<semihyp prob='0.01'>bye(stars=2)</semihyp>
+<semihyp prob='0.01'>request()</semihyp>
+<semihyp prob='0.01'>ack(stars=2)</semihyp>
+<semihyp prob='0.01'>inform(stars=2)</semihyp>
+<semihyp prob='0.00'>confirm(stars=2)</semihyp>
+<semihyp prob='0.00'>request(stars=2)</semihyp>
+</semi>
+</userturn>
+</turn>
+<turn turnnum='25'>
+<systurn turnnum='25' starttime='128.196'>
+<dact> bye() </dact>
+<prompt starttime='128.196'> Thank you, goodbye </prompt>
+</systurn>
+<userturn turnnum='25' starttime='128.196'>
+</userturn>
+</turn>
+</dialog>
