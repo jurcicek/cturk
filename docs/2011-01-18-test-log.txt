@@ -1,0 +1,73 @@
+已完成 DONE
+未完成 TODO
+
+ISS-025 LOW CONTRAST OF SOME TEXT WITH THE BACK GROUND(DONE)
+
+ISS-026 INACTIVE HITGROUPS SHOULD BE RENAMED TO EXPIRED HITGROUPS(DONE)
+
+ISS-027 REMOVE AND RENAME SOME SORTING OPTIONS
+Remaining HITs改名为HITs Available；去掉Max HITs项 – 东菊(DONE)
+这个Maximum number of HITs a worker can complete，要在发布HIT的脚本中有实现，可以通过命令行设置。-- 志远(TODO)
+
+ISS-027 CHANGE “HITS COMPLETE” TO “HITS COMPLETED”(DONE)
+
+ISS-028 RENAME “HITS REMAINING” TO “HITS AVAILABLE”(DONE)
+
+ISS-029 WHAT IS THE MEANING OF “ASSIGNMENTS AMOUNT: 1” ON HITGROUP SUMMARY(DONE)
+一个HIT对应一个或多个assignment，用户accept一个HIT就会生成一个assignment。
+assignment过期或者被拒绝，对应的HIT状态会变为Published (如果HIT过期则状态变为Expired)
+目前maxHITs是在hitGroup中设置的，当前用户是否能accept某个hit，就是检查该用户在这个hitGroup的assignment的数量
+
+ISS-030 PAGE ”VIEW HIT DETAILS” DOES NOT HAVE A TITLE (HEADING)(DONE)
+
+ISS-031 ADD EXPLANATION FOR MESSAGE “MAXHITS REACHED”.(DONE)
+
+ISS-032 THE MAIN MENU IS NOT CENTRED(DONE)
+
+ISS-033 THE USERNAME SHOULD BE CLICKABLE AND CLICKING SHOULD TRANSFER THE REQUESTOR TO THE PAGE WITH DETAILS OF A USER.(DONE)
+
+ISS-034 TRIM THE WHITE SPACES FROM THE BEGINNING AND END OF A EMAIL ADDRESS USED FOR LOGGING(DONE)
+
+ISS-035 APART FROM THE USER NAME PRINT ALSO THE NAME AND THE SURNAME(DONE)
+
+ISS-036 CHANGE THE MESSAGE “NO AVAILABLE HIT” TO “THERE ARE NO AVAILABLE HITS AT THIS MOMENT”(DONE)
+
+ISS-037 MISSING INTERFACE FOR “REQ-003 CREATING A GROUP OF HITS”(TODO)
+
+ISS-038 DISCREPANCY BETWEEN PENDING PAYMENTS AND LAST REQUESTED PAYMENTS(DONE)
+当前requester发布的HIT可能由很多worker来完成，
+Pending Payments是指当前requester总共需要给所有的worker付款多少，
+而worker手动requestPayment，才显示在Requested Payment detials这个列表中。
+换句话说，
+Pending Payments应该等于Approved Assignments列表中所有HIT的reward总和；
+如果每个worker都requestPayment，那么requester主页看到的Pending Payments应该等于Requested Payment detials这个列表中Amount的总和
+
+ISS-039 ONLY WHEN A HIT IS REJECTED, A FEEDBACK HAS TO BE PROVIDED(DONE)
+
+ISS-040 PRINT ALSO REWARD FOR LISTED HITS(DONE)
+显示了当前页面assignment的总价和每个assignment的价格
+
+ISS-041 MISSING FEATURE REQ-101 INVITITATION FOR A WORKER(TODO)
+
+ISS-042 MISSING FEATURE REQ-106 MESSAGE TO WORKERS(TODO)
+
+ISS-043 MISSING FEATURE “REQ-203 LIST OF HITS SUBMITTED BY A WORKER”. ADD A LIST OF SUBMITED HITS(DONE)
+
+ISS-044 MISSING FEATURE “REQ-807 DEFAULT CURRENCY”(TODO)
+目前统一使用USD，在requesters_controller.php的 payReceipt方法中，没有提取到配置文件中去
+
+ISS-045 YOU HAVE NOT EXPLAINED TO ME THE ISS-011 AND ISS-023 ISSUES 
+You remail:
+011 Describe difference between AccountState and Account Activity
+023 EXPLAIN THE “ACTIVE STATUS” AND “ENABLE STATUS”
+ -- Not sure how to display the help message.
+
+用户账户的Active和Enable状态说明：
+Active Status: Active || Inactive
+Enable Status: Enable || Disable
+Inactive的worker不可以登陆，
+Diabled的worker可以登陆，但不能acceptHIT。
+cturk-task3版本使用Account Activity 和 Account State 来描述这两个字段，
+cturk-task4版本统一改为Active Status 和 Enable Status
+
+

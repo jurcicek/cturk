@@ -1,0 +1,158 @@
+========================================
+1. Deploy cturk-task4 from spetechcular.com aid201004 SVN repository
+========================================
+Targeting folder: /home/ping/public_html/cturk-task4
+Correspondong HTTP URL: http://camdial.org/~ping/cturk-task4
+Web service URL: http://camdial.org/~ping-cturk4-server/
+
+* Enter the targeting folder
+cd /home/ping/public_html/cturk-task4
+
+* Checkout source codes
+svn co https://spetechcular.com/svn/aid201004/branches/task4 .
+
+* Set up Apache
+Start rewrite module and set
+	Options FollowSymLinks MultiViews
+	AllowOverride All
+	
+* Set up CakePHP
+edit cturk/server/config/core.php 
+	/**
+	 * If you are on PHP 5.3 uncomment this line and correct your server timezone
+	 * to fix the date & time related errors.
+	 */
+	//date_default_timezone_set('UTC');
+
+edit cturk/server/webroot/index.php
+
+	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'ping' . DS . 'public_html' . DS . 'cturk-task4' . DS . 'cturk' . DS . 'CakePHP');
+(Note: CAKE_CORE_INCLUDE_PATH defines where CakePHP framework locates)
+
+* Assign read and write right to cturk/server/tmp
+	cd cturk/server
+	chmod -R 777 tmp/
+
+* Assign mod 755 to cturk/server/webroot
+
+	cd cturk/server
+	chmod -R 755 webroot/
+
+* Setup Database, using SQL scripts finding @ docs/cturk20101231.sql
+(Note: All CakePHP databases start with cturk4_)
+
+* Setup Database parameters
+edit cturk/server/config/database.php
+(Note: Having the following user)
+	user_type registered_email password
+	requester midfar@qq.com  admin
+	requester admin@midfar.com  admin
+	worker midfar@vip.qq.com  admin
+
+* Setup application parameters
+edit cturk/server/app_controller.php
+Including: SMTP mail server settings, Paypal API settings, and Page redirection settings
+(Note: $RESET_PASSWORD_LINK is the HTML page for resetting password, appearing in the mail to reset the password.)
+(Note: $PAY_RETURN_LINK is the redirection page when PayPal payment accomplished.)
+
+* edit cturk/client/static/js/ui1/Config.js and cturk/client/form/static/js/Config.js
+	ajaxUrlPrefix: "/~ping/cturk-task4/cturk/server/webroot"
+(Note: ajaxUrlPrefix is the Web service URL, without host)
+
+
+* edit 
+/cturk/client/form/worker/externalSubmit
+/cturk-transcriber/wwwroot/start.html
+/cturk-transcriber/wwwroot/start2.html
+
+	<form id="dynamicTableForm" method="POST" action="http://camdial.org/~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit">
+
+* Edit cturk/server/webroot/.htaccess
+Add the following:
+	RewriteBase /~ping/cturk-task4/cturk/server/webroot
+So .htaccess should look like:
+
+	<IfModule mod_rewrite.c>
+	  RewriteEngine On
+	  RewriteBase /~ping/cturk-task4/cturk/server/webroot
+	  RewriteCond %{REQUEST_FILENAME} !-d
+	  RewriteCond %{REQUEST_FILENAME} !-f
+	  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+	</IfModule>
+
+* You need to restart apache at the point
+	sudo /etc/init.d/apache2 restart
+
+* visit the following address, you should see the configuration page of CakePHP, but without css styled.
+	http://camdial.org/~ping/cturk-task4/cturk/server/webroot
+
+
+* Access CTurk application @ http://camdial.org/~ping/cturk-task4/cturk/client/
+
+========================================
+2. Requester publishes HITs to CTurk
+========================================
+* Manually publish HITs (for testing)
+Log in to CTurk as requester @ http://camdial.org/~ping/cturk-task4/cturk/client/
+Access: http://camdial.org/~ping/cturk-task4/cturk/client/form/requester/createHIT.html
+(Note: Firebug (for Firefox ) console prints out "Create a new hit success.")
+
+* Using PERL scripts to publish HITs
+In total we need to make changes to 4 files for cturk-transcriber. For easy deply to camdial~ping:
+	cd /cturk-transcriber
+	bash switch2ping
+
+Detailed changes as the following:
+
+cd /cturk-transcriber/docs
+
+edit config.xml
+	  <username>admin@midfar.com</username>
+        <password>admin</password>
+        <webServiceUrl>http://localhost/~ping/cturk-task4/cturk/server/webroot</webServiceUrl>
+        <resourceRoot>/home/ping/public_html/cturk-task4/cturk-transcriber/resources</resourceRoot>
+        <webappRoot>/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot</webappRoot>
+        <webappUrl>http://camdial.org/~ping/cturk-task4/cturk-transcriber/wwwroot</webappUrl>
+        <transcriptionPrice>0.04</transcriptionPrice>
+        <validationPrice>4</validationPrice>
+        <mysql>
+                <dbHost>localhost</dbHost>
+                <dbName>cturk</dbName>
+                <dbUser>cturk</dbUser>
+                <dbPwd>lccturk</dbPwd>
+                <dbPort>3306</dbPort>
+                <dbPrefix>cturk_</dbPrefix>
+        </mysql>
+
+(Note: camdial does not allow visiting itself from the public domain, so webServiceUrl is set to http://localhost/~ping/cturk-task4/cturk/server/webroot)	
+
+edit cturk-transcriber/wwwroot/start.html and cturk-transcriber/wwwroot/start.html/start2.html
+	<form id="dynamicTableForm" method="POST" action="/~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit">
+
+for the first usage, edit cturk-transcriber/docs/publish.sh
+	WEB_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot";
+	DOC_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/docs";
+(Note: WEB_ROOT is cturk-transcriber's wwwroot path. DOC_ROOT is cturk-transcriber's doc path)
+
+Publish HITs
+	bash publish.sh $1 $2
+(Note: $1 is the folder contains audio files to be transcribed. $3 is the folder contains the standard transcribes. e.g.:)
+	bash publish.sh /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/raw_100812/ /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/ref_100812/
+(Note: Every published HIT is assigned to HITGroups according to some same properties. Every HIT has none or multiple assignments.)
+
+========================================
+3. Worker accomplishes HITs on CTurk
+worker在Cturk完成HIT的流程
+========================================
+Visit http://camdial.org/~ping/cturk-task4/cturk/client/
+Log in as a Worker
+Click HITs menu
+Click View a HIT in this group
+Click Accept HIT to accomplish HITs
+Click Accepted HITs to see the full list of accepted but yet submitted HITs
+
+========================================
+4. Requester checks HITs
+========================================
+Log in CTurk as requester
+Click Assignments Menu

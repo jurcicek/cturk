@@ -1,0 +1,62 @@
+2011-01-14 安装记录
+
+安装php5-curl 模块
+sudo apt-get install php5-curl
+
+增加apache虚拟目录
+
+sudo vi /etc/apache2/sites-available/default
+在 /var/www 的定义后面增加以下部分：
+======
+#Alias /~ping-cturk4-server "/home/ping/public_html/cturk-task4/cturk/server/webroot"
+#<Directory "/home/ping/public_html/cturk-task4/cturk/server/webroot">
+#    Options Indexes FollowSymLinks MultiViews
+#    AllowOverride All
+#    Order allow,deny
+#    Allow from all
+#</Directory>
+======
+修改 /cturk/server/webroot/.htaccess
+增加以下这行
+RewriteBase /~ping/cturk-task4/cturk/server/webroot
+那么你的.htaccess文件应该类似于下面的样子
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #RewriteBase /~ping-cturk4-server
+  RewriteBase /~ping/cturk-task4/cturk/server/webroot
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+重启apache
+sudo /etc/init.d/apache2 restart
+
+此时，访问以下地址，应该能看到后台的CakePHP配置信息页面，但没有css效果
+http://camdial.org/~ping/cturk-task4/cturk/server/webroot
+以下地址是前端html页面地址
+http://camdial.org/~ping/cturk-task4/cturk/client/
+
+然后根据faqs.txt 的描述进行配置
+
+
+最后，需要安装dos2unix 工具，将windows格式的文件转换为linux格式
+========
+Yet another "feature" from the developers of ubuntu to simplify life. "dos2unix" and "unix2dos" are missing in version 10.04 (Lucid).
+
+First of all, install dos2unix package:
+
+sudo aptitude install tofrodos
+
+Then if you want "dos2unix" type "fromdos" and if you want "unix2dos", type "todos". If you have a habit of typing in the old commands, its best to create links.
+
+Go to /usr/bin:
+
+username@linuxbox:/usr/bin# sudo ln -s fromdos dos2unix
+username@linuxbox:/usr/bin# sudo ln -s todos unix2dos
+========
+然后在cturk-transcriber/docs/cmd 目录下执行命令
+dos2unix *.sh
+
+
+

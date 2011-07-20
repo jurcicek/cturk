@@ -1,0 +1,167 @@
+========================================
+1. 从spetechcular.com aid200104 SVN repository 向camdial部署cturk-task4的流程
+========================================
+假定项目目录为 /home/ping/public_html/cturk-task4
+对应的http地址为 http://camdial.org/~ping/cturk-task4
+后台服务的地址为 http://camdial.org/~ping/cturk-task4/cturk/server/webroot
+
+■进入目录
+cd /home/ping/public_html/cturk-task4
+
+■svn checkout
+svn co https://spetechcular.com/svn/aid201004/branches/task4 .
+
+■配置apache
+开启rewrite模块，并且设置
+Options FollowSymLinks MultiViews
+AllowOverride All
+
+■配置CakePHP参数
+/cturk/server/config/core.php 
+/**
+ * If you are on PHP 5.3 uncomment this line and correct your server timezone
+ * to fix the date & time related errors.
+ */
+//date_default_timezone_set('UTC');
+
+/cturk/server/webroot/index.php
+CAKE_CORE_INCLUDE_PATH 定义了CakePHP框架所在的位置
+define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'ping' . DS . 'public_html' . DS . 'cturk-task4' . DS . 'cturk' . DS . 'CakePHP');
+
+cturk/server/tmp 目录需要读写执行权限
+cd cturk/server
+chmod -R 777 tmp/
+
+cturk/server/webroot/ 目录需要755权限
+chmod -R 755 webroot/
+
+■创建数据库，使用sql脚本
+/docs/cturk20110125.sql
+CakePHP使用的数据库表名都是以【cturk4_】开头的
+
+■配置数据库参数
+/cturk/server/config/database.php
+
+■配置项目参数
+/cturk/server/app_controller.php
+包括SMTP邮件服务器配置、PAYPAL API配置、页面跳转配置
+注意要修改以下参数：
+$RESET_PASSWORD_LINK 发送重置密码邮件中会出现的重置密码地址。
+http://camdial.org/~ping/cturk-task4/cturk/client/resetPassword.html
+$PAY_RETURN_LINK paypal支付完成后的返回链接。
+http://camdial.org/~ping/cturk-task4/cturk/client/requester/index.html
+
+/cturk/client/static/js/ui1/Config.js
+/cturk/client/form/static/js/Config.js
+ajax请求的url前缀地址，改为 /~ping/cturk-task4/cturk/server/webroot
+
+/cturk/client/form/worker/externalSubmit.html
+/cturk-transcriber/wwwroot/start.html
+/cturk-transcriber/wwwroot/start2.html
+表单POST的url地址 http://camdial.org/~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit
+
+修改cturk/client/form/requester/createHIT.html
+input标签name="url"的value值为
+http://camdial.org/~ping/cturk-task4/cturk/client/form/worker/externalSubmit.html
+
+修改 /cturk/server/webroot/.htaccess
+增加以下这行
+RewriteBase /~ping/cturk-task4/cturk/server/webroot
+那么你的.htaccess文件应该类似于下面的样子
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /~ping/cturk-task4/cturk/server/webroot
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+在cturk-transcriber/docs 目录下执行命令
+dos2unix *.sh
+
+在cturk-transcriber/docs/cmd 目录下执行命令
+dos2unix *.sh
+
+■访问http://camdial.org/~ping/cturk-task4/cturk/client/
+
+========================================
+2. requester向Cturk发布HIT的流程
+========================================
+■手动发布HIT
+http://camdial.org/~ping/cturk-task4/cturk/client/
+在这个页面以requester登录
+访问http://camdial.org/~ping/cturk-task4/cturk/client/form/requester/createHIT.html
+可以在控制台看到创建成功或失败的信息
+
+■使用perl脚本自动发布HIT
+cd /cturk-transcriber/docs
+
+config.xml配置文件的如下参数：
+webServiceUrl 改为http://camdial.org/~ping/cturk-task4/cturk/server/webroot
+注意：这里camdial主机不允许自己访问自己，所以改为 http://localhost/~ping/cturk-task4/cturk/server/webroot
+resourceRoot
+改为/home/ping/public_html/cturk-task4/cturk-transcriber/resources
+webappRoot
+改为/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot
+webappUrl
+改为http://camdial.org/~ping/cturk-task4/cturk-transcriber/wwwroot
+
+修改 /cturk-transcriber/wwwroot 的 start.html 和 start2.html 
+文件中form表单的POST地址为 /~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit
+
+第一次使用，需要修改/cturk-transcriber/docs/publish.sh 的参数
+WEB_ROOT 为cturk-transcriber的网站目录地址
+DOC_ROOT 为cturk-transcriber的docs目录地址
+WEB_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot";
+DOC_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/docs";
+
+发布HIT使用如下命令
+bash publish.sh $1 $2
+其中$1为需要用户评分的目录，$2为标准音频的目录
+例如
+bash publish.sh /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/raw_100812/ /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/ref_100812/
+
+
+发布的每一个HIT会自动分配到具有某些相同属性的HITGroups，
+每一个HITs会有0个或多个assignment与之对应。
+========================================
+3. worker在Cturk完成HIT的流程
+========================================
+进入 http://camdial.org/~ping/cturk-task4/cturk/client/
+以worker登录，点击【HITs】菜单，会出现目前可用的HITs列表；
+点击【View a HIT in this group】链接，进入HIT预览页面；
+点击【Accept HIT】按钮，即接受了这个HIT任务。3秒钟后进入HIT页面。
+点击【Accepted HITs】菜单可以查看当前用户已经接受了还未完成的HIT。
+
+========================================
+4. requester在CTurk检查HIT的流程
+========================================
+最便捷的操作：直接点击【Assignments】菜单，
+可以看到当前requester发布的所有HIT对应的Assignments状态。下拉菜单
+【Accepted】Assignments
+ 列表显示了worker接受了但还未提交数据的assignment，等待worker提交数据。
+ 如果超过一定的时间会自动过期，worker手动return HIT也会在这个列表中。
+【Submitted】Assignments
+ 列表显示了有worker提交数据但还未处理的assignment，需要requester做approve或reject操作。
+【Approved】Assignments
+ 已经approved的assignment，等待requester付款。
+【Rejected】Assignments
+ 已经rejected的assignment。
+【Closed】Assignments
+ 已经close的assignment，表明对应的HIT已经付款。
+【Expired】Assignments
+ 已经expired的assignment，表明对应的HIT已经过期。
+
+========================================
+5. requester向worker付费的流程
+========================================
+有多个付费入口：
+如果worker手动提交了付费申请，则会在requester的【My Account】页面展示出来;
+在【Assignments】菜单点击【Pay】进行单个付费；
+在【Assignments】菜单点击【Pay Selected】进行批量付费；
+在 HIT Details 页面的 Assignments List 选择指定的assignment来单个付费。
+点击【Pay】按钮后都会提示输入付费账号，然后进入paypal付费流程。
+注意：
+paypal付费帐号必须不能与任何一个paypal收费帐号相同，否则paypal会报API错误。
+付费完成后必须等待paypal页面跳转，网站的数据才会更新。
+
