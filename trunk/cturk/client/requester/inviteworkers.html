@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Invite workers</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/InviteWorkers.js"></script>
+</head>
+<body class="requester inviteWorkers">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write();
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div class="commonPanel registerPanel">
+                                <div class="commonTitle">
+                                    Invite a worker
+                                </div>
+                                <form id="form1" name="form1" method="post" action="">
+                                    <div class="error registerError">
+                                    </div>
+                                    <table width="90%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td width="180px">
+                                                <span class="text-title">User Name *</span>
+                                            </td>
+                                            <td>
+                                                <input class="input" type="text" name="username" value="" title="Username" required="true" /><span class="grey">Used for CTurk to identify theirselves</span>
+                                                <br/>
+                                                <div class="error usernameError">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Title *</span>
+                                            </td>
+                                            <td>
+                                                <select class="input" name="title" title="Title" required="true">
+                                                    <option value="Mr.">Mr.</option>
+                                                    <option value="Mrs.">Mrs.</option>
+                                                    <option value="Miss.">Miss.</option>
+                                                    <option value="Ms.">Ms.</option>
+                                                    <option value="Dr.">Dr.</option>
+                                                </select>
+                                                <br/>
+                                                <div class="error titleError">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">First Name *</span>
+                                            </td>
+                                            <td>
+                                                <input class="input" type="text" name="firstname" value="" title="First Name" required="true" />
+                                                <br/>
+                                                <div class="error firstnameError">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Surname *</span>
+                                            </td>
+                                            <td>
+                                                <input class="input" type="text" name="surname" value="" title="Surname" required="true" />
+                                                <br/>
+                                                <div class="error surnameError">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Gender *</span>
+                                            </td>
+                                            <td>
+                                                <select class="input" name="sex" title="Gender" required="true">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                                <br/>
+                                                <div class="error sexError">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Building Name</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="buildingName" value="" /><span class="grey">As the payment information for CTurk to issue invoice</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Street Name</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="streetName" value="" /><span class="grey">As the payment information for CTurk to issue invoice</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">City Name</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="cityName" value="" /><span class="grey">As the payment information for CTurk to issue invoice</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="text-title">Postcode</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="postcode" value="" /><span class="grey">As the payment information for CTurk to issue invoice</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="Create Invitation Link" /><span style="padding:0 10px;"></span>
+                                                <input type="button" value="Cancel" onclick="location.href='index.html';"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div id="inviteLinkDiv" class="hidden">
+                                                    <div class="name">
+                                                        Please copy the following link: 
+                                                    </div>
+                                                    <div class="value highlight">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <div class="copyright">
+                    </div>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

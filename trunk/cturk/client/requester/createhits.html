@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Create HITs</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterCreateHits.js"></script>
+</head>
+<body class="requester requesterCreateHits">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write();
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <div class="commonTitle">
+                                Create a HIT
+                            </div>
+                            <br/>
+                            <form id="form1" name="form1" method="post" action="">
+                                <table width="90%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="180px">
+                                            <span class="text-title">Name *</span>
+                                        </td>
+                                        <td >
+                                            <input style="width: 60%;" type="text" name="name" value="" class="textBox required" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height:110px;">
+                                            <span class="text-title">Description *</span>
+                                        </td>
+                                        <td>
+                                            <textarea name="description" class="required" rows="2" cols="50" style="width:60%; height:100px;"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Currency code</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="currencyCode" value="" class="textBox" /> (USD, GBP, EUR....)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Reward *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="reward" value="" class="textBox required" /> (a floating point number)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Expire date *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" id="expireDateCalendar" type="text" name="expireDate" value="" class="textBox required" /> (yyyy/mm/dd HH:MM)
+                                            <div>
+                                                Time zone:<script type="text/javascript">
+                                                    var tzo = (new Date().getTimezoneOffset() / 60) * (-1);
+                                                    if (tzo > 0) {
+                                                        tzo = "+" + tzo;
+                                                    }
+                                                    document.write(tzo);
+                                                </script>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Assignment time *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="assignmentTime" value="" class="textBox required" /> (time available to a worker for completing the HIT in seconds)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Auto approval time *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="autoApprovalTime" value="" class="textBox required" /> (a period after which the HIT is appereved automatically in seconds)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Max HITs</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="maxHits" value="" class="textBox" /> (a maximum number of HITs that can be submitted by a single worker)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">URL *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="url" value="" class="textBox required" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="text-title">Frame height *</span>
+                                        </td>
+                                        <td>
+                                            <input style="width: 60%;" type="text" name="frameHeight" value="" class="textBox required" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <input type="submit" value="Submit" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div><!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <div class="copyright">
+                    </div>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

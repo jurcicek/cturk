@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - HITs</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/jquery/pagination/pagination.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/jquery.pagination.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/MFPagination.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<!-- util --><script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterHits.js"></script>
+</head>
+<body class="requester requesterHits">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write("HITs");
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div id="summaryInfo" class="summaryInfo">
+                                <h3>HITs summary</h3>
+                                <dl>
+                                    <dt>
+                                        Group Name: 
+                                    </dt>
+                                    <dd>
+                                        <span class="groupName"></span>
+                                    </dd>
+                                    <dt>
+                                        Completed HITs:
+                                    </dt>
+                                    <dd>
+                                        <span class="completedHits"></span>
+                                    </dd>
+                                    <dt>
+                                        Submitted Assignments (Need approval):
+                                    </dt>
+                                    <dd>
+                                        <span class="submittedAssignments"></span>
+                                    </dd>
+                                    <dt>
+                                        Approved Assignments (Waiting for payment):
+                                    </dt>
+                                    <dd>
+                                        <span class="approvedAssignments"></span>
+                                    </dd>
+                                    <dt>
+                                        Rejected Assignments:
+                                    </dt>
+                                    <dd>
+                                        <span class="rejectedAssignments"></span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="50%">
+                                        <span id="hitGroupPaginatorText"></span>
+                                    </td>
+                                    <td>
+                                        <div id="hitGroupPaginator">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text">Sort by: </span>
+                                        <select id="groupSortType">
+                                            <option value="Hit.name ASC">HIT Name (A-Z)</option>
+                                            <option value="Hit.name DESC">HIT Name (Z-A)</option>
+                                            <option value="Hit.publishDate ASC">Publish Date (earliest first)</option>
+                                            <option value="Hit.publishDate DESC">Publish Date (latest first)</option>
+                                            <option value="Hit.expireDate ASC">Expiration Date (soonest first)</option>
+                                            <option value="Hit.expireDate DESC">Expiration Date (latest first)</option>
+                                            <option value="Hit.reward ASC">Reward Amount (least first)</option>
+                                            <option value="Hit.reward DESC">Reward Amount (most first)</option>
+                                            <option value="Hit.state ASC">HIT state (A-Z)</option>
+                                            <option value="Hit.state DESC">HIT state (Z-A)</option>
+                                        </select>
+                                        <input id="groupSortButton" type="image" src="images/go-button-gateway.gif" style="vertical-align:middle;"/>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <div id="hitGroupList" class="hitGroupList hitList">
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="RequesterFooter.js"></script>
+                    <script type="text/javascript">
+                        RequesterFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

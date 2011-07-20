@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>worker logout</title>
+<script type="text/javascript"
+	src="../static/js/Config.js"></script>
+<script type="text/javascript"
+	src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#form1").unbind("submit").submit(function() {
+			$.ajax( {
+				url : Config.ajaxUrlPrefix + "/workers/logout",
+				type : "POST",
+				data : $("#form1").serialize(),
+				dataType : "json",
+				success : function(o) {
+					console.log(o.info);
+				}
+			});
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+<ul>
+	<li><input type="submit" value="submit" /></li>
+</ul>
+</form>
+</body>
+</html>

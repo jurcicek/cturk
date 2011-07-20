@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Login</title>
+<!-- css -->
+<link href="static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<!-- config --><script type="text/javascript" src="static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="static/js/ui1/ajax/Ajax.js"></script>
+<script type="text/javascript" src="static/js/ui1/page/Index.js"></script>
+</head>
+<body class="anonymous login">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <div class="headerContent">
+                        <a href="register.html" class="link registerLink">Register</a>
+                    </div>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div class="commonPanel loginPanel">
+                                <div class="commonTitle">
+                                    Log in
+                                </div>
+                                <form id="loginForm" name="loginForm" class="loginForm" method="post" action="">
+                                    <div class="error loginError">
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            Log in as
+                                        </dt>
+                                        <dd>
+                                            <input type="radio" name="type" value="requesters"/>Requester <input type="radio" name="type" value="workers" checked="checked"/>Worker
+                                        </dd>
+                                        <dt>
+                                            Username
+                                        </dt>
+                                        <dd>
+                                            <input type="text" name="username" value="" class="input"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="usernameError error"></span>
+                                        </dd>
+                                        <dt>
+                                            Password
+                                        </dt>
+                                        <dd>
+                                            <input type="password" name="password" value="" class="input"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="passwordError error"></span>
+                                        </dd>
+                                        <dt>
+                                            <a href="register.html">Not Registered?</a>
+                                        </dt>
+                                        <dd>
+                                            <a href="getResetPassword.html">Forget Password</a>
+                                        </dd>
+                                        <dt>
+                                            &nbsp;
+                                        </dt>
+                                        <dd>
+                                            <input type="submit" value="Submit"/>
+                                        </dd>
+                                    </dl>
+                                </form>
+                            </div>
+                        </div><!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <div class="copyright">
+                    </div>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Worker List</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/jquery/pagination/pagination.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/jquery.pagination.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/MFPagination.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<!-- util --><script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterWorkerList.js"></script>
+</head>
+<body class="requester requesterWorkerList">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write("WorkerList");
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div>
+                                <INPUT TYPE="BUTTON" VALUE="Invite workers" ONCLICK="window.location.href='inviteworkers.html'">
+                            </div>
+                            <br/>
+                            <h3 class="pageName">Workers</h3>
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="50%">
+                                        <span id="workerListPaginatorText"></span>
+                                    </td>
+                                    <td>
+                                        <div id="workerListPaginator">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text">Sort by: </span>
+                                        <select id="groupSortType">
+                                            <option value="User.username ASC">Username (A-Z)</option>
+                                            <option value="User.surname ASC">Surname (A-Z)</option>
+                                            <option value="User.sex ASC">Gender (A-Z)</option>
+                                            <option value="User.paypalAccount ASC">Paypal Account (A-Z)</option>
+                                            <option value="User.acceptanceRatio DESC">Acceptance Ratio (most first)</option>
+                                            <option value="User.isActive DESC">Active Status (active first)</option>
+                                            <option value="User.isEnabled DESC">Enable Status (enable first)</option>
+                                        </select>
+                                        <input id="groupSortButton" type="image" src="images/go-button-gateway.gif" style="vertical-align:middle;"/>
+                                        <div style="padding:0 10px; display:inline;">
+                                        </div>
+                                        <input type="button" id="sendMessageButton" class="fnButton" value="Send Message to the Selected Workers" />
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <div id="workerList" width="100%">
+                            </div>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="RequesterFooter.js"></script>
+                    <script type="text/javascript">
+                        RequesterFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+</body>
+</html>

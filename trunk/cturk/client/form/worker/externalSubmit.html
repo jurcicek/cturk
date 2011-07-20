@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>externalSubmit</title>
+<script type="text/javascript" src="../static/js/Config.js"></script>
+<script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/js/util/LocationSearch.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //$("#form1").unbind("submit").submit(function() {
+        //	$.ajax( {
+        //		url : Config.ajaxUrlPrefix + "/workers/externalSubmit",
+        //		type : "GET",
+        //		dataType : "json",
+        //		success : function(o) {
+        //			console.log(o.info);
+        //		}
+        //	});
+        //	return false;
+        //});
+        if (LocationSearch.has("assignmentId")) {
+            var assignmentId = LocationSearch.attr("assignmentId");
+            if (assignmentId == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+                $("#form1 input").attr("disabled", true);
+            } else {
+                $("#form1 input[name='assignmentId']").attr("value", assignmentId);
+                $("#form1 input").attr("disabled", false);
+            }
+        }
+    });
+</script>
+</head>
+<body>
+    <form id="form1" name="form1" method="post" action="http://www.camdial.com/~fj228/cturk-task4/cturk/server/webroot/workers/externalSubmit">
+        assignmentId
+        <ul>
+            <li>
+                assignmentId<input type="text" name="assignmentId" value="" />*
+            </li>
+            <li>
+                name<input type="text" name="name" value="haha" />
+            </li>
+            <li>
+                key<input type="text" name="key[]" value="2" />
+            </li>
+            <li>
+                key<input type="text" name="key[]" value="1" />
+            </li>
+            <li>
+                email<input type="text" name="email" value="emailValue" />
+            </li>
+            <li>
+                <input type="submit" value="submit" />
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

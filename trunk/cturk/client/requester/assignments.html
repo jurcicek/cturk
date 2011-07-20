@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cturk - Assignments</title>
+<!-- css -->
+<link href="../static/jquery/ui/css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/blog.css" rel="stylesheet" type="text/css" />
+<link href="../static/jquery/pagination/pagination.css" rel="stylesheet" type="text/css" />
+<link href="../static/themes/ui1/screen.css" rel="stylesheet" type="text/css" />
+<!-- jquery --><script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/jquery/ui/js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/jquery.pagination.js"></script>
+<script type="text/javascript" src="../static/jquery/pagination/MFPagination.js"></script>
+<!-- config --><script type="text/javascript" src="../static/js/ui1/Config.js"></script>
+<script type="text/javascript" src="../static/js/ui1/ajax/Ajax.js"></script>
+<!-- util --><script type="text/javascript" src="../static/js/ui1/util/Util.js"></script>
+<script type="text/javascript" src="../static/js/ui1/util/LocationSearch.js"></script>
+<script type="text/javascript" src="../static/js/ui1/page/requester/RequesterAssignments.js"></script>
+</head>
+<body class="requester requesterHitGroups">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <script type="text/javascript" src="RequesterHeader.js"></script>
+                    <script type="text/javascript">
+                        RequesterHeader.write("Assignments");
+                    </script>
+                </div>
+                <!-- #header end -->
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+                            <div id="summaryInfo" class="summaryInfo">
+                                <h3>Assignments summary</h3>
+                                <dl>
+                                    <dt>
+                                        Group Name: 
+                                    </dt>
+                                    <dd>
+                                        <span class="groupName"></span>
+                                    </dd>
+                                    <dt>
+                                        Worker UserId: 
+                                    </dt>
+                                    <dd>
+                                        <span class="username"></span>
+                                    </dd>
+                                    <dt style="display:none;">
+                                        Completed HITs:
+                                    </dt>
+                                    <dd style="display:none;">
+                                        <span class="completedHits"></span>
+                                    </dd>
+                                    <dt>
+                                        Submitted Assignments (Need approval):
+                                    </dt>
+                                    <dd>
+                                        <span class="submittedAssignments"></span>
+                                    </dd>
+                                    <dt>
+                                        Approved Assignments (Waiting for payment):
+                                    </dt>
+                                    <dd>
+                                        <span class="approvedAssignments"></span>
+                                    </dd>
+                                    <dt>
+                                        Rejected Assignments:
+                                    </dt>
+                                    <dd>
+                                        <span class="rejectedAssignments"></span>
+                                    </dd>
+                                    <dt>
+                                        Closed Assignments:
+                                    </dt>
+                                    <dd>
+                                        <span class="closedAssignments"></span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div id="hitSuccessMessage" class="hitMessage hitSuccess" style="display:none;">
+                            </div>
+                            <div id="hitWarningMessage" class="hitMessage hitWarning" style="display:none;">
+                            </div>
+                            <div id="hitErrorMessage" class="hitMessage hitError" style="display:none;">
+                            </div>
+                            <h3 class="pageName">
+                                <select id="assignmentStateSelect" style="color:#CC6600;">
+                                    <option value="null" selected="selected">All</option>
+                                    <option value="Accepted">Accepted</option>
+                                    <option value="Submitted">Submitted</option>
+                                    <option value="Approved">Approved</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Closed">Closed</option>
+                                    <option value="Expired">Expired</option>
+                                </select>
+                                Assignments
+                            </h3>
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="50%">
+                                        <span id="assignmentPaginatorText"></span>
+                                    </td>
+                                    <td>
+                                        <div id="assignmentPaginator">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text">Sort by: </span>
+                                        <select id="groupSortType">
+                                            <option value="Assignment.id DESC">Assignement ID (highest first)</option>
+                                            <option value="Assignment.id ASC">Assignement ID (lowest first)</option>
+                                            <option value="Assignment.state DESC">Assignement state (highest first)</option>
+                                            <option value="Assignment.state ASC">Assignement state(lowest first)</option>
+                                            <option value="Assignment.submitDate DESC">Submit Date(latest first)</option>
+                                            <option value="Assignment.submitDate ASC">Submit Date(earliest first)</option>
+                                            <option value="Assignment.finishDate DESC">Finish Date(latest first)</option>
+                                            <option value="Assignment.finishDate ASC">Finish Date(earliest first)</option>
+                                        </select>
+                                        <input id="groupSortButton" type="image" src="images/go-button-gateway.gif" style="vertical-align:middle;"/>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                            <form id="assignmentForm" name="assignmentForm" method="post" action="">
+                                <div id="assignmentList" class="hitGroupList">
+                                </div>
+                                <div id="extraData">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- #alpha end -->
+                    </div>
+                    <div id="beta">
+                        <div id="beta-inner">
+                        </div>
+                        <!-- #beta end -->
+                    </div>
+                    <div id="gamma">
+                        <div id="gamma-inner">
+                        </div>
+                        <!-- #gamma end -->
+                    </div>
+                </div>
+                <!-- #content end -->
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <script type="text/javascript" src="RequesterFooter.js"></script>
+                    <script type="text/javascript">
+                        RequesterFooter.write();
+                    </script>
+                </div>
+                <!-- #footer end -->
+            </div>
+        </div>
+        <!-- #container end -->
+    </div>
+    <div id="assignmentResultDialog">
+    </div>
+    <form id="paypalForm" name="paypalForm" method="post" action="" style="display:none;">
+        <ul>
+            <li>
+                Sender's Email: <input type="text" name="paypalSenderEmail" value="" />
+            </li>
+            <li>
+                assignmentId<input type="text" name="assignmentId[]" value="" />
+            </li>
+            <li>
+                <input type="submit" value="submit" />
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

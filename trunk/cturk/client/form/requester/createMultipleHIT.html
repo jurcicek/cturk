@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>createMultipleHIT</title>
+<script type="text/javascript" src="../static/js/Config.js"></script>
+<script type="text/javascript" src="../static/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#form1").unbind("submit").submit(function(){
+            $.ajax({
+                url: Config.ajaxUrlPrefix + "/requesters/createMultipleHIT",
+                type: "POST",
+                data: $("#form1").serialize(),
+                dataType: "json",
+                success: function(o){
+                    console.log(o.info);
+                }
+            });
+            return false;
+        });
+        
+        var v = new Date().getTime() + 1000 * 60 * 60 * 24;
+        $("#form1 input[name='expireDate']").val(v);
+    });
+</script>
+</head>
+<body>
+    <form id="form1" name="form1" method="post" action="">
+        <ul>
+            <li>
+                name<input type="text" name="name" value="name" />
+            </li>
+            <li>
+                description<input type="text" name="description" value="description" />
+            </li>
+            <li>
+                currencyCode<input type="text" name="currencyCode" value="USD" />
+            </li>
+            <li>
+                reward<input type="text" name="reward" value="0.2" />
+            </li>
+            <li>
+                expireDate<input type="text" name="expireDate" value="" />(timestamp)
+            </li>
+            <li>
+                assignmentTime<input type="text" name="assignmentTime" value="7200" />seconds
+            </li>
+            <li>
+                autoApprovalTime<input type="text" name="autoApprovalTime" value="86400" />seconds
+            </li>
+            <li>
+                maxHits<input type="text" name="maxHits" value="" />
+            </li>
+            <li>
+                url<input type="text" name="url[]" value="http://www.aid201004.com/task4/cturk/client/form/worker/externalSubmit.html" />
+            </li>
+            <li>
+                frameHeight<input type="text" name="frameHeight[]" value="600" />
+            </li>
+            <li>
+                url<input type="text" name="url[]" value="http://www.aid201004.com/task4/cturk/client/form/worker/externalSubmit.html" />
+            </li>
+            <li>
+                frameHeight<input type="text" name="frameHeight[]" value="600" />
+            </li>
+            <li>
+                <input type="submit" value="submit" />
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
