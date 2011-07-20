@@ -1,0 +1,139 @@
+ISS-58 PROVIDE DOCUMENTATION FOR THE INTERFACE BETWEEN CTURK AND EXTERNAL HIT
+
+The “REQ-808 Interface between CTURK and external HIT” specified that you should follow the standard of communication from MTurk. You diverted as you thought that it would be too difficult to implement.
+As a result I need a description of how to communicate with CTURK. Especially, I need:
+•	How to submit a hit.
+•	Retrieve hit status.
+•	Aprove a hit.
+•	Reject hit.
+•	Delete hit.
+•	Expire hit.
+•	Etc.
+More precisely all command/(http request) you implemented for communication between CTURK-TRANSCIBER and CTURK.
+This also relates to “REQ-811 HTTP interface” request. It assumes implementation and documentation of such interface.
+
+===========
+WebService Interfaces
+If a parameter is NOT labled optional, then it is required.
+Returning result is an object, containing the following three properties: data, info, status
+===========
+createHIT
+form:		/cturk/client/form/requester/createHIT.html
+perl:		/cturk-transcriber/docs/cmd/perl/loadhits.pl
+request:	POST /requesters/createHIT
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			name
+			description
+			currencyCode (optional) currency type, possible value: USD, GBP, EUR, JPY, CAD, AUD. USD by default.
+			reward
+			expireDate
+			assignmentTime
+			autoApprovalTime
+			maxHits (optional) HITGroup's maxHits + 1 by default. maxHits value of the corresponding HITGroup.
+			url
+			frameHeight
+return:
+If success, status=1; data= HIT info
+If failed, status=0; data is empty, info contains reason
+
+===========
+getHITInfo
+form:		/cturk/client/form/requester/getHITInfo.html
+perl:		/cturk-transcriber/docs/cmd/perl/getresults.pl
+request:	POST /requesters/getHITInfo/$hitId
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+return:
+If success, status=1; data=HIT info
+If failed status=0; data is empty; info contains reason
+
+===========
+approveAssignment
+form:		/cturk/client/form/requester/approveAssignment.html
+perl:		/cturk-transcriber/docs/cmd/perl/approve.pl
+request:	POST /requesters/approveAssignment
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			assignmentId String or array
+			message (optional)
+return:
+If success，status=1
+If failed，status=0; info contains reason
+
+===========
+rejectAssignment
+form:		/cturk/client/form/requester/rejectAssignment.html
+perl:		/cturk-transcriber/docs/cmd/perl/reject.pl
+request:	POST /requesters/rejectAssignment
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			assignmentId String or array
+			message (optinal)
+return:
+If success,  status=1
+If failed status=0; info contains reason
+
+===========
+expireHIT
+request:	POST /requesters/expireHIT
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			hitId String
+return:
+If success,  status=1
+If failed status=0; info contains reason
+
+===========
+expireHITGroup
+request:	POST /requesters/expireHITGroup
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			groupId String
+return:
+If success,  status=1
+If failed status=0; info contains reason
+
+===========
+getAssignmentList
+request:	POST /requesters/getAssignmentList/$groupId/$workerId/$assignmentState
+parameters:	_DEFAULT_AJAX_RETURN (optional) AJAX return data format, possible value:JSON, XML. JSON by default
+			_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+return:
+If success,  status=1
+If failed status=0; info contains reason
+
+$assignmentState = array ('Accepted', 'Submitted', 'Approved', 'Closed', 'Rejected', 'Expired')
+
+
+===========
+acceptHIT
+request:	POST /workers/acceptHIT
+parameters:	_username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			hitId String
+return:
+If success,  status=1
+If failed status=0; info contains reason
+
+===========
+externalSubmit
+form:       /task4/cturk/client/form/worker/externalSubmit.html
+request:	POST /workers/externalSubmit
+        	GET /workers/externalSubmit
+parameters: _username (optional) empty by default. user name using the current session
+			_password (optional) empty by default. user's password using the current session
+			assignmentId String or array
+
+Object location.search carries an assignmentId property. If assignmentId=ASSIGNMENT_ID_NOT_AVAILABLE, it means the current user does not accept this HIT (he/she is reviewing the HIT);
+If any parameters of POST method is an array, then it is named ending with []
+
+In the page example, "key" parameter of the POST method is an one-dimension array, nameing as key[]
+Refer to: /task4/cturk/client/form/worker/externalSubmit.html

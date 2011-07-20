@@ -1,0 +1,50 @@
+已完成 DONE
+未完成 TODO
+
+ISS-046 SHOW ALSO THE NAME OF THE APPROPRIATE WORKER(DONE)
+
+ISS-047 A RELEASED HIT SHOULD NOT BE COUNTED INTO THE LIMIT OF MAXHITS(DONE)
+如果创建HIT时没有指定maxHITs，会在以前HITGroup的maxHITs值加1 (新建的HITGroup初始值为0)；
+如果创建HIT时指定了maxHITs，会将对应HITGroup的maxHITs值设为指定值。
+
+ISS-048 GOOGLE CHROME DOES NOT REMEMBER LOGIN INFORMATION(DONE)
+
+ISS-049 CANNOT SUBMIT A HIT(DONE)
+如果externalHIT中表单POST的url地址和cturk当前地址不一致，会导致跨域问题
+当前页面访问的地址为
+http://camdial.org/~fj228/cturk-task4/cturk/client/worker/accepthit.html?hitId=20
+而externalHIT表单POST的地址为
+http://www.camdial.org/~fj228/cturk-task4/cturk/server/webroot/workers/externalSubmit
+这两个地址的域名应该统一，比如都使用camdial.org或者都使用www.camdial.org
+当然，也可以通过配置php.ini解决跨域问题，但不推荐。
+
+ISS-050 SHOW ALSO NAME + SURNAME AND USER NAME(DONE)
+
+ISS-051 IMPLEMENT ROUNDED CORNER IN WORKER MODE(DONE)
+IE浏览器不支持css圆角
+
+ISS-052 DO NOT SHOW HITS WHICH A USER CANNON ACCEPT. (DONE)
+
+ISS-053 CREATING A GROUP OF HITS (REQ-003, ISS-037)(DONE)
+
+ISS-054 REGARDING “ISS-044 DEFAULT CURRENCY”(DONE)
+已经放到了配置文件app_controller.php 变量名为 $CURRENCY_CODE
+如果在createHIT时未指定currencyCode，则使用该默认值
+
+ISS-055 A LIST OF HITS IS NOT PROPERLY ALIGNED(DONE)
+
+ISS-056 MISSALIGNED WORKER LIST(DONE)
+
+FAQ
+1.如果我用requester approve了一个HIT（的assignemnt），我可以在My Account页面看到我的Pending Payments增加了，但是如果相应的worker不Request Payment，我找不到哪里去进行付费？
+A. 在requester的assignment页面，选择[Approved Assignments] 即可看到当前requester所有应付款的assignment
+B. 在HIT页面，上面的[HITGroup Summary]可以看到有几个assignment未付款。可以根据HIT state排序来找到并进入相应的HIT详细信息页面。
+C. 在用户信息页面[All HITs Submitted]，点击链接可以查看该user的所有assignment信息并进行操作。
+
+2. 如果我要更换到paypal的live环境，需要修改哪些地方？
+修改 app_controller.php 文件
+$PAYPAL_API_USERNAME
+$PAYPAL_API_PASSWORD
+$PAYPAL_API_SIGNATURE
+$PAYPAL_API_ENDPOINT = 'https://svcs.paypal.com/';
+$PAYPAL_REDIRECT_URL = 'https://www.paypal.com/webscr&cmd=';

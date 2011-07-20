@@ -1,0 +1,61 @@
+ISS-57 EXPIRE DATE CANNOT BE ENTERED AS TIME STAMP
+DONE
+svn revision: 119
+
+ISS-58 PROVIDE DOCUMENTATION FOR THE INTERFACE BETWEEN CTURK AND EXTERNAL HIT
+ONGOING
+
+ISS-59 NOT WORKING “SEND MESSAGE TO THE SELECTED WORKERS”
+目前是通过调用本地email终端来实现给选中的用户发邮件。
+可能是客户端没有设定默认的邮件应用程序，导致系统不能正常调用邮件客户端。
+
+ISS-60 REMOVE ALL CHINESE COMMENTS FROM THE SOURCE CODE.
+TODO
+
+ISS-61 CORRECT THE NAMES OF OPTIONS IN THE SORTING LISTBOX
+DONE
+
+ISS-62 INCORRECTLY DISPLAYED DESCRIPTION FOR DUPLICATED HIT GROUP
+DONE
+svn revision: 120
+
+ISS-63 RENAME “HITGROUP SUMMARY” TO “HIT ASSIGNMENT SUMMARY”
+DONE
+
+ISS-64 I STILL END UP AFTER THE PAYMENT ON THE WRONG PAGE
+如果支付成功，会直接跳到网站页面，没有提示信息。
+DONE
+
+ISS-65 HOW DO I CHANGE THE CURRENCY FOR PAYMENT BY CTURK-TRASCIBER
+DONE
+svn revision: 121
+修改config.xml，增加参数currencyCode
+config.pl, config2.pl, loadhits.pl, loadhits2.pl 增加读取参数
+
+ISS-66 WHEN A REQUESTER PAYS A WORKER THAN A WORKER PAYS FEES. IT SHOULD BE OPPOSITE.
+DONE
+在 /cturk/server/controllers/requesters_controller.php 中的payReceipt方法，
+$request_array变量中的feesPayer变量值改为"SENDER"
+
+ISS-67 BUTTON “SUBMIT” SHOULD BE “SUBMIT”
+DONE
+修改/cturk-transcriber/wwwroot 文件夹中的start.html 和 start2.html 文件
+
+ISS-68 DO NOT SUM UP AND GROUP HITS WITH DIFFERENT CURRENCIES
+DONE
+
+Q:I get the following error.
+{"status":0,"info":"PaypalSenderEmail CANNOT equal PAYPAL_API_EMAIL","data":""}
+A: 不能使用系统用的paypal账户进行付费，因为否则是自动完成付费，没有输入密码的环节了。
+
+Q: fj229使用cturk-transcriber又出现问题了，log如下，请看看是什么问题
+A: 因为发布HIT失败。
+/home/fj228/src/cturk-task4/cturk-transcriber/docs/cmd/perl/config.pl
+/home/fj228/src/cturk-task4/cturk-transcriber/docs/cmd/perl/2/config2.pl
+这两个文件会读取如下配置文件
+/home/fj228/src/cturk-task4/cturk-transcriber/docs/config.xml
+而这个配置文件中webServiceUrl 的主机为camdial.org
+该主机不允许自己访问自己，应该改为localhost 或者 127.0.0.1
+
+
+
