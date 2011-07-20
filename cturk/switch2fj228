@@ -6,3 +6,6 @@ cp ./server/config/database.php.fj228 ./server/config/database.php
 
 mv ./server/webroot/.htaccess ./server/webroot/.htaccess.bck
 cp ./server/webroot/.htaccess.fj228 ./server/webroot/.htaccess
+
+mv ./client/static/js/ui1/Config.js ./client/static/js/ui1/Config.js.bck
+cp ./client/static/js/ui1/Config.js.fj228 ./client/static/js/ui1/Config.js
