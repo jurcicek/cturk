@@ -1,0 +1,257 @@
+FAQ 1: 
+Question:
+A user reported that, his Validation HIT task has been rejected. He has provided the HIT id, which is 1BUFI1RKUWRPXFYOMDU9BSW6SQC1F9. He asked why. How to check for what has happened?
+
+Answer:
+Check HIT task record table (table cturk_list for the Transcription HIT tasks, and table cturk_list2 for the Validation HIT tasks) for the status and all the related information of a HIT task.
+
+1. Query table cturk_list2 for hitid=1BUFI1RKUWRPXFYOMDU9BSW6SQC1F9, the database returns a record, of which the trans_id is 16. It tells that, the Validation HIT task 1BUFI1RKUWRPXFYOMDU9BSW6SQC1F9 is published associated with a Transcription HIT task, which is saved in table cturk_list with id is 16. 
+2. Since a Validation HIT task would be re-published if a user's answers are rejected, there would be more than on Validtion HIT task associated with a Transcription HIT task. To find out this fact, query the table cturk_list2 for trans_id=16, the data base returns four records (at the time of writing this documents), id 13, 38, 48, and 59. The status of three of them (13, 38, and 48) are 5, which means user's answers have been rejected. The status of the VAlidation HIT task id 59 is 1, which means it is a newly published HIT task, and no one has submitted any answer. 
+3. id of a Validation HIT can link to the real HIT page. e.g. for a Validation HIT task id 13, the corresponding real HIT page is http://cam-talk.co.uk/cturk/wwwroot/start2.html?id=13. 
+4. Query table cturk_list2 for id=13. Then check the field StdQuestions, StdAnswers, and Answers. StdQuestions records 
+
+StdQuestions records the questions a user had seen from webpage http://cam-talk.co.uk/cturk/wwwroot/start2.html?id=13
+e.g. (useless info has been deleted for the purpose of demostration.)
+
+    <turn turnnum="1">
+      <systurn starttime="0.013" turnnum="1">
+        <dact>hello()</dact>
+        <prompt starttime="0.024"> Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you? </prompt>
+      </systurn>
+      <userturn starttime="0.024" turnnum="1">
+        <transcription>(sil)</transcription>
+      </userturn>         
+    </turn>	
+    <turn turnnum="2">
+      <systurn starttime="0.650" turnnum="2">
+        <dact>request(task)</dact>
+        <prompt starttime="0.697"> What are you looking for? For example, a place to see, a place to play sport, or a type of transport. </prompt>
+      </systurn>
+      <userturn starttime="0.698" turnnum="2">     
+        <transcription>I'm looking for a moderately priced restaurant in around the area.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="3">
+      <systurn starttime="0.720" turnnum="3">
+        <dact>inform(name=none,type=placetostay,stars="5")</dact>
+        <prompt starttime="0.738"> There is no place to stay with 5 stars. </prompt>
+      </systurn>
+      <userturn starttime="0.738" turnnum="3">       
+        <transcription>(sil)</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="4">
+      <systurn starttime="-0.069" turnnum="4">
+        <dact>repeat()</dact>
+        <prompt starttime="-0.051"> Can you please rephrase that? </prompt>
+      </systurn>
+      <userturn starttime="-0.051" turnnum="4">        
+        <transcription>Gotcha.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="2">
+      <systurn starttime="0.463" turnnum="2">
+        <dact>confirm(type=restaurant)</dact>
+        <prompt starttime="0.464"> You are looking for a restaurant is that right? </prompt>
+      </systurn>
+      <userturn starttime="0.464" turnnum="v2">        
+        <transcription>Yes, that sells pizza.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="5">
+      <systurn starttime="-0.152" turnnum="5">
+        <dact>repeat()</dact>
+        <prompt starttime="-0.130"> Can you please rephrase that? </prompt>
+      </systurn>
+      <userturn starttime="-0.130" turnnum="5">       
+        <transcription>(sil)</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="6">
+      <systurn starttime="0.522" turnnum="6">
+        <dact>repeat()</dact>
+        <prompt starttime="0.540"> Can you please rephrase that? </prompt>
+      </systurn>
+      <userturn starttime="0.540" turnnum="6">        
+        <transcription>I'm look-.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="7">
+      <systurn starttime="-0.200" turnnum="7">
+        <dact>inform(name="Express by Holiday Inn Cambridge",type=placetostay,pricerange=moderate,stars="2")</dact>
+        <prompt starttime="-0.156"> The Express Holiday Inn is a wonderful place to stay in the moderate price range with 2 stars. </prompt>
+      </systurn>
+      <userturn starttime="-0.156" turnnum="7">        
+        <transcription>I'm looking for a moderately priced restaurant.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="8">
+      <systurn starttime="0.644" turnnum="8">
+        <dact>inform(name="Aylesbray Lodge Guest House",type=placetostay,pricerange=moderate,stars="4")</dact>
+        <prompt starttime="0.691"> The Aylesbray Lodge Guesthouse is a wonderful place to stay, also it's in the moderate price range, and it has 4 stars. </prompt>
+      </systurn>
+      <userturn starttime="0.691" turnnum="8" />
+      <userturn></userturn>
+    </turn>
+    <turn turnnum="9">
+      <systurn starttime="127.978" turnnum="9">
+        <dact>confirm(pricerange=cheap)</dact>
+        <prompt starttime="127.978"> Let me confirm, you are looking for a venue in the cheap price range? </prompt>
+      </systurn>
+      <userturn starttime="127.978" turnnum="v9">       
+        <transcription>I want a pizza, Pizza Hut or Pizza Land.</transcription>
+      </userturn>      
+    </turn>
+    <turn turnnum="11">
+      <systurn starttime="128.538" turnnum="11">
+        <dact>repeat()</dact>
+        <prompt starttime="128.538"> Could you please repeat that? </prompt>
+      </systurn>
+      <userturn starttime="128.538" turnnum="v11">        
+        <transcription>(sil)</transcription>
+      </userturn>      
+    </turn>    
+  </dialog>
+
+StdAnswers records the "known" answer to some of the questions. 
+e.g. 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <QuestionFormAnswers xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionFormAnswers.xsd">
+    <Answer>
+      <FreeText>1</FreeText>
+      <QuestionIdentifier>userturn[v2]</QuestionIdentifier>
+    </Answer>
+    <Answer>
+      <FreeText>1</FreeText>
+      <QuestionIdentifier>userturn[v9]</QuestionIdentifier>
+    </Answer>
+    <Answer>
+      <FreeText>0</FreeText>
+      <QuestionIdentifier>userturn[v11]</QuestionIdentifier>
+    </Answer>
+  </QuestionFormAnswers>
+
+This StdAnswers tell that the answer to the question userturn[v2] is true, and the answer to the question userturn[v9] is true, while the answer to the question userturn[v11] is false. 
+  
+Answeres records user's answers. 
+e.g. 
+
+<Answer>
+<QuestionIdentifier>userturn[5]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[4]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[3]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[2]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[1]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[v2]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[7]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[v9]</QuestionIdentifier>
+<FreeText>0</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[v11]</QuestionIdentifier>
+<FreeText>0</FreeText>
+</Answer>
+<Answer>
+<QuestionIdentifier>userturn[6]</QuestionIdentifier>
+<FreeText>1</FreeText>
+</Answer>
+</QuestionFormAnswers>
+
+
+
+Auto check to the submitted Validation HIT tasks compares StdAnswers and Answers. So, user's answer to userturn[v2] is true, which passes the check. User's answer to userturn[v11] is false, which also passes the check. But user's answer to userturn[v9] is false, which does not pass the check. So this user's answer to the Validation HIT task is rejected. 
+
+We can also check StdQuestions to retrieve the corresponding audio of userturn[v9], which is ky219x-009-090805_122846_0005674_0006195.wav. Meanwhile, path field of table cturk_list2 shows all HIT data's local path, which is path='/raw_100811/voip-2132864199-100521_181633' for id=13. Listen to the audio: in audio, there is another "pizza" between "I want a pizza" and "Pizza Hut or Pizza Land.". The standard answer is true, while user thought it is false. It is another issue to solve or clarify for the tasks themselves. 
+
+It is similar to analysis Transcription HIT tasks. Query table cturk_list given the HIT id. Then retrieve information from StdAnswers and Answers fields. Manually compare the source data as path field shows, e.g. audio files, and session-fixed-question.xml, which is the source of the questions a user has seen. 
+================
+FAQ 2
+Question:
+A user reported that, his Validation HIT task has been rejected. He has provided the HIT id, which is 1BUFI1RKUWRPXFYOMDU9BSW6SQC1F9. He asked why. How to check for what has happened?
+
+Answer:
+Refer to FAQ 1. It is similar to analysis Transcription HIT tasks. Query table cturk_list given the HIT id. Then retrieve information from StdAnswers and Answers fields. Manually compare the source data as path field shows, e.g. audio files, and session-fixed-question.xml, which is the source of the questions a user has seen. 
+================
+
+FAQ 3
+Question:
+How do I know whether a HIT task (either the Transcription HIT task or the Validation HIT task) has been successfully published?
+Answer:
+It is recommended to check for table cturk_list and cturk_list2 to check for the status of a HIT task. status field and AssignmentStatus field tells the precise status of a HIT task. In details: 
+
+status -- HIT task status
+0 -- unpublished
+1 -- published
+2 -- answer submitted
+3 -- answer may have passed auto check, but no associated Validation HIT task(s) published
+31 -- answer may have passed auto check, and the associated Validation HIT task(s) published
+4 -- answer rejected
+5 -- closed 
+
+AssignmentStatus -- HIT task assignment status (retrieved from Amazon MTurk)
+submitted
+approved
+rejected
+
+For the table cturk_list, after executing withValidation.sh, status field may be 5 or 31. 
+For the table cturk_list, after executing noValidation.sh, status field must be 5.
+
+========
+
+FAQ3
+Question:
+How many places should I configure to make this system work properly. 
+
+Answers:
+RAEDME shows detaild installation instrucion. But here is a full list of the all configurations:
+
+Web site root		/cturk/wwwroot/
+server/common.php	configure database connection for getConfig();
+static/js/Config.js	Needs no modification if the web site root remains as default;
+cturk/docs/import.php	configure database connection for $config;
+cturk/docs/cmd/perl/config.pl	configure database connection for getDBI();
+								configure Transaction HIT task price through getTranscriptionPrice();
+								configure Validation HIT task price through getValidationPrice();
+								configure the rule of the auto check to the Transaction HIT task through isApproveHit();
+								configure the rule to approve the Transaction HIT task (after the associated Validation HIT task has been approved) through isApproveTransHit();
+								configure HIT task publishing target (sandbox or real MTurk) through getServiceUrl();
+								
+cturk/docs/cmd/perl/loadhits.pl	configure the Transcription HIT task, such as website URL for the published external HIT page for ExternalURL, 
+								configure HIT properties through getProperties(), including:
+
+
+Title
+Description 
+Keywords
+Reward 
+CurrencyCode Currency, e.g. USD
+Amount
+AssignmentDurationInSeconds 
+AutoApprovalDelayInSeconds 
+MaxAssignments 
+LifetimeInSeconds 
+
+Refer to Amazon MTurk SDK documentation http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2007-03-12/ApiReference_HITDataStructureArticle.html for details.
+
+cturk/docs/cmd/perl/loadhit2.pl	configure the Validation HIT task, similar to loadhits.pl

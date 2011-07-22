@@ -1,0 +1,112 @@
+Introduction: MTurk Transcription and Validation HITs
+
+author ping.zou
+date 2010-07-21
+version 0.1
+
+Introduction:
+
+MTurk Transcription and Validation HITs (in short: MTVH) publishes external Transcription and Validation HITs to Amazon MTurk. MTVH uses Amazon MTurk SDK for Perl to accomplish communication with Amazon MTurk, including publishing HITs, retrieving workers' answers, approve or reject HITs. External Transcription and Validation HITs are dynamically generated using some PHP scripts. External Transcription and Validation HITs pages use HTML/CSS/JavaScript and a Flash audio player. 
+
+All published external HITs, related information and status are recorded in a project database (MySQL). 
+
+There are 2 working pattern form MTVH:
+1) Approve Transcription HIT without Validation HIT. 
+MTVH publishes Transcription HITs. MTVH reject or approve HITs by the auto check algorithms. 
+
+2) Approve Transcription HIT with Validation HIT.
+MTVH publishes Transcription HITs. 
+If auto check to a Transcription HIT does not pass, MTVH then rejects the answer to this HIT and re-publishes this HIT.
+Else, MTVH publish a corresponding Validation HIT. 
+If auto check to the Validation HIT does not pass, MTVH then rejects the answer to this Validation HIT and re-publishes this Validation HIT.
+Else, MTVH the approves the Validation HIT. If the Validation HIT shows that, the corresponding Transcription HIT has "3" and above, or over "1/3" transcriptions are wrong, MTVH then rejects the corresponding Transcription HIT, and re-publishes this Transcription HIT. Else, MTVH then approve the corresponding Transcription HIT. Here, "3" and "1/3" are two adjustable parameters. 
+
+=================================
+Project structure:
+
+docs: 		project scripts and related documents
+resources: 	demo resources
+wwwroot: 	web document root
+
+
+=================================
+HIT data
+
+HIT data is a set of audio files and transcription files, saved in a folder. 
+
+There are also a set of 
+
+publish.sh command of MTVH accepts two path as parameter. This path should contain at least one folder of HIT data. e.g. /var/www/resources/wav/TranscribedSample1 contains 5 folders of HIT data. 
+
+It would be the best practice to group folders of HIT data into one folder, say named "20100721HITs", then copy to /var/www/resources/wav. Then perform MTVH publish command as "sudo bash publish.sh /var/www/cturk/resources/wav/20100721HITs". To avoid republishing HITs, make sure "20100721HITs" is unique. 
+
+=================================
+publish.sh performances the following in sequence:
+1. Copy targeting HIT data from resources/wav to wwwroot/data/wav
+2. Generate Transcription HITs questions. Randomly select 3 standard answers from trancription.xml and insert them to session-fixed-question.xml. And generate reference.xml which contains the 3 standard answers. (There should be at least 3 transcriptions for generating the standard answers.)
+3. Calculate the total length of the audio files in seconds.
+4. Convert WAVE to MP3.
+5. Generate standard answers for auto check Transcription HITs. Generate autocheck.xml from reference.xml.
+6. Import all HIT data to database.
+7. Publish HIT to Amazon MTurk.
+
+=================================
+Database schema
+
+Table cturk_list is used to record all the published Transcription HITs. 
+
+Fields:
+id      		key
+path    		related path of HIT related files, such as audio files, transcription files and etc
+status  		HIT status, 
+			0 -- Not published
+			1 -- Published
+			2 -- Answer submitted
+			3 -- Answer to be approved
+			31 -- Wait to be approved with the corresponding Validation HIT.
+			4 -- Answer to be rejected
+			5 -- Accomplished
+hitid			Amazon MTurk HIT ID
+hittypeid		Amazon MTurk HIT Type ID
+AssignmentId		Amazon MTurk Assignment ID
+AssignmentStatus	Amazon MTurk Assignment Status
+WorkerId		Amazon Mturk Worker ID
+Answers 		Worker's answer
+StdAnswers 		Standard answer, imported by MTVT
+audioLength 		Total length of audio files, in seconds
+publishDate 		HIT published date, DDMMYYYY
+checkDate 		HIT checked date, DDMMYYY
+
+Table cturk_list2 is used to record all the published Validation HITs. Table schema is similar to the table cturk_list. Only difference is:
+Fields:
+trans_id	Id of the corresponding Transcription HIT
+transAssignmentId AssignmentId of the corresponding Transcription HIT
+(There is no status 31 for the table cturk_list3)
+
+=================================
+Amazon AWS account:
+(This Amazon AWS account can be used for demo purpose.)
+
+user: 			fj228@cam.ac.uk
+passwd: 		test1234
+AWS Account ID: 	9717-9101-4028
+Access Key ID:		AKIAJAJ4SU3ZRHF4FQ6A
+Secret Access Key:	NZEKKbp3pUFrYIouYMamAUWSXIOqe5OyLLSd3/nL 
+
+=================================
+References:
+
+Sample tasks
+https://www.mturk.com/mturk/searchbar?selectedSearchType=hitgroups&searchWords=transcription&minReward=0.00&x=0&y=0
+
+Dialogue Systems Group
+http://mi.eng.cam.ac.uk/research/dialogue/
+
+API
+http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1852&categoryID=28
+
+API externalQuestion
+http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-02-14/ApiReference_ExternalQuestionArticle.html
+
+sandbox
+http://sandbox.mturk.com/
