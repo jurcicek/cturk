@@ -12,17 +12,17 @@ then
     echo
 else
     mv ./docs/config.xml ./docs/config.xml.bck
-    cp $CFG_PATH/config.xml.fj228 ./docs/config.xml
+    cp $CFG_PATH/config.xml ./docs/config.xml
 
     mv ./docs/publish.sh ./docs/publish.sh.bck
-    cp $CFG_PATH/publish.sh.fj228 ./docs/publish.sh
+    cp $CFG_PATH/publish.sh ./docs/publish.sh
 
     mv ./wwwroot/start.html ./wwwroot/start.html.bck
-    cp $CFG_PATH/start.html.fj228 ./wwwroot/start.html
+    cp $CFG_PATH/start.html ./wwwroot/start.html
 
     mv ./wwwroot/start2.html ./wwwroot/start2.html.bck
-    cp $CFG_PATH/start2.html.fj228 ./wwwroot/start2.html
+    cp $CFG_PATH/start2.html ./wwwroot/start2.html
 
     mv ./wwwroot/server/common.php ./wwwroot/server/common.php.bck
-    cp $CFG_PATH/server/common.php.fj228 ./wwwroot/server/common.php
+    cp $CFG_PATH/server/common.php ./wwwroot/server/common.php
 fi
