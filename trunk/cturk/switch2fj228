@@ -1,11 +1,25 @@
-mv ./server/app_conroller.php ./server/app_conroller.php.bck
-cp ./server/app_conroller.php.fj228 ./server/app_conroller.php
+#!/bin/sh
 
-mv ./server/config/database.php ./server/config/database.php.bck
-cp ./server/config/database.php.fj228 ./server/config/database.php
+$CFG_PATH = $1
 
-mv ./server/webroot/.htaccess ./server/webroot/.htaccess.bck
-cp ./server/webroot/.htaccess.fj228 ./server/webroot/.htaccess
 
-mv ./client/static/js/ui1/Config.js ./client/static/js/ui1/Config.js.bck
-cp ./client/static/js/ui1/Config.js.fj228 ./client/static/js/ui1/Config.js
+if ["$CFG_PATH" -eq "" ]
+then
+    echo "switch2config config_dir_path"
+    echo "  - changes all necessary in th eproject by the config files from the passed config directory"
+    echo
+    echo "parameter config_dir_path missing"
+    echo
+else
+    mv ./server/app_conroller.php ./server/app_conroller.php.bck
+    cp $CFG_PATH/app_conroller.php ./server/app_conroller.php
+
+    mv ./server/config/database.php ./server/config/database.php.bck
+    cp $CFG_PATH/database.php ./server/config/database.php
+
+    mv ./server/webroot/.htaccess ./server/webroot/.htaccess.bck
+    cp $CFG_PATH/.htaccess ./server/webroot/.htaccess
+
+    mv ./client/static/js/ui1/Config.js ./client/static/js/ui1/Config.js.bck
+    cp $CFG_PATH/Config.js ./client/static/js/ui1/Config.js
+fi
