@@ -1,35 +1,21 @@
+<wiki:comment>
+This text is using the Google Code wiki syntax.
+</wiki:comment>
 
-INSTALATION MANUAL FOR THE CTURK PROJECT
+= INSTALATION MANUAL FOR THE CTURK PROJECT = 
 
 AUTHOR: FILIP JURCICEK
+
 VERSION: 22/07/2011
 
-1. INTRODUCTION
--------------------------------------------------------------------------------------------------
+= INTRODUCTION =
 
 This document describes how to download the code, configure the computer used for deployment, 
 installing all necessary software, and runing the CTURK project.
 
 This manual will describe a specific case of installing the CTURK on the Ubuntu 11.04 Linux distribution.
 
-
-2. CHECK OUT THE CODE FROM GOOGLE CODE 
--------------------------------------------------------------------------------------------------
-
-If you plan to make changes, use this command to check out the code as yourself using HTTPS:
-
-# Project members authenticate over HTTPS to allow committing changes.
-svn checkout https://cturk.googlecode.com/svn/trunk/ gcturk --username xxx@xxx.com
-
-When prompted, enter your generated googlecode.com password.
-Use this command to anonymously check out the latest project source code:
-
-# Non-members may check out a read-only working copy anonymously over HTTP.
-svn checkout http://cturk.googlecode.com/svn/trunk/ gcturk-read-only
-
-
-3. INSTALLING THE REQUIERED SOFTWARE
--------------------------------------------------------------------------------------------------
+= INSTALLING THE REQUIERED SOFTWARE =
 
 This secstion will describe how to install all necessary software on the Ubuntu 11.04 Linux 
 distribution. You will have to have root rights, e.g. to be in the sudo group. The resto of 
@@ -44,19 +30,184 @@ You will have to install apache and mysql:
 - apt-get install mysql-server 
 
 
-4. CONFIGURE THE CTURK
--------------------------------------------------------------------------------------------------
+FIXME: add all the necesary software
+
+
+= CHECK OUT THE CODE FROM GOOGLE CODE =
+
+If you plan to make changes, use this command to check out the code as yourself using HTTPS:
+
+# Project members authenticate over HTTPS to allow committing changes.
+svn checkout https://cturk.googlecode.com/svn/trunk/ gcturk --username xxx@xxx.com
+
+When prompted, enter your generated googlecode.com password.
+Use this command to anonymously check out the latest project source code:
+
+# Non-members may check out a read-only working copy anonymously over HTTP.
+svn checkout http://cturk.googlecode.com/svn/trunk/ gcturk-read-only
+
+This manual assumes that the code has been checked out into the "~/src/" directory!
+
+
+= CONFIGURE THE CTURK = 
+
+The deployment of CTURK assumes deployment of into the public_html direcotory as it allows multiple 
+users to deploy CTURK on the same computer in a conroled way.
+
+In this task, we will assume deployment of the computer with the domain name localhost into 
+the public_html directory of the "filip" user. 
+
+SUMMARY:
+- the code is placed in: /home/filip/public_html/gcturk
+- the corresponding URL is: http://localhost/~filip/gcturk
+- the web service URL: http://localhost/~filip/gcturk/cturk/server/webroot
+
+Since the code in the src directory, one has to link from the public_html diretory to the gcturk directory
+- cd ~/src
+- ln -s gcturk ~/public_html
+
+
+A convenient way to configure CTURK is to use the "switch2config" tool in the cturk directory.
+The tool copies all necessary config files into the approriate places. 
+
+It is used as:
+- switch2config path_to_the_config_dir
+where the path_to_the_config_dir parameters point to the paremters contains all config files for 
+setting the CTURK.
+
+Templates of the configuration files are in the "config" directory.
+
+The files that have to be changed are:
+- app_conroller.php  - will be coppied to ./server/
+- database.php - will be coppied to ./server/config/
+- .htaccess - will be coppied to ./server/webroot/
+- index.php - will be coppied to ./server/webroot/
+- Config.js - will be coppied to ./client/static/js/ui1/
+
+It is advised to make a copy of the config directory using:
+- cp -r config config.filip@localhost
+
+then edit the files in config.filip@localhost
+
+== edit app_controller.php ==
+
+Change the following lines:
+ 
+        var $SMTP_SERVER = 'smtp.zzz.com';
+        var $SMTP_PORT = '25';
+        var $SMTP_TIMEOUT = '30';
+        var $SMTP_EMAIL = 'zzzzz_noreply@zzz.com';
+        var $SMTP_USERNAME = 'zzzzz_noreply';
+        var $SMTP_PASSWORD = 'zzzzzzzzzzzzzz';
+
+to a valid SMTP mail server is sending email is reqiered.
+
+Change PAYPAL_* variables for proper integration with PayPal: 
+        var $PAYPAL_APPLICATION_ID = 'APP-zzzzzzzzzzzzzzzzz';
+        var $PAYPAL_API_EMAIL = 'zzzzz.zzzzzzz@zzzzz.com';
+        var $PAYPAL_API_USERNAME = 'zzzzz.zzzzzzz_api1.zzzzz.com';
+        var $PAYPAL_API_PASSWORD = 'zzzzzzzzzzzzzzzz';
+        var $PAYPAL_API_SIGNATURE = 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz';
+        var $PAYPAL_API_ENDPOINT = 'https://svcs.paypal.com/';
+        var $PAYPAL_REDIRECT_URL = 'https://www.paypal.com/webscr&cmd=';
+
+The integration with PayPal will be described later.
+
+
+Change the lines: 
+        var $RESET_PASSWORD_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/resetPassword.html';
+        var $PAY_RETURN_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/requester/index.html';
+
+to:
+        var $RESET_PASSWORD_LINK = 'http://localhost/~filip/gcturk/cturk/client/resetPassword.html';
+        var $PAY_RETURN_LINK = 'http://localhost/~filip/gcturk/cturk/client/requester/index.html';
+
+
+Change the $CURRENCY_CODE if different the cturk should a different currency with PayPal.
+
+        var $CURRENCY_CODE = 'GBP'; //USD, GBP, EUR, JPY, CAD, AUD
+
+
+== edit database.php ==
+
+Change the database information: login, password, database, and prefix.
+
+The prefix is used for all names of tables used by CTURK in the provided database.
+
+<?php
+class DATABASE_CONFIG {
+
+        var $default = array(
+                'driver' => 'mysql',
+                'persistent' => false,
+                'host' => 'localhost',
+                'login' => 'zzzzz',
+                'password' => 'zzzzzzz',
+                'database' => 'zzzzz',
+                'prefix' => 'zzzzzz_',
+                'encoding' => 'utf8'
+        );
+}
+?>
 
 
 
--------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
+== edit .htaccess ==
 
-PING'S documentation
+Define for the rewrite rules where teh code is located.
+
+Change the line:
+	RewriteBase /~zzzzz/zzzzzzzzzzz/cturk/server/webroot 
+to:
+	RewriteBase /~filip/gcturk/cturk/server/webroot
+
+
+
+
+== edit index.php ==
+
+In the index.php file must be changed the aboslute path to the CakePHP framawork: CAKE_CORE_INCLUDE_PATH
+Note that CAKE_CORE_INCLUDE_PATH defines location of the CakePHP framework.
+
+Change the line: 
+{{{
+	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'zzz' . DS . 'public_html' . DS . 'zzzzzz' . DS . 'cturk' . DS . 'CakePHP');
+}}}
+to:
+{{{
+	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'filip' . DS . 'public_html' . DS . 'gcturk' . DS . 'cturk' . DS . 'CakePHP');
+}}}	
+
+== edit Config.js ==
+
+The Config.js define the URL where all webservisces used by Javascript are located.
+
+Change the line:
+	ajaxUrlPrefix: "/~zzzzz/zzzzzzzzzzz/cturk/server/webroot",
+to:
+	ajaxUrlPrefix: "/~filip/gcturk/cturk/server/webroot",
+
+
+
+
+Then use the switch2config tool in the cturk directory:
+- switch2config ../config.filip@localhost
+
+
+
+
+In addition to copying the config files, the switch2config also sets correct access rights to some directories:
+	* Assign all read and write rights to cturk/server/tmp
+		chmod -R 777 cturk/server/tmp/
+
+	* Assign mod 755 to cturk/server/webroot
+		chmod -R 755 cturk/server/webroot/
+
+
+
+= CONFIGURE THE CTURK-TRANSCRIBER =
+
+= PING'S documentation = 
 
 ========================================
 1. Deploy cturk-task4 from spetechcular.com aid201004 SVN repository
@@ -76,27 +227,8 @@ Start rewrite module and set
 	Options FollowSymLinks MultiViews
 	AllowOverride All
 	
-* Set up CakePHP
-edit cturk/server/config/core.php 
-	/**
-	 * If you are on PHP 5.3 uncomment this line and correct your server timezone
-	 * to fix the date & time related errors.
-	 */
-	//date_default_timezone_set('UTC');
-
-edit cturk/server/webroot/index.php
-
-	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'ping' . DS . 'public_html' . DS . 'cturk-task4' . DS . 'cturk' . DS . 'CakePHP');
-(Note: CAKE_CORE_INCLUDE_PATH defines where CakePHP framework locates)
-
-* Assign read and write right to cturk/server/tmp
-	cd cturk/server
-	chmod -R 777 tmp/
-
-* Assign mod 755 to cturk/server/webroot
-
-	cd cturk/server
-	chmod -R 755 webroot/
+XXXXXXXX
+XXXXXXXX
 
 * Setup Database, using SQL scripts finding @ docs/cturk20101231.sql
 (Note: All CakePHP databases start with cturk4_)
@@ -144,7 +276,7 @@ So .htaccess should look like:
 	sudo /etc/init.d/apache2 restart
 
 * visit the following address, you should see the configuration page of CakePHP, but without css styled.
-	http://camdial.org/~ping/cturk-task4/cturk/server/webroot
+	http://camdial.org/~ping/cturk-task4/cturk/server/webroot 
 
 
 * Access CTurk application @ http://camdial.org/~ping/cturk-task4/cturk/client/
@@ -216,7 +348,6 @@ Click Accepted HITs to see the full list of accepted but yet submitted HITs
 ========================================
 Log in CTurk as requester
 Click Assignments Menu
-
 
 
 
