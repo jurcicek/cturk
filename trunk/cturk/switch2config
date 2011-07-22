@@ -20,6 +20,19 @@ else
     mv ./server/webroot/.htaccess ./server/webroot/.htaccess.bck
     cp $CFG_PATH/.htaccess ./server/webroot/.htaccess
 
+    mv ./server/webroot/index.php ./server/webroot/index.php.bck
+    cp $CFG_PATH/index.php ./server/webroot/index.php
+
+    mv ./client/form/worker/externalSubmit.html ./client/form/worker/externalSubmit.html.bck
+    cp $CFG_PATH/externalSubmit.html ./client/form/worker/externalSubmit.html
+
     mv ./client/static/js/ui1/Config.js ./client/static/js/ui1/Config.js.bck
     cp $CFG_PATH/Config.js ./client/static/js/ui1/Config.js
+
+
+    # set the correct rights
+    chmod -R 777 cturk/server/tmp/
+    chmod -R 755 cturk/server/webroot/
+
+
 fi

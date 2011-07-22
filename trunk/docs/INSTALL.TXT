@@ -8,12 +8,25 @@ AUTHOR: FILIP JURCICEK
 
 VERSION: 22/07/2011
 
+== Contents == 
+
+<wiki:toc max_depth="2" />
+
+
+
 = INTRODUCTION =
 
 This document describes how to download the code, configure the computer used for deployment, 
 installing all necessary software, and runing the CTURK project.
 
 This manual will describe a specific case of installing the CTURK on the Ubuntu 11.04 Linux distribution.
+
+It also describe how to deploy the CTURK-TRANSCRIBER which is an example of an external HIT working with the CTURK.
+
+CUED has a more detailed description of MTURK-TRANSCRIBER which is a variation of the CTURK-TRANSCRIBER.
+
+
+
 
 = INSTALLING THE REQUIERED SOFTWARE =
 
@@ -23,14 +36,28 @@ the section assumes that you are logged in the root. This can be achieved by run
 the "sudo -s" command from the command line.
 
 If you do not have SVN (Subversion) then it can be installed by the following command:
-- apt-get install subversion
+{{{
+apt-get install subversion
+}}}
 
 You will have to install apache and mysql:
-- apt-get install apache2
-- apt-get install mysql-server 
-
+{{{
+apt-get install apache2
+apt-get install mysql-server 
+}}}
 
 FIXME: add all the necesary software
+
+{{{
+apt-get install php
+apt-get install mysql-server 
+}}}
+
+
+
+
+
+
 
 
 = CHECK OUT THE CODE FROM GOOGLE CODE =
@@ -38,102 +65,152 @@ FIXME: add all the necesary software
 If you plan to make changes, use this command to check out the code as yourself using HTTPS:
 
 # Project members authenticate over HTTPS to allow committing changes.
+{{{
 svn checkout https://cturk.googlecode.com/svn/trunk/ gcturk --username xxx@xxx.com
+}}}
 
 When prompted, enter your generated googlecode.com password.
 Use this command to anonymously check out the latest project source code:
 
 # Non-members may check out a read-only working copy anonymously over HTTP.
+{{{
 svn checkout http://cturk.googlecode.com/svn/trunk/ gcturk-read-only
+}}}
 
-This manual assumes that the code has been checked out into the "~/src/" directory!
+*This manual assumes that the code has been checked out into the "~/src/" directory!*
+
+= SETTING THE APACHE UP =
+
+Enable the `public_html` directory for each user on the computer. 
+Start rewrite module and set
+	Options FollowSymLinks MultiViews
+	AllowOverride All
+
+
+= SETTING THE DATABASE UP  = 
+
+The CTURK connects only to the MYSQL database. Create the database with the name: cturk.
+This manual assumes that the `cturk` user has full access the `cturk` database.
+The `cturk` user's password is `cturk`.
+Please change this default values into more approriate values.
+
+{{{
+create user cturk;
+create database cturk;
+set rights to cturk for user cturk;
+}}}
+
+Setup the content of the database using the `docs/cturk20110125.sql` SQL scripts from the admin. 
+Note all CakePHP tables start with the `cturk4_` prefix.
+
+After the setup the `cturk` database will have the followiomng users. Please remove them if you do not need them.
+
+||*user type* || *registered email*  || *password* ||
+||requester   || midfar@qq.com       || admin ||
+||requester   || admin@midfar.com    || admin ||
+||worker      || midfar@vip.qq.com   || admin ||
+
+
 
 
 = CONFIGURE THE CTURK = 
 
-The deployment of CTURK assumes deployment of into the public_html direcotory as it allows multiple 
+The deployment of CTURK assumes deployment of into the {{{public_html}}} direcotory as it allows multiple 
 users to deploy CTURK on the same computer in a conroled way.
 
-In this task, we will assume deployment of the computer with the domain name localhost into 
-the public_html directory of the "filip" user. 
+In this task, we will assume deployment of the computer with the domain name {{{localhost}}} into 
+the {{{public_html}}} directory of the {{{filip}}} user. 
 
 SUMMARY:
-- the code is placed in: /home/filip/public_html/gcturk
-- the corresponding URL is: http://localhost/~filip/gcturk
-- the web service URL: http://localhost/~filip/gcturk/cturk/server/webroot
+ * the code is placed in: {{{/home/filip/public_html/gcturk}}}
+ * the corresponding URL is: {{{http://localhost/~filip/gcturk}}}
+ * the web service URL: {{{http://localhost/~filip/gcturk/cturk/server/webroot}}}
 
-Since the code in the src directory, one has to link from the public_html diretory to the gcturk directory
-- cd ~/src
-- ln -s gcturk ~/public_html
+Since the code in the src directory, one has to link from the {{{public_html}}} directory to the {{{gcturk}}} directory
+{{{
+cd ~/src
+ln -s gcturk ~/public_html
+}}}
 
-
-A convenient way to configure CTURK is to use the "switch2config" tool in the cturk directory.
+A convenient way to configure CTURK is to use the {{{switch2config}}} tool in the cturk directory.
 The tool copies all necessary config files into the approriate places. 
 
 It is used as:
-- switch2config path_to_the_config_dir
-where the path_to_the_config_dir parameters point to the paremters contains all config files for 
+{{{
+switch2config path_to_the_config_dir
+}}}
+where the {{{path_to_the_config_dir}}} parameters point to the paremters contains all config files for 
 setting the CTURK.
 
-Templates of the configuration files are in the "config" directory.
+Templates of the configuration files are in the {{{config}}} directory.
 
 The files that have to be changed are:
-- app_conroller.php  - will be coppied to ./server/
-- database.php - will be coppied to ./server/config/
-- .htaccess - will be coppied to ./server/webroot/
-- index.php - will be coppied to ./server/webroot/
-- Config.js - will be coppied to ./client/static/js/ui1/
+ * {{{app_conroller.php}}}  - will be coppied to {{{./server/}}}
+ * {{{database.php}}} - will be coppied to {{{./server/config/}}}
+ * {{{.htaccess}}} - will be coppied to {{{./server/webroot/}}}
+ * {{{index.php}}} - will be coppied to {{{./server/webroot/}}}
+ * `externalSubmit.html` - will be coppied to `./client/form/worker/`
+ * {{{Config.js}}} - will be coppied to {{{./client/static/js/ui1/}}}
 
 It is advised to make a copy of the config directory using:
-- cp -r config config.filip@localhost
+{{{
+cp -r config config.filip@localhost
+}}}
+then edit the files in the {{{config.filip@localhost}}} directory.
 
-then edit the files in config.filip@localhost
-
-== edit app_controller.php ==
+== Edit {{{app_controller.php}}} ==
 
 Change the following lines:
- 
-        var $SMTP_SERVER = 'smtp.zzz.com';
-        var $SMTP_PORT = '25';
-        var $SMTP_TIMEOUT = '30';
-        var $SMTP_EMAIL = 'zzzzz_noreply@zzz.com';
-        var $SMTP_USERNAME = 'zzzzz_noreply';
-        var $SMTP_PASSWORD = 'zzzzzzzzzzzzzz';
-
+{{{
+var $SMTP_SERVER = 'smtp.zzz.com';
+var $SMTP_PORT = '25';
+var $SMTP_TIMEOUT = '30';
+var $SMTP_EMAIL = 'zzzzz_noreply@zzz.com';
+var $SMTP_USERNAME = 'zzzzz_noreply';
+var $SMTP_PASSWORD = 'zzzzzzzzzzzzzz';
+}}}
 to a valid SMTP mail server is sending email is reqiered.
 
-Change PAYPAL_* variables for proper integration with PayPal: 
-        var $PAYPAL_APPLICATION_ID = 'APP-zzzzzzzzzzzzzzzzz';
-        var $PAYPAL_API_EMAIL = 'zzzzz.zzzzzzz@zzzzz.com';
-        var $PAYPAL_API_USERNAME = 'zzzzz.zzzzzzz_api1.zzzzz.com';
-        var $PAYPAL_API_PASSWORD = 'zzzzzzzzzzzzzzzz';
-        var $PAYPAL_API_SIGNATURE = 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz';
-        var $PAYPAL_API_ENDPOINT = 'https://svcs.paypal.com/';
-        var $PAYPAL_REDIRECT_URL = 'https://www.paypal.com/webscr&cmd=';
-
+Change {{{PAYPAL_*}}} variables for proper integration with PayPal: 
+{{{
+var $PAYPAL_APPLICATION_ID = 'APP-zzzzzzzzzzzzzzzzz';
+var $PAYPAL_API_EMAIL = 'zzzzz.zzzzzzz@zzzzz.com';
+var $PAYPAL_API_USERNAME = 'zzzzz.zzzzzzz_api1.zzzzz.com';
+var $PAYPAL_API_PASSWORD = 'zzzzzzzzzzzzzzzz';
+var $PAYPAL_API_SIGNATURE = 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz';
+var $PAYPAL_API_ENDPOINT = 'https://svcs.paypal.com/';
+var $PAYPAL_REDIRECT_URL = 'https://www.paypal.com/webscr&cmd=';
+}}}
 The integration with PayPal will be described later.
 
 
 Change the lines: 
-        var $RESET_PASSWORD_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/resetPassword.html';
-        var $PAY_RETURN_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/requester/index.html';
-
+{{{
+var $RESET_PASSWORD_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/resetPassword.html';
+var $PAY_RETURN_LINK = 'http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk/client/requester/index.html';
+}}}
 to:
-        var $RESET_PASSWORD_LINK = 'http://localhost/~filip/gcturk/cturk/client/resetPassword.html';
-        var $PAY_RETURN_LINK = 'http://localhost/~filip/gcturk/cturk/client/requester/index.html';
+{{{
+var $RESET_PASSWORD_LINK = 'http://localhost/~filip/gcturk/cturk/client/resetPassword.html';
+var $PAY_RETURN_LINK = 'http://localhost/~filip/gcturk/cturk/client/requester/index.html';
+}}}
 
+ # Note: `$RESET_PASSWORD_LINK` is the HTML page for resetting password, appearing in the mail to reset the password.
+ # Note: `$PAY_RETURN_LINK` is the page of return when the PayPal payment finishes.
 
-Change the $CURRENCY_CODE if different the cturk should a different currency with PayPal.
+Change the {{{$CURRENCY_CODE}}} if different the cturk should a different currency with PayPal.
+{{{
+var $CURRENCY_CODE = 'GBP'; //USD, GBP, EUR, JPY, CAD, AUD
+}}}
 
-        var $CURRENCY_CODE = 'GBP'; //USD, GBP, EUR, JPY, CAD, AUD
-
-
-== edit database.php ==
+== Edit {{{database.php}}} ==
 
 Change the database information: login, password, database, and prefix.
 
 The prefix is used for all names of tables used by CTURK in the provided database.
 
+Change the lines:
+{{{
 <?php
 class DATABASE_CONFIG {
 
@@ -149,205 +226,263 @@ class DATABASE_CONFIG {
         );
 }
 ?>
+}}}
+
+to:
+{{{
+<?php
+class DATABASE_CONFIG {
+
+        var $default = array(
+                'driver' => 'mysql',
+                'persistent' => false,
+                'host' => 'localhost',
+                'login' => 'cturk',
+                'password' => 'cturk',
+                'database' => 'cturk',
+                'prefix' => 'cturk4_',
+                'encoding' => 'utf8'
+        );
+}
+?>
+}}}
 
 
+== Edit {{{.htaccess}}} ==
 
-== edit .htaccess ==
-
-Define for the rewrite rules where teh code is located.
+The {{{.htaccess}}} file defines for the rewrite rules where the code is located.
 
 Change the line:
-	RewriteBase /~zzzzz/zzzzzzzzzzz/cturk/server/webroot 
-to:
-	RewriteBase /~filip/gcturk/cturk/server/webroot
-
-
-
-
-== edit index.php ==
-
-In the index.php file must be changed the aboslute path to the CakePHP framawork: CAKE_CORE_INCLUDE_PATH
-Note that CAKE_CORE_INCLUDE_PATH defines location of the CakePHP framework.
-
-Change the line: 
 {{{
-	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'zzz' . DS . 'public_html' . DS . 'zzzzzz' . DS . 'cturk' . DS . 'CakePHP');
+RewriteBase /~zzzzz/zzzzzzzzzzz/cturk/server/webroot 
 }}}
 to:
 {{{
-	define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'filip' . DS . 'public_html' . DS . 'gcturk' . DS . 'cturk' . DS . 'CakePHP');
+RewriteBase /~filip/gcturk/cturk/server/webroot
+}}}
+
+
+== Edit {{{index.php}}} ==
+
+In the index.php file must be changed the aboslute path to the CakePHP framawork: {{{CAKE_CORE_INCLUDE_PATH}}}
+Note that {{{CAKE_CORE_INCLUDE_PATH}}} defines location of the CakePHP framework.
+
+Change the line: 
+{{{
+define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'zzz' . DS . 'public_html' . DS . 'zzzzzz' . DS . 'cturk' . DS . 'CakePHP');
+}}}
+to:
+{{{
+define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'filip' . DS . 'public_html' . DS . 'gcturk' . DS . 'cturk' . DS . 'CakePHP');
 }}}	
 
-== edit Config.js ==
 
-The Config.js define the URL where all webservisces used by Javascript are located.
+== Edit `externalSubmit.html` ==
 
 Change the line:
-	ajaxUrlPrefix: "/~zzzzz/zzzzzzzzzzz/cturk/server/webroot",
+{{{
+<form id="form1" name="form1" method="post" action="http://zzzzzzzz/~zzzzz/zzzzzzzzzzz/cturk/server/webroot/workers/externalSubmit">
+}}}
 to:
-	ajaxUrlPrefix: "/~filip/gcturk/cturk/server/webroot",
+{{{
+<form id="form1" name="form1" method="post" action="http://localhost/~filip/gcturk/cturk/server/webroot/workers/externalSubmit">
+}}}
+
+== Edit {{{Config.js}}} ==
+
+The {{{Config.js}}} defines the URL where all webservisces used by Javascript are located.
+
+Change the line:
+{{{
+ajaxUrlPrefix: "/~zzzzz/zzzzzzzzzzz/cturk/server/webroot",
+}}}
+to:
+{{{
+ajaxUrlPrefix: "/~filip/gcturk/cturk/server/webroot",
+}}}
 
 
 
+== Use the {{{switch2config}}} tool ==
+ 
+Then use the {{{switch2config}}} tool in the cturk directory:
+{{{
+switch2config ../config.filip@localhost
+}}}
 
-Then use the switch2config tool in the cturk directory:
-- switch2config ../config.filip@localhost
 
 
+In addition to copying the config files, the {{{switch2config}}} also sets correct access rights to some directories:
+ * Assign all users read, write, and excute rights to {{{cturk/server/tmp}}}
+{{{
+	chmod -R 777 cturk/server/tmp/
+}}}
+ * Assign {{{mod 755}}} to {{{cturk/server/webroot}}}
+{{{
+	chmod -R 755 cturk/server/webroot/
+}}}
 
 
-In addition to copying the config files, the switch2config also sets correct access rights to some directories:
-	* Assign all read and write rights to cturk/server/tmp
-		chmod -R 777 cturk/server/tmp/
-
-	* Assign mod 755 to cturk/server/webroot
-		chmod -R 755 cturk/server/webroot/
 
 
 
 = CONFIGURE THE CTURK-TRANSCRIBER =
 
-= PING'S documentation = 
+The CTURK-TRANSCRIBER is the reference inmplementation of an external HIT for the CTURK. 
+The CTURK-TRANSCRIBER is located in the `gcturk/cturk-transcriber` directory.
 
-========================================
-1. Deploy cturk-task4 from spetechcular.com aid201004 SVN repository
-========================================
-Targeting folder: /home/ping/public_html/cturk-task4
-Correspondong HTTP URL: http://camdial.org/~ping/cturk-task4
-Web service URL: http://camdial.org/~ping-cturk4-server/
+Again, a convenient way to configure CTURK-TRANSCRIBER is to use the {{{switch2config}}} tool in the `cturk-transcriber` directory.
+The tool copies all necessary config files into the approriate places. 
 
-* Enter the targeting folder
-cd /home/ping/public_html/cturk-task4
+Templates of the configuration files are in the {{{config}}} directory.
 
-* Checkout source codes
-svn co https://spetechcular.com/svn/aid201004/branches/task4 .
+The files that have to be changed are:
+ * {{{config.xml}}}  - will be coppied to {{{./docs/}}}
+ * {{{publish.sh}}} - will be coppied to {{{./docs/}}}
+ * {{{start.html}}} - will be coppied to {{{./webroot/}}}
+ * {{{start2.html}}} - will be coppied to {{{./webroot/}}}
+ 
 
-* Set up Apache
-Start rewrite module and set
-	Options FollowSymLinks MultiViews
-	AllowOverride All
-	
-XXXXXXXX
-XXXXXXXX
+Since you already made a copy of the config templates then edit the config files in the `config.filip@localhost` directory.
 
-* Setup Database, using SQL scripts finding @ docs/cturk20101231.sql
-(Note: All CakePHP databases start with cturk4_)
+== Edit {{{config.xml}}} ==
 
-* Setup Database parameters
-edit cturk/server/config/database.php
-(Note: Having the following user)
-	user_type registered_email password
-	requester midfar@qq.com  admin
-	requester admin@midfar.com  admin
-	worker midfar@vip.qq.com  admin
+The CTURK-TRANSCRIBER will use the same user and the database as the CTURK. Only the prefix of tables will be different (`cturk`).
 
-* Setup application parameters
-edit cturk/server/app_controller.php
-Including: SMTP mail server settings, Paypal API settings, and Page redirection settings
-(Note: $RESET_PASSWORD_LINK is the HTML page for resetting password, appearing in the mail to reset the password.)
-(Note: $PAY_RETURN_LINK is the redirection page when PayPal payment accomplished.)
+Change the lines:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<username>zzzzz.zzzzzzzz@zzzzz.com</username>
+	<password>zzz</password>
+	<webServiceUrl>http://localhost/~zzzzz/zzzzzzzzzzz/cturk/server/webroot</webServiceUrl>
+	<resourceRoot>/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/resources</resourceRoot>
+	<webappRoot>/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/wwwroot</webappRoot>
+	<webappUrl>http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk-transcriber/wwwroot</webappUrl>
+	<currencyCode>GBP</currencyCode>
+	<transcriptionPrice>0.01</transcriptionPrice>
+	<validationPrice>4</validationPrice>
+	<mysql>
+	        <dbHost>localhost</dbHost>
+	        <dbName>zzzzz</dbName>
+	        <dbUser>zzzzz</dbUser>
+	        <dbPwd>zzzzzzz</dbPwd>
+	        <dbPort>zzzz</dbPort>
+	        <dbPrefix>zzzzz_</dbPrefix>
+	</mysql>
+</root>
+}}}
+to:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<username>filip.jurcicek@gmail.com</username>
+	<password>lol</password>
+	<webServiceUrl>http://localhost/~filip/gcturk/cturk/server/webroot</webServiceUrl>
+	<resourceRoot>/home/filip/src/gcturk/cturk-transcriber/resources</resourceRoot>
+	<webappRoot>/home/filip/src/gcturk/cturk-transcriber/wwwroot</webappRoot>
+	<webappUrl>http://localhost/~filip/gcturk/cturk-transcriber/wwwroot</webappUrl>
+	<currencyCode>GBP</currencyCode>
+	<transcriptionPrice>0.01</transcriptionPrice>
+	<validationPrice>4</validationPrice>
+	<mysql>
+	        <dbHost>localhost</dbHost>
+	        <dbName>cturk</dbName>
+	        <dbUser>cturk</dbUser>
+	        <dbPwd>cturk</dbPwd>
+	        <dbPort>3306</dbPort>
+	        <dbPrefix>cturk_</dbPrefix>
+	</mysql>
+</root>
+}}}
 
-* edit cturk/client/static/js/ui1/Config.js and cturk/client/form/static/js/Config.js
-	ajaxUrlPrefix: "/~ping/cturk-task4/cturk/server/webroot"
-(Note: ajaxUrlPrefix is the Web service URL, without host)
-
-
-* edit 
-/cturk/client/form/worker/externalSubmit
-/cturk-transcriber/wwwroot/start.html
-/cturk-transcriber/wwwroot/start2.html
-
-	<form id="dynamicTableForm" method="POST" action="http://camdial.org/~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit">
-
-* Edit cturk/server/webroot/.htaccess
-Add the following:
-	RewriteBase /~ping/cturk-task4/cturk/server/webroot
-So .htaccess should look like:
-
-	<IfModule mod_rewrite.c>
-	  RewriteEngine On
-	  RewriteBase /~ping/cturk-task4/cturk/server/webroot
-	  RewriteCond %{REQUEST_FILENAME} !-d
-	  RewriteCond %{REQUEST_FILENAME} !-f
-	  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-	</IfModule>
-
-* You need to restart apache at the point
-	sudo /etc/init.d/apache2 restart
-
-* visit the following address, you should see the configuration page of CakePHP, but without css styled.
-	http://camdial.org/~ping/cturk-task4/cturk/server/webroot 
+*Note that some HTTP servers does not allow visiting itself from the nom-localhost domain. As a result `webServiceUrl` is set to `http://localhost/~filip/gcturk/cturk/server/webroot`.*	
 
 
-* Access CTurk application @ http://camdial.org/~ping/cturk-task4/cturk/client/
+== Edit {{{publish.sh}}} ==
 
-========================================
-2. Requester publishes HITs to CTurk
-========================================
-* Manually publish HITs (for testing)
-Log in to CTurk as requester @ http://camdial.org/~ping/cturk-task4/cturk/client/
-Access: http://camdial.org/~ping/cturk-task4/cturk/client/form/requester/createHIT.html
-(Note: Firebug (for Firefox ) console prints out "Create a new hit success.")
+Change the lines:
+{{{
+WEB_ROOT="/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/wwwroot";
+DOC_ROOT="/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/docs";
+}}}
+to:
+{{{
+WEB_ROOT="/home/filip/src/gcturk/cturk-transcriber/wwwroot";
+DOC_ROOT="/home/filip/src/gcturk/cturk-transcriber/docs";
+}}}
+Note that `WEB_ROOT` is `cturk-transcriber's` wwwroot path and `DOC_ROOT` is `cturk-transcriber's` doc path.
 
-* Using PERL scripts to publish HITs
-In total we need to make changes to 4 files for cturk-transcriber. For easy deply to camdial~ping:
-	cd /cturk-transcriber
-	bash switch2ping
 
-Detailed changes as the following:
+== Edit {{{start.html}}} ==
 
-cd /cturk-transcriber/docs
+Change the line:
+{{{
+<form id="dynamicTableForm" method="POST" action="http://zzzzzzzz/~zzzzz/zzzzzzzzzzz/cturk/server/webroot/workers/externalSubmit">
+}}}
+to:
+{{{
+<form id="dynamicTableForm" method="POST" action="http://localhost/~filip/gcturk/cturk/server/webroot/workers/externalSubmit">
+}}}
 
-edit config.xml
-	  <username>admin@midfar.com</username>
-        <password>admin</password>
-        <webServiceUrl>http://localhost/~ping/cturk-task4/cturk/server/webroot</webServiceUrl>
-        <resourceRoot>/home/ping/public_html/cturk-task4/cturk-transcriber/resources</resourceRoot>
-        <webappRoot>/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot</webappRoot>
-        <webappUrl>http://camdial.org/~ping/cturk-task4/cturk-transcriber/wwwroot</webappUrl>
-        <transcriptionPrice>0.04</transcriptionPrice>
-        <validationPrice>4</validationPrice>
-        <mysql>
-                <dbHost>localhost</dbHost>
-                <dbName>cturk</dbName>
-                <dbUser>cturk</dbUser>
-                <dbPwd>lccturk</dbPwd>
-                <dbPort>3306</dbPort>
-                <dbPrefix>cturk_</dbPrefix>
-        </mysql>
 
-(Note: camdial does not allow visiting itself from the public domain, so webServiceUrl is set to http://localhost/~ping/cturk-task4/cturk/server/webroot)	
+== Edit {{{start2.html}}} == 
 
-edit cturk-transcriber/wwwroot/start.html and cturk-transcriber/wwwroot/start.html/start2.html
-	<form id="dynamicTableForm" method="POST" action="/~ping/cturk-task4/cturk/server/webroot/workers/externalSubmit">
+Change the line:
+{{{
+<form id="dynamicTableForm" method="POST" action="http://zzzzzzzz/~zzzzz/zzzzzzzzzzz/cturk/server/webroot/workers/externalSubmit">
+}}}
+to:
+{{{
+<form id="dynamicTableForm" method="POST" action="http://localhost/~filip/gcturk/cturk/server/webroot/workers/externalSubmit">
+}}}
 
-for the first usage, edit cturk-transcriber/docs/publish.sh
-	WEB_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/wwwroot";
-	DOC_ROOT="/home/ping/public_html/cturk-task4/cturk-transcriber/docs";
-(Note: WEB_ROOT is cturk-transcriber's wwwroot path. DOC_ROOT is cturk-transcriber's doc path)
 
-Publish HITs
-	bash publish.sh $1 $2
-(Note: $1 is the folder contains audio files to be transcribed. $3 is the folder contains the standard transcribes. e.g.:)
-	bash publish.sh /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/raw_100812/ /home/ping/public_html/cturk-task4/cturk-transcriber/resources/wav/ref_100812/
-(Note: Every published HIT is assigned to HITGroups according to some same properties. Every HIT has none or multiple assignments.)
+= TESTING THE DEPLOYMENT = 
 
-========================================
-3. Worker accomplishes HITs on CTurk
-workerÔÚCturkÍê³ÉHITµÄÁ÷³Ì
-========================================
-Visit http://camdial.org/~ping/cturk-task4/cturk/client/
-Log in as a Worker
-Click HITs menu
-Click View a HIT in this group
-Click Accept HIT to accomplish HITs
-Click Accepted HITs to see the full list of accepted but yet submitted HITs
+You need to restart Apache at this point.
+{{{
+sudo /etc/init.d/apache2 restart
+}}}
 
-========================================
-4. Requester checks HITs
-========================================
-Log in CTurk as requester
-Click Assignments Menu
+Visit the following [http://localhost/~filip/gcturk/cturk/server/webroot] address. You should see the configuration page of the CakePHP (not CSS styled).
+
+Access the CTURK at [http://localhost/~filip/gcturk/cturk/client/index.html].
+
+ 
+== Manually publish HITs (for testing) == 
+
+Login to CTURK as requester at [http://localhost/~filip/gcturk/cturk/client/]
+Visit [http://localhost/~filip/gcturk/cturk/client/form/requester/createHIT.html]
+
+== Publish HITs for the CTURK-TRANSCRIBER  ==
+
+The `publish.sh` BASH script is using a set of PERL scripts to publish HITs. 
+{{{
+bash publish.sh $1 $2
+}}}
+
+Note that `$1` is the folder that contains audio files to be transcribed and $2 is the folder that contains the gold standard transcriptions (reference). It can be used as it follows:
+{{{
+bash publish.sh /home/filip/src/gcturk/cturk-transcriber/resources/wav/test1/ /home/filip/src/gcturk/cturk-transcriber/resources/wav/auto-valid-refs-TownInfo/
+}}}
+
+Note: Every published HIT is assigned to HITGroups according to some same properties. Every HIT has none or multiple assignments.
+
+== Worker completes HITs on CTURK ==
+
+Visit [http://localhost/~filip/gcturk/cturk/client/]
+
+ # Login as a Worker
+ # Click HITs menu
+ # Click View a HIT in this group
+ # Click Accept HIT to accomplish HITs
+ # Click Accepted HITs to see the full list of accepted but yet submitted HITs
+
+==  Requester checks HITs ==
+
+ # Log in CTurk as requester
+ # Click Assignments Menu
 
 
 
