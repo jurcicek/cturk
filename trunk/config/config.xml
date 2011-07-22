@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<username>zzzzz.zzzzzzzz@zzzzz.com</username>
+	<password>zzz</password>
+	<webServiceUrl>http://localhost/~zzzzz/zzzzzzzzzzz/cturk/server/webroot</webServiceUrl>
+	<resourceRoot>/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/resources</resourceRoot>
+	<webappRoot>/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/wwwroot</webappRoot>
+	<webappUrl>http://www.zzzzzzz.org/~zzzzz/zzzzzzzzzzz/cturk-transcriber/wwwroot</webappUrl>
+	<currencyCode>GBP</currencyCode>
+	<transcriptionPrice>0.01</transcriptionPrice>
+	<validationPrice>4</validationPrice>
+	<mysql>
+		<dbHost>localhost</dbHost>
+		<dbName>zzzzz</dbName>
+		<dbUser>zzzzz</dbUser>
+		<dbPwd>zzzzzzz</dbPwd>
+		<dbPort>zzzz</dbPort>
+		<dbPrefix>zzzzz_</dbPrefix>
+	</mysql>
+</root>
+
