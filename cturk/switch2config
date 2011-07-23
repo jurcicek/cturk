@@ -1,18 +1,19 @@
 #!/bin/sh
 
-$CFG_PATH = $1
+CFG_PATH="$1"
 
-
-if ["$CFG_PATH" -eq "" ]
+if [ ! -n "$CFG_PATH" ]
 then
     echo "switch2config config_dir_path"
     echo "  - changes all necessary in th eproject by the config files from the passed config directory"
     echo
-    echo "parameter config_dir_path missing"
+    echo "ERROR: Parameter config_dir_path is missing."
     echo
 else
-    mv ./server/app_conroller.php ./server/app_conroller.php.bck
-    cp $CFG_PATH/app_conroller.php ./server/app_conroller.php
+    echo "The config directory: $CFG_PATH"
+    
+    mv ./server/app_controller.php ./server/app_controller.php.bck
+    cp $CFG_PATH/app_controller.php ./server/app_controller.php
 
     mv ./server/config/database.php ./server/config/database.php.bck
     cp $CFG_PATH/database.php ./server/config/database.php
@@ -31,8 +32,8 @@ else
 
 
     # set the correct rights
-    chmod -R 777 cturk/server/tmp/
-    chmod -R 755 cturk/server/webroot/
+    chmod -R 777 ./server/tmp/
+    chmod -R 755 ./server/webroot/
 
 
 fi
