@@ -71,7 +71,7 @@ apt-get install phpmyadmin
 apt-get install libdbd-mysql-perl
 }}}
 
-FIXME: add all the necesary software
+FIXME: add all the necessary software
 
 {{{
 apt-get install XXX 
@@ -81,16 +81,17 @@ apt-get install XXX
 
 == Setting the Apache up ==
 
-Enable the `public_html` directory for each user on the computer. 
+Enable the `public_html` directory for each user on the computer and the `mod_rewrite` module. 
 
 {{{
 cd /etc/apache2/mods-enabled
 ln -s ../mods-available/userdir.conf userdir.conf
 ln -s ../mods-available/userdir.load userdir.load
+ln -s ../mods-available/rewrite.load rewrite.load
 /etc/init.d/apache2 restart
 }}}
 
-== Setting the MSQL databse up  ==
+== Setting the MySQL database up  ==
 
 The CTURK connects only to the MYSQL database. Create the database with the name: cturk.
 This manual assumes that the `cturk` user has full access the `cturk` database.
@@ -150,7 +151,27 @@ You can check the content of the database by using the phpmyadmin web interface 
 
 == Setting the PHP up ==
 
+Now yopu have to enable the php execution in the `public_html` directories. Go to the `/etc/apache2/mods-enabled` directory.
+{{{
+cd /etc/apache2/mods-enabled
+}}}
 
+Edit the `php5.conf` file. Change the lines:
+{{{
+<IfModule mod_userdir.c>
+	<Directory /home/*/public_html>
+		php_admin_value engine Off
+	</Directory>
+</IfModule>
+}}}
+to:
+{{{
+<IfModule mod_userdir.c>
+	<Directory /home/*/public_html>
+		#php_admin_value engine Off
+	</Directory>
+</IfModule>
+}}}
 
 
 = CONFIGURE THE CTURK = 
@@ -177,7 +198,7 @@ The tool copies all necessary config files into the approriate places.
 
 It is used as:
 {{{
-switch2config path_to_the_config_dir
+bash switch2config path_to_the_config_dir
 }}}
 where the {{{path_to_the_config_dir}}} parameters point to the paremters contains all config files for 
 setting the CTURK.
