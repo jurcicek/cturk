@@ -6,7 +6,7 @@ This text is using the Google Code wiki syntax.
 
 AUTHOR: FILIP JURCICEK
 
-VERSION: 22/07/2011
+VERSION: 23/07/2011
 
 == Contents == 
 
@@ -24,39 +24,6 @@ This manual will describe a specific case of installing the CTURK on the Ubuntu 
 It also describe how to deploy the CTURK-TRANSCRIBER which is an example of an external HIT working with the CTURK.
 
 CUED has a more detailed description of MTURK-TRANSCRIBER which is a variation of the CTURK-TRANSCRIBER.
-
-
-
-
-= INSTALLING THE REQUIERED SOFTWARE =
-
-This secstion will describe how to install all necessary software on the Ubuntu 11.04 Linux 
-distribution. You will have to have root rights, e.g. to be in the sudo group. The resto of 
-the section assumes that you are logged in the root. This can be achieved by running 
-the "sudo -s" command from the command line.
-
-If you do not have SVN (Subversion) then it can be installed by the following command:
-{{{
-apt-get install subversion
-}}}
-
-You will have to install apache and mysql:
-{{{
-apt-get install apache2
-apt-get install mysql-server 
-}}}
-
-FIXME: add all the necesary software
-
-{{{
-apt-get install php
-apt-get install mysql-server 
-}}}
-
-
-
-
-
 
 
 
@@ -79,36 +46,109 @@ svn checkout http://cturk.googlecode.com/svn/trunk/ gcturk-read-only
 
 *This manual assumes that the code has been checked out into the "~/src/" directory!*
 
-= SETTING THE APACHE UP =
+If you do not have SVN (Subversion) then it can be installed by the following command:
+{{{
+sudo apt-get install subversion
+}}}
+
+
+
+
+= INSTALLING THE REQUIERED SOFTWARE =
+
+This secstion will describe how to install all necessary software on the Ubuntu 11.04 Linux 
+distribution. You will have to have root rights, e.g. to be in the sudo group. The rest of 
+the section assumes that you are logged in the root. This can be achieved by running 
+the "sudo -s" command from the command line.
+
+You will have to install apache, mysql and php:
+{{{
+apt-get install apache2
+apt-get install mysql-server mysql-common mysql-client 
+apt-get install php5
+apt-get install php5-mysql
+apt-get install phpmyadmin
+apt-get install libdbd-mysql-perl
+}}}
+
+FIXME: add all the necesary software
+
+{{{
+apt-get install XXX 
+apt-get install XXX
+}}}
+
+
+== Setting the Apache up ==
 
 Enable the `public_html` directory for each user on the computer. 
-Start rewrite module and set
-	Options FollowSymLinks MultiViews
-	AllowOverride All
 
+{{{
+cd /etc/apache2/mods-enabled
+ln -s ../mods-available/userdir.conf userdir.conf
+ln -s ../mods-available/userdir.load userdir.load
+/etc/init.d/apache2 restart
+}}}
 
-= SETTING THE DATABASE UP  = 
+== Setting the MSQL databse up  ==
 
 The CTURK connects only to the MYSQL database. Create the database with the name: cturk.
 This manual assumes that the `cturk` user has full access the `cturk` database.
 The `cturk` user's password is `cturk`.
 Please change this default values into more approriate values.
 
+Run MySQL from the commandline:
 {{{
-create user cturk;
-create database cturk;
-set rights to cturk for user cturk;
+mysql -u root -p
 }}}
+
+You will get:
+{{{
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 152
+Server version: 5.1.54-1ubuntu4 (Ubuntu)
+
+Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+This software comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to modify and redistribute it under the GPL v2 license
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+}}}
+
+Create the `cturk` database:
+{{{
+mysql> create database cturk;
+}}}
+
+Add a user called `cturk` and grant access from localhost with the password `cturk`:
+{{{
+mysql> GRANT ALL ON cturk.* TO cturk@localhost IDENTIFIED BY 'cturk';
+}}}
+
 
 Setup the content of the database using the `docs/cturk20110125.sql` SQL scripts from the admin. 
 Note all CakePHP tables start with the `cturk4_` prefix.
+{{{
+mysql> use cturk;
+mysql> source docs/cturk20110125.sql;
+}}}
+This command sets up also the tables needed for the CTURK-TRANSCRIBER.
 
-After the setup the `cturk` database will have the followiomng users. Please remove them if you do not need them.
+After the setup the `cturk` database will have the following users. Please remove them if you do not need them.
 
 ||*user type* || *registered email*  || *password* ||
 ||requester   || midfar@qq.com       || admin ||
 ||requester   || admin@midfar.com    || admin ||
 ||worker      || midfar@vip.qq.com   || admin ||
+
+
+You can check the content of the database by using the phpmyadmin web interface at [http://localhost/phpmyadmin].
+
+
+== Setting the PHP up ==
 
 
 
