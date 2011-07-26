@@ -2,7 +2,7 @@
 This text is using the Google Code wiki syntax.
 </wiki:comment>
 
-= INSTALATION MANUAL FOR THE CTURK PROJECT = 
+= INSTILLATION MANUAL FOR THE CTURK PROJECT = 
 
 AUTHOR: FILIP JURCICEK
 
@@ -17,7 +17,7 @@ VERSION: 23/07/2011
 = INTRODUCTION =
 
 This document describes how to download the code, configure the computer used for deployment, 
-installing all necessary software, and runing the CTURK project.
+installing all necessary software, and running the CTURK project.
 
 This manual will describe a specific case of installing the CTURK on the Ubuntu 11.04 Linux distribution.
 
@@ -54,9 +54,9 @@ sudo apt-get install subversion
 
 
 
-= INSTALLING THE REQUIERED SOFTWARE =
+= INSTALLING THE REQUIRED SOFTWARE =
 
-This secstion will describe how to install all necessary software on the Ubuntu 11.04 Linux 
+This section will describe how to install all necessary software on the Ubuntu 11.04 Linux 
 distribution. You will have to have root rights, e.g. to be in the sudo group. The rest of 
 the section assumes that you are logged in the root. This can be achieved by running 
 the "sudo -s" command from the command line.
@@ -73,8 +73,9 @@ apt-get install phpmyadmin
 apt-get install libdbd-mysql-perl
 }}}
 
-== CTURK-TRANSCRIEBER == 
-For the CTURK-TRANSCRIEBER, an example of a HIT integrated with the CTURK, you must install perl 5.8.9. As it is not part 
+== CTURK-TRANSCRIBER == 
+
+For the CTURK-TRANSCRIBER, an example of a HIT integrated with the CTURK, you must install perl 5.8.9. As it is not part 
 of current version of Ubuntu any more, you will have to download the source code and compile it on your own.
 
 Go to some directory where you can download the source code, e.g.:
@@ -100,7 +101,7 @@ Run the following command in the shell:
 {{{
 perl -v
 }}}
-and you should see version information simillar to the following output:
+and you should see version information similar to the following output:
 {{{
 This is perl, v5.8.9 built for i686-linux
 Copyright 1987-2008, Larry Wall
@@ -114,7 +115,7 @@ apt-get install lame
 apt-get install shntool
 }}}
 
-If you cannot compile the perl 5.8.9, you can try to trick the CTURK-TRANSCRIBER by cretaing simling between the current version of perl and the 5.8.9 version, e.g.:
+If you cannot compile the perl 5.8.9, you can try to trick the CTURK-TRANSCRIBER by creating sym link between the current version of perl and the 5.8.9 version, e.g.:
 {{{
 ln -s /usr/bin/perl5.10.1 perl5.8.9
 }}} 
@@ -150,9 +151,9 @@ ln -s ../mods-available/rewrite.load rewrite.load
 The CTURK connects only to the MYSQL database. Create the database with the name: cturk.
 This manual assumes that the `cturk` user has full access the `cturk` database.
 The `cturk` user's password is `cturk`.
-Please change this default values into more approriate values.
+Please change this default values into more appropriate values.
 
-Run MySQL from the commandline:
+Run MySQL from the command line:
 {{{
 mysql -u root -p
 }}}
@@ -184,7 +185,7 @@ mysql> GRANT ALL ON cturk.* TO cturk@localhost IDENTIFIED BY 'cturk';
 }}}
 
 
-Setup the content of the database using the `docs/cturk20110125.sql` SQL scripts from the admin. 
+Set up the content of the database using the `docs/cturk20110125.sql` SQL scripts from the admin. 
 Note all CakePHP tables start with the `cturk4_` prefix.
 {{{
 mysql> use cturk;
@@ -205,7 +206,7 @@ You can check the content of the database by using the phpmyadmin web interface 
 
 == Setting the PHP up ==
 
-Now yopu have to enable the php execution in the `public_html` directories. Go to the `/etc/apache2/mods-enabled` directory.
+Now you have to enable the php execution in the `public_html` directories. Go to the `/etc/apache2/mods-enabled` directory.
 {{{
 cd /etc/apache2/mods-enabled
 }}}
@@ -230,8 +231,8 @@ to:
 
 = CONFIGURE THE CTURK = 
 
-The deployment of CTURK assumes deployment of into the {{{public_html}}} direcotory as it allows multiple 
-users to deploy CTURK on the same computer in a conroled way.
+The deployment of CTURK assumes deployment of into the {{{public_html}}} directory as it allows multiple 
+users to deploy CTURK on the same computer in a controlled way.
 
 In this task, we will assume deployment of the computer with the domain name {{{localhost}}} into 
 the {{{public_html}}} directory of the {{{filip}}} user. 
@@ -248,24 +249,24 @@ ln -s gcturk ~/public_html
 }}}
 
 A convenient way to configure CTURK is to use the {{{switch2config}}} tool in the cturk directory.
-The tool copies all necessary config files into the approriate places. 
+The tool copies all necessary config files into the appropriate places. 
 
 It is used as:
 {{{
 bash switch2config path_to_the_config_dir
 }}}
-where the {{{path_to_the_config_dir}}} parameters point to the paremters contains all config files for 
+where the {{{path_to_the_config_dir}}} parameters point to the parameters contains all config files for 
 setting the CTURK.
 
 Templates of the configuration files are in the {{{config}}} directory.
 
 The files that have to be changed are:
- * {{{app_conroller.php}}}  - will be coppied to {{{./server/}}}
- * {{{database.php}}} - will be coppied to {{{./server/config/}}}
- * {{{.htaccess}}} - will be coppied to {{{./server/webroot/}}}
- * {{{index.php}}} - will be coppied to {{{./server/webroot/}}}
- * `externalSubmit.html` - will be coppied to `./client/form/worker/`
- * {{{Config.js}}} - will be coppied to {{{./client/static/js/ui1/}}}
+ * {{{app_conroller.php}}}  - will be copied to {{{./server/}}}
+ * {{{database.php}}} - will be copied to {{{./server/config/}}}
+ * {{{.htaccess}}} - will be copied to {{{./server/webroot/}}}
+ * {{{index.php}}} - will be copied to {{{./server/webroot/}}}
+ * `externalSubmit.html` - will be copied to `./client/form/worker/`
+ * {{{Config.js}}} - will be copied to {{{./client/static/js/ui1/}}}
 
 It is advised to make a copy of the config directory using:
 {{{
@@ -284,7 +285,7 @@ var $SMTP_EMAIL = 'zzzzz_noreply@zzz.com';
 var $SMTP_USERNAME = 'zzzzz_noreply';
 var $SMTP_PASSWORD = 'zzzzzzzzzzzzzz';
 }}}
-to a valid SMTP mail server is sending email is reqiered.
+to a valid SMTP mail server is sending email is required.
 
 Change {{{PAYPAL_*}}} variables for proper integration with PayPal: 
 {{{
@@ -379,7 +380,7 @@ RewriteBase /~filip/gcturk/cturk/server/webroot
 
 == Edit {{{index.php}}} ==
 
-In the index.php file must be changed the aboslute path to the CakePHP framawork: {{{CAKE_CORE_INCLUDE_PATH}}}
+In the index.php file must be changed the absolute path to the CakePHP framework: {{{CAKE_CORE_INCLUDE_PATH}}}
 Note that {{{CAKE_CORE_INCLUDE_PATH}}} defines location of the CakePHP framework.
 
 Change the line: 
@@ -405,7 +406,7 @@ to:
 
 == Edit {{{Config.js}}} ==
 
-The {{{Config.js}}} defines the URL where all webservisces used by Javascript are located.
+The {{{Config.js}}} defines the URL where all web-services used by Java-script are located.
 
 Change the line:
 {{{
@@ -428,7 +429,7 @@ switch2config ../config.filip@localhost
 
 
 In addition to copying the config files, the {{{switch2config}}} also sets correct access rights to some directories:
- * Assign all users read, write, and excute rights to {{{cturk/server/tmp}}}
+ * Assign all users read, write, and execute rights to {{{cturk/server/tmp}}}
 {{{
 	chmod -R 777 cturk/server/tmp/
 }}}
@@ -443,19 +444,19 @@ In addition to copying the config files, the {{{switch2config}}} also sets corre
 
 = CONFIGURE THE CTURK-TRANSCRIBER =
 
-The CTURK-TRANSCRIBER is the reference inmplementation of an external HIT for the CTURK. 
+The CTURK-TRANSCRIBER is the reference implementation of an external HIT for the CTURK. 
 The CTURK-TRANSCRIBER is located in the `gcturk/cturk-transcriber` directory.
 
 Again, a convenient way to configure CTURK-TRANSCRIBER is to use the {{{switch2config}}} tool in the `cturk-transcriber` directory.
-The tool copies all necessary config files into the approriate places. 
+The tool copies all necessary config files into the appropriate places. 
 
 Templates of the configuration files are in the {{{config}}} directory.
 
 The files that have to be changed are:
- * {{{config.xml}}}  - will be coppied to {{{./docs/}}}
- * {{{publish.sh}}} - will be coppied to {{{./docs/}}}
- * {{{start.html}}} - will be coppied to {{{./webroot/}}}
- * {{{start2.html}}} - will be coppied to {{{./webroot/}}}
+ * {{{config.xml}}}  - will be copied to {{{./docs/}}}
+ * {{{publish.sh}}} - will be copied to {{{./docs/}}}
+ * {{{start.html}}} - will be copied to {{{./webroot/}}}
+ * {{{start2.html}}} - will be copied to {{{./webroot/}}}
  
 
 Since you already made a copy of the config templates then edit the config files in the `config.filip@localhost` directory.
@@ -513,7 +514,7 @@ to:
 
 Please remember to change the username and the password to something more appropriate!
 
-*Note that some HTTP servers does not allow visiting itself from the nom-localhost domain. As a result `webServiceUrl` is set to `http://localhost/~filip/gcturk/cturk/server/webroot`.*	
+*Note that some HTTP servers does not allow visiting itself from the non-localhost domain. As a result `webServiceUrl` is set to `http://localhost/~filip/gcturk/cturk/server/webroot`.*	
 
 
 == Edit {{{publish.sh}}} ==
@@ -577,7 +578,8 @@ Visit [http://localhost/~filip/gcturk/cturk/client/form/requester/createHIT.html
 
 The `publish.sh` BASH script is using a set of PERL scripts to publish HITs. 
 {{{
-bash publish.sh $1 $2
+cd ~/src/gcturk/cturk-transcriber/docs
+publish.sh $1 $2
 }}}
 
 Note that `$1` is the folder that contains audio files to be transcribed and $2 is the folder that contains the gold standard transcriptions (reference). It can be used as it follows:
@@ -587,20 +589,33 @@ bash publish.sh /home/filip/src/gcturk/cturk-transcriber/resources/wav/test1/ /h
 
 Note: Every published HIT is assigned to HITGroups according to some same properties. Every HIT has none or multiple assignments.
 
-== Worker completes HITs on CTURK ==
+== A worker completes/submits HITs ==
 
 Visit [http://localhost/~filip/gcturk/cturk/client/]
 
- # Login as a Worker
- # Click HITs menu
- # Click View a HIT in this group
- # Click Accept HIT to accomplish HITs
- # Click Accepted HITs to see the full list of accepted but yet submitted HITs
+ # Log in CTURK as a worker
+ # Click on the "Available HITs" menu
+ # Click on the "View a HIT in this group" button
+ # Click on the "Accept HIT" button to complete this HIT
+ # Click on the "Accepted HITs" menu to see the list of accepted but not yet submitted HITs
+ # Click on the "Continue work on this HIT" button to complete the HIT
+ # Add the transcriptions
+ # Click on the "Submit" button
+ # Click on the "Submitted HITs" menu to see the list of submitted HITs
+ 
 
-==  Requester checks HITs ==
+== A requester checks HITs ==
 
- # Log in CTurk as requester
- # Click Assignments Menu
+ # Log in CTURK as a requester
+ # Click on the "HIT Groups" menu to see published HITs
 
+
+== A requester accepts or rejects submitted HITs == 
+
+Check submitted transcriptions, and approve or reject them:
+{{{
+cd ~/src/gcturk/cturk-transcriber/docs/cmd
+noValidation.sh
+}}}
 
 
