@@ -8,9 +8,9 @@ class HitsController extends AppController {
 	var $components = array ('Ajax' );
 	
 	/**
-	 * get HIT info given hitId
-	 * GET hitId
-	 */
+	* get HIT info given hitId
+	* GET hitId
+	*/
 	public function info($hitId = null) {
 		if (! empty ( $hitId ) && is_numeric ( $hitId )) {
 			$data = $this->Hit->find ( 'first', array (//

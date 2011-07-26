@@ -491,8 +491,8 @@ to:
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-	<username>filip.jurcicek@gmail.com</username>
-	<password>lol</password>
+	<username>admin@midfar.com</username>
+	<password>admin</password>
 	<webServiceUrl>http://localhost/~filip/gcturk/cturk/server/webroot</webServiceUrl>
 	<resourceRoot>/home/filip/src/gcturk/cturk-transcriber/resources</resourceRoot>
 	<webappRoot>/home/filip/src/gcturk/cturk-transcriber/wwwroot</webappRoot>
@@ -510,6 +510,8 @@ to:
 	</mysql>
 </root>
 }}}
+
+Please remember to change the username and the password to something more appropriate!
 
 *Note that some HTTP servers does not allow visiting itself from the nom-localhost domain. As a result `webServiceUrl` is set to `http://localhost/~filip/gcturk/cturk/server/webroot`.*	
 
