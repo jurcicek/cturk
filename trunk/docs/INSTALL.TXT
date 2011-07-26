@@ -61,7 +61,9 @@ distribution. You will have to have root rights, e.g. to be in the sudo group. T
 the section assumes that you are logged in the root. This can be achieved by running 
 the "sudo -s" command from the command line.
 
-You will have to install apache, mysql and php:
+== CTURK == 
+
+You will have to install Apache, MySQL and PHP:
 {{{
 apt-get install apache2
 apt-get install mysql-server mysql-common mysql-client 
@@ -71,12 +73,64 @@ apt-get install phpmyadmin
 apt-get install libdbd-mysql-perl
 }}}
 
-FIXME: add all the necessary software
+== CTURK-TRANSCRIEBER == 
+For the CTURK-TRANSCRIEBER, an example of a HIT integrated with the CTURK, you must install perl 5.8.9. As it is not part 
+of current version of Ubuntu any more, you will have to download the source code and compile it on your own.
 
+Go to some directory where you can download the source code, e.g.:
 {{{
-apt-get install XXX 
-apt-get install XXX
+cd ~/install
 }}}
+then get the source code: 
+{{{
+wget http://www.cpan.org/src/5.0/perl-5.8.9.tar.bz2
+}}}
+then extract, compile and install the code:
+{{{
+tar -jxf perl-5.8.9.tar.bz2
+cd perl-5.8.9
+./Configure -des
+make
+make install
+}}}
+
+Log out and log in again:
+
+Run the following command in the shell:
+{{{
+perl -v
+}}}
+and you should see version information simillar to the following output:
+{{{
+This is perl, v5.8.9 built for i686-linux
+Copyright 1987-2008, Larry Wall
+}}}
+
+Now, install the following packages:
+{{{
+apt-get install libmysqlclient15-dev libmysql++-dev libmysqlclient16-dev
+apt-get install libexpat1-dev
+apt-get install lame
+apt-get install shntool
+}}}
+
+If you cannot compile the perl 5.8.9, you can try to trick the CTURK-TRANSCRIBER by cretaing simling between the current version of perl and the 5.8.9 version, e.g.:
+{{{
+ln -s /usr/bin/perl5.10.1 perl5.8.9
+}}} 
+
+Install necessary perl packages:
+{{{
+perl -MCPAN -e shell
+cpan[1]>install YAML
+cpan[2]>install XML::Simple
+cpan[3]>install Test::Simple
+cpan[4]>install DBD::mysql
+cpan[5]>install Data::Dumper
+cpan[6]>install Text:WagnerFischer
+cpan[7]>exit
+}}}
+
 
 
 == Setting the Apache up ==
@@ -513,8 +567,9 @@ Access the CTURK at [http://localhost/~filip/gcturk/cturk/client/index.html].
  
 == Manually publish HITs (for testing) == 
 
-Login to CTURK as requester at [http://localhost/~filip/gcturk/cturk/client/]
-Visit [http://localhost/~filip/gcturk/cturk/client/form/requester/createHIT.html]
+Login to CTURK as requester at [http://localhost/~filip/gcturk/cturk/client/].
+
+Visit [http://localhost/~filip/gcturk/cturk/client/form/requester/createHIT.html].
 
 == Publish HITs for the CTURK-TRANSCRIBER  ==
 

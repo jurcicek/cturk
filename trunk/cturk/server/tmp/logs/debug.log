@@ -1,4 +1,0 @@
-2011-03-23 17:39:50 Notice: Notice (8): Undefined index: isWorker in [/home/fj228/src/cturk-task4/cturk/server/controllers/workers_controller.php, line 570]
-2011-03-23 17:40:21 Notice: Notice (8): Undefined index: isWorker in [/home/fj228/src/cturk-task4/cturk/server/controllers/workers_controller.php, line 570]
-2011-03-24 11:15:33 Notice: Notice (8): Undefined index: assignmentId in [/home/fj228/src/cturk-task4/cturk/server/controllers/workers_controller.php, line 381]
-2011-03-24 11:21:37 Notice: Notice (8): Undefined variable: assignmentId in [/home/fj228/src/cturk-task4/cturk/server/controllers/workers_controller.php, line 388]
