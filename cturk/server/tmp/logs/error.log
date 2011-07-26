@@ -1,2 +1,0 @@
-2011-02-17 17:53:57 Warning: Warning (2): require(/home/fj228/src/cturk-task4/cturk/server/app_controller.php) [http://php.net/function.require]: failed to open stream: Permission denied in [/home/fj228/src/cturk-task4/cturk/CakePHP/cake/libs/configure.php, line 1067]
-2011-02-17 17:53:57 Warning: Warning (2): require(/home/fj228/src/cturk-task4/cturk/server/app_controller.php) [http://php.net/function.require]: failed to open stream: Permission denied in [/home/fj228/src/cturk-task4/cturk/CakePHP/cake/libs/configure.php, line 1067]
