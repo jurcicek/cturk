@@ -87,11 +87,12 @@ transAssignmentId AssignmentId of the corresponding Transcription HIT
 Amazon AWS account:
 (This Amazon AWS account can be used for demo purpose.)
 
-user: 			fj228@cam.ac.uk
-passwd: 		test1234
-AWS Account ID: 	9717-9101-4028
-Access Key ID:		AKIAJAJ4SU3ZRHF4FQ6A
-Secret Access Key:	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 
+Create you own AWS account and get the following details:
+ - user
+ - passwd 		
+ - AWS Account ID
+ - Access Key ID		
+ - Secret Access Key
 
 =================================
 References:
