@@ -192,11 +192,16 @@ var HITs = {
         
         var frameHeight = o.Hit['frameHeight'];
         var frameUrl = o.Hit['url'];
-        var url = frameUrl + '?assignmentId=' + assignmentId + '&workerId=' + workerId + '&hitId=' + hitId ;
-/*        if (frameUrl.indexOf("?") > 0) {
-            url = frameUrl + '&assignmentId=' + assignmentId;
-        }
-*/        html += '<iframe id="hitFrame" name="hitFrame" scrolling="auto" height="' + frameHeight + '" frameborder="0" align="center" width="100%" src="' + url + '"></iframe>';
+	if (frameUrl.indexOf("?") == 0) {
+	    frameUrl = frameUrl + '?'
+	}
+	else {
+	    frameUrl = frameUrl + '&'
+	}
+	
+        var url = frameUrl + 'assignmentId=' + assignmentId + '&workerId=' + workerId + '&hitId=' + hitId;
+
+        html += '<iframe id="hitFrame" name="hitFrame" scrolling="auto" height="' + frameHeight + '" frameborder="0" align="center" width="100%" src="' + url + '"></iframe>';
         $("#hitData").html(html);
     }
     
