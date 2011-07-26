@@ -3,7 +3,7 @@
 WEB_ROOT="/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/wwwroot";
 DOC_ROOT="/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/docs";
 
-rm -r $WEB_ROOT/data/wav/`basename $1`;
+rm -r -f $WEB_ROOT/data/wav/`basename $1`;
 mkdir $WEB_ROOT/data/wav/`basename $1`;
 cp $1 $WEB_ROOT/data/wav -r;
 
@@ -18,7 +18,7 @@ for d in $WEB_ROOT/data/wav/`basename $1`/*;do
 done
 
 # convert wav to mp3
-rm -r $WEB_ROOT/data/mp3/`basename $1`;
+rm -r -f $WEB_ROOT/data/mp3/`basename $1`;
 mkdir $WEB_ROOT/data/mp3/`basename $1`;
 for f in $WEB_ROOT/data/wav/`basename $1`/*/*.wav;do
     dir=`dirname $f | sed 's=wav=mp3='`;
