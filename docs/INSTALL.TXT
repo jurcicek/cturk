@@ -2,7 +2,7 @@
 This text is using the Google Code wiki syntax.
 </wiki:comment>
 
-= INSTILLATION MANUAL FOR THE CTURK PROJECT = 
+= INSTALLATION MANUAL FOR THE CTURK PROJECT = 
 
 AUTHOR: FILIP JURCICEK
 
