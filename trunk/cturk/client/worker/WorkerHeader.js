@@ -18,6 +18,9 @@ var WorkerHeader = {
         html += '    <li class="menuItem availableHITs">';
         html += '        <a href="findhits.html" class="menuItemAnchor">Available HITs</a>';
         html += '    </li>';
+        html += '    <li class="menuItem help">';
+        html += '        <a href="help.html" class="menuItemAnchor">Help</a>';
+        html += '    </li>';
         html += '</ul>';
         document.write(html);
         
