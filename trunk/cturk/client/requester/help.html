@@ -52,17 +52,215 @@ The main use cases of CTURK are:
 
 <p>
 In the CTURK framework are two types of users: requesters and workers.
+The requesters publish work on the CTURK in the form of HITs and pay workers for their successful completion of the HITs.
+The workers complete the published HITs, wait for their work being accepted and when they earn a minimum amount of money then they can request to be paid.
 </p>
+
 <p>
-The requesters publish work on the CTURK in the form of HITs and pay workers for their succesful completion of the HITs.
-</p>
-<p>
-The workers complete the puchlished HITs, wait for their work being accepted and when they earn a minimum amount of money then they can request to be paid.
+There are three main concepts in the CTURK:
+<ul>
+	<li>a HIT Group - is a set of HITs which have similar properties such as name, description, reward, etc. 
+	    See below for more details.</li>
+	<li>A HIT - is a basic task which can be completed by a worker by doing the requested work and submitting the results. </li> 
+	<li>Assignment - is a result of a completion, in the CTURK terminology submission. 
+	    An assignment is either approved or reject by a requester. 
+	    If the assignment is approved that the worker is awarded the advertised price for the HIT (reward).</li>
+</ul>
 </p>
 
 <p> 
-The next sections provide basic information on how requesters can corectly and efficiently use the CTURK famework.
+The next sections provide basic information on how requesters can correctly and efficiently use the CTURK framework.
 </p>
+
+
+
+
+<h4>Creating an account</h4>
+
+<p>
+As a user who can see this help, you already have an account and you are a requester. 
+However, it will be helpful to review a requesters account can be created. 
+First, a user who wants to be a requester must create a workers account. 
+A workers account can be created <a href="../register.html">here</a>. 
+</p>
+<p>
+When registering, a user must provide:
+<ul>
+	<li>User name</li>
+	<li>Password </li>
+	<li>Paypal account email</li>
+	<li>Title</li>
+	<li>First name</li>
+	<li>Surname</li>
+	<li>Gender</li>
+	<li>Building name</li>
+	<li>Street name</li>
+	<li>City name</li>
+	<li>Postcode</li>
+</ul>
+</p>
+
+<p>
+Second, a the rights of the worker have to raised by another requester. 
+</p>
+<p>
+The upgrade of a worker to requester is performed in the Workers section in the main menu.
+</p>
+<p>
+For example, you might to see something similar to:
+</p>
+<p>
+<img src="images/CTURK-Workers-List.png"/>
+</p>
+
+<p>
+Here you can see a list of all workers in the CTURK. By clicking on the "Update To Requester", you can raise the rights of a worker to requester.
+</p>
+<p>
+Also, you can disable a worker by clicking on the "Disable" button. This is useful if you do not want a worker to be able to use the CTURK any more. 
+If you change your mind later then you can always enable the disabled user.
+</p>
+
+<p>
+The "Invite workers" button can be used to create a link which will enable a user to create a worker account automatically. 
+However, it is easier to email potential workers a link where they can register on their own.
+The potential workers can register <a href="../register.html">here</a>.
+</p>
+
+
+
+<h4>Creating a HIT Group</h4>
+
+<p>
+A HIT Group is a set of HITs which share the same properties such as:
+<ul>
+	<li>Name</li>
+	<li>Description </li>
+	<li>Currency - has to one of the currency codes such as USD, GBP, EUR, .... used by PayPal.</li>
+	<li>Reward - is a floating point number.</li>
+	<li>Expire date - has the format yyyy/mm/dd HH:MM and sets the date when the published HITs expires. If a HIT expire then will not be available to workers any more.  </li>
+	<li>Assignment time - time available to a worker for completing the HIT in seconds.</li>
+	<li>Auto approval time - a period after which the HIT is approved automatically in seconds.</li>
+	<li>Max HITs - a maximum number of HITs that can be submitted by a single worker.</li>
+	<li>URL - the URL where the external HITs is placed.</li>
+	<li>Frame Height - the allocated size of IFRAME element for the HIT.</li>
+</ul>
+</p>
+
+<p>
+These HITs are published by a requester to be completed by one or more workers. 
+Graphical interface for publishing a group of HITs with one HIT is <a href="createhits.html">here</a>.
+However, all external HITs (software such as cturk-transcriber) offers its own way how to publish HITs on the CTURK, e.g. execution of a command in a commandline.
+</p>
+
+
+
+<h4>List all HIT Groups</h4>
+
+<p>
+All published HIT Groups can be viewed in the "HIT Groups" section in the main menu.
+</p>
+<p>
+For example, you might to see something similar to:
+</p>
+<p>
+<img src="images/CTURK-HITGroups-List.png"/>
+</p>
+<p>
+The list has two parts: active HIT Groups and and expired HIT Groups.
+</p>
+<p>
+The active HIT Groups contain all HIT groups which have:
+<ul>
+	<li>any HITs that can be completed/submitted by workers</li>
+	<li>the HIT group did not automatically expired</li>
+	<li>there are some assignments (results submitted by workers) and must be approved or rejected </li>
+	<li>there are some assignments which were approved but not paid for</li>
+</ul>
+</p>
+<p>
+For example, in the picture above the active HIT groups are having either unpaid HITs (assignments) or unapproved or un-rejected HITs.</p>
+<p>
+By clicking on the "View HITs" button, you will see a set of all HITs associated with the HIT Group. 
+</p>
+<p>
+By clicking on the "Assignments" button, you will see a set of all assignments associated with the HIT Group. 
+</p>
+<p>
+By clicking on the "Expire" button, you can expire all HITs within the HIT Group. 
+The expired HITs will not be available to workers for completion.
+However, after the expired HIT Group can stay among the active HIT Groups as there may be some unpaid, unaccepted, un-rejected HITs associated with the HIT Group.
+</p>
+<p>
+You can duplicate a HIT Group by clicking on the "Duplicate" button. 
+Before a new HIT Group is saved into the CTURK, you can modify the parameters of the HIT Group.
+</p>
+
+
+
+
+
+<h4>List all HITs</h4>
+
+<p>
+List of all HITs is displayed in the "HITs" section in the main menu.
+</p>
+<p>
+It displays all HITs of the current requester. This view is used also for some filtered listings of HITs, e.g. for listing HITs associated with a particular HIT Group.
+</p>
+
+
+
+
+<h4>List all assignments</h4>
+
+<p>
+List of all assignments is displayed in the "Assignments" section in the main menu.
+</p>
+<p>
+It displays all assignments associated with HITs of the current requester. This view is used also for some filtered listings of assignments, e.g. for listing assignments associated with a particular HIT.
+</p>
+
+<p>
+For example, you might to see something similar to:
+</p>
+<p>
+<img src="images/CTURK-Assignments.png"/>
+</p>
+
+<p>
+By clicking on the "Details" button, you will see details of the associated HIT and all assignments associated with that HIT.
+</p>
+<p>
+By clicking on the "Results" button, you will see an XML document with the data submitted by the worker.
+</p>
+<p>
+By clicking on the "Approve" button, you approve the assignment and agree that the worker should be paid.
+</p>
+<p>
+By clicking on the "Reject" button, you reject the assignment and the worker will not be paid.
+</p>
+<p>
+By clicking on the "Pay" button, you will pay a worker for this individual assignment (completed HIT).
+However, it is more efficient to wait for the worker's request to be paid. 
+Once a worker request the pay then it can be completed in the "My Account" section in the main menu.
+</p>
+
+
+
+
+<h4>Paying the subject for approved HITs</h4>
+
+<p>
+As suggested above, you can pay individually for each approved HIT.
+However, this is rather expensive as each payment as involves also a transaction fee. 
+Generally, it is better to wait until the worker requests to be paid and then complete the payment in the "My Account" section in the main menu.
+You will see all request for payments in the "Requested payments detail" block.
+</p>
+<p>
+To pay a worker, you will need a valid PayPal account.
+</p>
+
 
 <!-- help end  -->
                         </div>
