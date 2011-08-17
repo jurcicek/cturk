@@ -71,7 +71,7 @@ hr{ border:1px solid #8BC0DF; margin:10px 0;}
 .worker #header-inner,
 .requester #header-inner{ height:auto; border-bottom:5px solid #f1d5b1;}
 .worker .headerNavigator{ width:575px;}
-.requester .headerNavigator{ width:575px;}
+.requester .headerNavigator{ width:690px;}
 /* worker */
 .headerNavigator{ background:url(images/tab_bg.png) left bottom repeat-x;}
 .headerNavigator{ height:33px; /*padding-left:255px;*/ margin:0 auto; list-style:none;}

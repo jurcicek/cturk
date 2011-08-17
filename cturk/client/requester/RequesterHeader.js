@@ -21,6 +21,9 @@ var RequesterHeader = {
         html += '    <li class="menuItem Assignments">';
         html += '        <a href="assignments.html" class="menuItemAnchor">Assignments</a>';
         html += '    </li>';
+        html += '    <li class="menuItem help">';
+        html += '        <a href="help.html" class="menuItemAnchor">Help</a>';
+        html += '    </li>';
         html += '</ul>';
         document.write(html);
         
