@@ -1,3 +1,8 @@
+Written by PING
+
+Modified by FILIP JURCICEK
+
+
 ISS-58 PROVIDE DOCUMENTATION FOR THE INTERFACE BETWEEN CTURK AND EXTERNAL HIT
 
 The “REQ-808 Interface between CTURK and external HIT” specified that you should follow the standard of communication from MTurk. You diverted as you thought that it would be too difficult to implement.
