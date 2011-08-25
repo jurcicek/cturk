@@ -146,6 +146,16 @@ ln -s ../mods-available/rewrite.load rewrite.load
 /etc/init.d/apache2 restart
 }}}
 
+An alternative to this is to allow these options for a specific direction in the httpd.conf file. For example, one can add:
+{{{
+<Directory /home/filip/public_html/gcturk> 
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+}}}
+
 == Setting the MySQL database up  ==
 
 The CTURK connects only to the MYSQL database. Create the database with the name: cturk.
@@ -228,7 +238,13 @@ to:
 </IfModule>
 }}}
 
-
+In some cases it is necessary to set the timezone appropriately (e.g. on Mac). This is done by editing the php.ini file (on Mac this is at /private/etc/php.ini) so that the date configurations are as follows:
+{{{
+	[Date]
+	; Defines the default timezone used by the date functions                                                                                                    
+	; http://php.net/date.timezone                                                                                                                               
+	date.timezone = "UTC"
+}}}
 = CONFIGURE THE CTURK = 
 
 The deployment of CTURK assumes deployment of into the {{{public_html}}} directory as it allows multiple 
