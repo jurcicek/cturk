@@ -132,6 +132,7 @@ cpan[6]>install Text:WagnerFischer
 cpan[7]>exit
 }}}
 
+Note - if you have multiple versions of perl installed then make sure you install the perl packages in the 5.8.9 version of perl by adjusting the above command line to /usr/bin/perl5.8.9 -MCPAN -e shell
 
 
 == Setting the Apache up ==
