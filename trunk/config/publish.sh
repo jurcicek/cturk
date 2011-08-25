@@ -5,7 +5,7 @@ DOC_ROOT="/home/zzzzz/src/zzzzzzzzzzz/cturk-transcriber/docs";
 
 rm -r -f $WEB_ROOT/data/wav/`basename $1`;
 mkdir $WEB_ROOT/data/wav/`basename $1`;
-cp $1 $WEB_ROOT/data/wav -r;
+cp -r $1 $WEB_ROOT/data/wav;
 
 cd $DOC_ROOT;
 # generate question
